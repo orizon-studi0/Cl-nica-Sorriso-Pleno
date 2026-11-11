@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Sorriso Pleno | Odontologia em Pinheiros, São Paulo</title>
+  <meta name="description" content="Clínica odontológica moderna e humanizada em Pinheiros, São Paulo. Atendimento em clínica geral, ortodontia, implantes, clareamento, endodontia e odontopediatria." />
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Clínica Sorriso Pleno | Odontologia em Pinheiros, São Paulo" />
+  <meta property="og:description" content="Odontologia com foco no cuidado humanizado, tecnologia moderna e bem-estar. Conheça nossa estrutura em Pinheiros - SP." />
+  <meta property="og:image" content="https://image.pollinations.ai/prompt/modern%20dental%20clinic%20interior%20with%20dental%20chair%20bright%20clean%20blue%20and%20white%20no%20people%20no%20text?width=1600&height=900&model=flux&nologo=true&seed=21" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Clínica Sorriso Pleno" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Clínica Sorriso Pleno | Odontologia em Pinheiros, São Paulo" />
+  <meta name="twitter:description" content="Atendimento odontológico de excelência em Pinheiros - SP. Agende sua consulta com facilidade." />
+  <meta name="twitter:image" content="https://image.pollinations.ai/prompt/modern%20dental%20clinic%20interior%20with%20dental%20chair%20bright%20clean%20blue%20and%20white%20no%20people%20no%20text?width=1600&height=900&model=flux&nologo=true&seed=21" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Clínica Sorriso Pleno",
+    "image": "https://image.pollinations.ai/prompt/modern%20dental%20clinic%20interior%20with%20dental%20chair%20bright%20clean%20blue%20and%20white%20no%20people%20no%20text?width=1600&height=900&model=flux&nologo=true&seed=21",
+    "description": "Clínica odontológica de referência em Pinheiros, São Paulo - SP. Tratamentos preventivos, ortodontia, implantes, clareamento, endodontia e odontopediatria.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua dos Pinheiros, 789, 3º andar",
+      "addressLocality": "Pinheiros",
+      "addressRegion": "SP",
+      "postalCode": "05422-001",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.565345,
+      "longitude": -46.687796
+    },
+    "telephone": "+5511999998888",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "13:00"
+      }
+    ],
+    "medicalSpecialty": [
+      "Dentistry",
+      "Orthodontics",
+      "Periodontics",
+      "Endodontics",
+      "Pediatric Dentistry"
+    ]
+  }
+  </script>
+
+  <style>
+    /* CSS Variables & Reset */
+    :root {
+      --color-primary: #0E7490;
+      --color-primary-dark: #155E75;
+      --color-primary-light: #E0F2FE;
+      --color-primary-soft: #F0F9FF;
+      --color-accent: #06B6D4;
+      --color-text-main: #0F172A;
+      --color-text-muted: #475569;
+      --color-text-light: #64748B;
+      --color-bg-alt: #F8FAFC;
+      --color-white: #FFFFFF;
+      --color-border: #E2E8F0;
+      --color-success: #16A34A;
+      --color-whatsapp: #25D366;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --nav-height: 72px;
+      --banner-height: 36px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text-main);
+      background-color: var(--color-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-top: calc(var(--nav-height) + var(--banner-height));
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5 {
+      color: var(--color-text-main);
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--color-text-muted);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Container Utility */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    /* Section Styling */
+    section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      position: relative;
+      scroll-margin-top: calc(var(--nav-height) + var(--banner-height) + 12px);
+    }
+
+    .section-alt {
+      background-color: var(--color-bg-alt);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-primary);
+      background-color: var(--color-primary-light);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.875rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .section-desc {
+      font-size: 1.0625rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      padding: 0.875rem 1.625rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      box-shadow: 0 4px 14px 0 rgba(14, 116, 144, 0.35);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px 0 rgba(14, 116, 144, 0.45);
+    }
+
+    .btn-secondary {
+      background-color: var(--color-white);
+      color: var(--color-primary);
+      border-color: var(--color-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-primary-soft);
+      border-color: var(--color-primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    .btn-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    /* Fixed Top Banner (Demonstration Stamp) */
+    .demo-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--banner-height);
+      background-color: #0F172A;
+      color: #94A3B8;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 0 1rem;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .demo-banner strong {
+      color: #38BDF8;
+      font-weight: 600;
+      margin-left: 0.25rem;
+    }
+
+    /* Fixed Navigation Bar */
+    .navbar {
+      position: fixed;
+      top: var(--banner-height);
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 999;
+      border-bottom: 1px solid var(--color-border);
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 1.1875rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+      letter-spacing: -0.03em;
+    }
+
+    .brand-icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      color: var(--color-primary);
+      background: var(--color-primary-light);
+      padding: 0.35rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--color-primary);
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-links {
+        display: flex;
+      }
+      .nav-cta {
+        display: inline-flex;
+      }
+    }
+
+    /* Mobile Menu Toggle Button */
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: transparent;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      cursor: pointer;
+      color: var(--color-text-main);
+    }
+
+    @media (min-width: 1024px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: calc(var(--banner-height) + var(--nav-height));
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--color-white);
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow-y: auto;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .mobile-drawer.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (min-width: 1024px) {
+      .mobile-drawer {
+        display: none !important;
+      }
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .mobile-nav-link {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--color-text-main);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+      display: block;
+    }
+
+    /* Image Container with Fixed Aspect Ratio & Cyan Gradient Placeholder */
+    .img-box {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #0E7490 0%, #155E75 50%, #164E63 100%);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img-placeholder-icon {
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      color: rgba(255, 255, 255, 0.4);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .img-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+      animation: shimmer 2s infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .img-box img {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+    .img-box:hover img {
+      transform: scale(1.03);
+    }
+
+    .aspect-16-9 {
+      aspect-ratio: 16 / 9;
+    }
+
+    .aspect-3-2 {
+      aspect-ratio: 3 / 2;
+    }
+
+    .aspect-4-3 {
+      aspect-ratio: 4 / 3;
+    }
+
+    /* 1. Hero Section */
+    .hero {
+      padding-top: 3.5rem;
+      padding-bottom: 5rem;
+      background: linear-gradient(180deg, #F0F9FF 0%, #FFFFFF 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      background-color: rgba(14, 116, 144, 0.1);
+      padding: 0.35rem 0.875rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: 2.375rem;
+      font-weight: 800;
+      color: var(--color-text-main);
+      line-height: 1.18;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 3.25rem;
+      }
+    }
+
+    .hero-title span {
+      color: var(--color-primary);
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    @media (min-width: 640px) {
+      .hero-features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .hero-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+
+    .hero-feature-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .hero-img-wrap {
+      position: relative;
+    }
+
+    .hero-badge-float {
+      position: absolute;
+      bottom: -1.25rem;
+      left: 1.25rem;
+      background: var(--color-white);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      z-index: 5;
+    }
+
+    .badge-icon-box {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--color-primary-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+    }
+
+    .badge-text-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+    }
+
+    .badge-text-sub {
+      font-size: 0.75rem;
+      color: var(--color-text-light);
+    }
+
+    /* 2. Sobre Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .about-card-box {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-pillars {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    @media (min-width: 640px) {
+      .about-pillars {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .pillar-item {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .pillar-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pillar-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .pillar-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-light);
+    }
+
+    /* 3. Especialidades Section */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .specs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .specs-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .spec-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .spec-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(14, 116, 144, 0.4);
+    }
+
+    .spec-icon-wrap {
+      width: 3.25rem;
+      height: 3.25rem;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .spec-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .spec-text {
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .spec-link {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    .spec-link:hover {
+      color: var(--color-primary-dark);
+      gap: 0.625rem;
+    }
+
+    .section-footer-cta {
+      text-align: center;
+      margin-top: 3.5rem;
+    }
+
+    /* 4. Corpo Clínico Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .team-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(14, 116, 144, 0.4);
+    }
+
+    .team-avatar {
+      width: 5rem;
+      height: 5rem;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, #0E7490, #155E75);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 12px rgba(14, 116, 144, 0.25);
+      border: 3px solid var(--color-primary-light);
+    }
+
+    .team-name {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .team-spec {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .team-cro {
+      font-size: 0.75rem;
+      color: var(--color-text-light);
+      background: var(--color-bg-alt);
+      padding: 0.25rem 0.625rem;
+      border-radius: var(--radius-full);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .team-bio {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* 5. Convênios e Particular */
+    .plans-box {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .plans-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .plans-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .plan-badge {
+      padding: 0.5rem 1rem;
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .plan-check {
+      width: 1rem;
+      height: 1rem;
+      color: var(--color-primary);
+    }
+
+    .private-perks {
+      list-style: none;
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .private-perk-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+    }
+
+    /* 6. Como Funciona (4 Passos) */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      position: relative;
+    }
+
+    @media (min-width: 640px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .step-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(14, 116, 144, 0.4);
+    }
+
+    .step-num {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 12px;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      font-size: 1.25rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .step-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+
+    /* 7. Estrutura (Galeria) */
+    .structure-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .structure-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .structure-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .structure-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .structure-info {
+      padding: 1.5rem;
+    }
+
+    .structure-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .structure-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+
+    /* 8. FAQ Section */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .faq-item.active {
+      border-color: var(--color-primary);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.25rem 1.5rem;
+      background: transparent;
+      border: none;
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--color-text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+    }
+
+    .faq-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--color-primary);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+      padding: 0 1.5rem;
+      color: var(--color-text-muted);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    /* 9. Localização e Formulário */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .contact-info-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .info-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .info-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .info-desc {
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+    }
+
+    .map-frame-wrap {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      aspect-ratio: 16 / 10;
+      background: #E2E8F0;
+    }
+
+    .map-frame-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Interactive Form */
+    .form-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-card-desc {
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text-main);
+      margin-bottom: 0.375rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.8125rem 1rem;
+      font-size: 0.9375rem;
+      font-family: inherit;
+      color: var(--color-text-main);
+      background-color: #F8FAFC;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-control:focus {
+      background-color: var(--color-white);
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.15);
+    }
+
+    .form-error {
+      color: #DC2626;
+      font-size: 0.8125rem;
+      margin-top: 0.375rem;
+      display: none;
+    }
+
+    .form-error.visible {
+      display: block;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1050;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .whatsapp-tooltip {
+      background-color: #0F172A;
+      color: var(--color-white);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      transform: translateX(10px);
+      pointer-events: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .whatsapp-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-full);
+      background-color: var(--color-whatsapp);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
+      cursor: pointer;
+      border: none;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s;
+      animation: whatsappPulse 3s infinite;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
+    }
+
+    @keyframes whatsappPulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+      70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    .whatsapp-icon {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #0F172A;
+      color: #94A3B8;
+      padding-top: 4rem;
+      padding-bottom: 2.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+    }
+
+    .footer-brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-white);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-text {
+      font-size: 0.9375rem;
+      color: #94A3B8;
+      max-width: 400px;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-heading {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--color-white);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      font-size: 0.875rem;
+    }
+
+    .footer-link:hover {
+      color: #38BDF8;
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: #64748B;
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+
+    .footer-disclaimer {
+      font-weight: 500;
+      color: #94A3B8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Discreet Demonstration Seal -->
+  <aside class="demo-banner" aria-label="Aviso de demonstração">
+    <span>Selo de prévia: <strong>Modelo de demonstração Orizon Studio</strong></span>
+  </aside>
+
+  <!-- Fixed Navigation -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="#inicio" class="brand" aria-label="Clínica Sorriso Pleno - Início">
+        <div class="brand-icon">
+          <!-- Dental Tooth SVG Icon -->
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C8.5 2 6 4.5 6 7.5C6 10 7.5 12 8.5 14C9.5 16 9.5 22 12 22C14.5 22 14.5 16 15.5 14C16.5 12 18 10 18 7.5C18 4.5 15.5 2 12 2Z"></path>
+            <path d="M9 7C9 9 10 10 12 10C14 10 15 9 15 7"></path>
+          </svg>
+        </div>
+        <span>Sorriso Pleno</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#especialidades" class="nav-link">Especialidades</a></li>
+          <li><a href="#equipe" class="nav-link">Corpo Clínico</a></li>
+          <li><a href="#convenios" class="nav-link">Convênios</a></li>
+          <li><a href="#passos" class="nav-link">Como Funciona</a></li>
+          <li><a href="#estrutura" class="nav-link">Estrutura</a></li>
+          <li><a href="#faq" class="nav-link">Dúvidas</a></li>
+          <li><a href="#localizacao" class="nav-link">Localização</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop CTA Button -->
+      <div class="nav-cta">
+        <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <!-- WhatsApp Icon -->
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"></path>
+          </svg>
+          <span>Agendar consulta</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="menu-toggle" id="menuToggleBtn" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-label="Menu móvel">
+    <ul class="mobile-nav-links">
+      <li><a href="#sobre" class="mobile-nav-link">Sobre a Clínica</a></li>
+      <li><a href="#especialidades" class="mobile-nav-link">Especialidades</a></li>
+      <li><a href="#equipe" class="mobile-nav-link">Corpo Clínico</a></li>
+      <li><a href="#convenios" class="mobile-nav-link">Convênios e Particular</a></li>
+      <li><a href="#passos" class="mobile-nav-link">Como Funciona</a></li>
+      <li><a href="#estrutura" class="mobile-nav-link">Estrutura</a></li>
+      <li><a href="#faq" class="mobile-nav-link">Perguntas Frequentes</a></li>
+      <li><a href="#localizacao" class="mobile-nav-link">Localização e Horários</a></li>
+    </ul>
+    <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"></path>
+      </svg>
+      <span>Agendar Consulta via WhatsApp</span>
+    </a>
+  </div>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section id="inicio" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-tag">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Atendimento em Pinheiros, São Paulo</span>
+            </div>
+            <h1 class="hero-title">
+              Cuidado odontológico completo com <span>acolhimento e precisão</span>.
+            </h1>
+            <p class="hero-desc">
+              Na Clínica Sorriso Pleno, combinamos tecnologia diagnóstica contemporânea, ambiente tranquilo e equipe multidisciplinar para cuidar da saúde bucal de toda a sua família.
+            </p>
+            <div class="hero-actions">
+              <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"></path>
+                </svg>
+                <span>Agendar consulta</span>
+              </a>
+              <a href="#especialidades" class="btn btn-secondary">
+                <span>Ver especialidades</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+            </div>
+            <div class="hero-features">
+              <div class="hero-feature-item">
+                <svg class="hero-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Pontualidade</span>
+              </div>
+              <div class="hero-feature-item">
+                <svg class="hero-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>Biossegurança</span>
+              </div>
+              <div class="hero-feature-item">
+                <svg class="hero-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span>Sem pressa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-img-wrap">
+            <!-- Exact Hero Image Container with aspect ratio and fallback cyan gradient -->
+            <div class="img-box aspect-16-9">
+              <svg class="img-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M12 2C8.5 2 6 4.5 6 7.5C6 10 7.5 12 8.5 14C9.5 16 9.5 22 12 22C14.5 22 14.5 16 15.5 14C16.5 12 18 10 18 7.5C18 4.5 15.5 2 12 2Z"></path>
+                <path d="M9 7C9 9 10 10 12 10C14 10 15 9 15 7"></path>
+              </svg>
+              <img
+                src="https://image.pollinations.ai/prompt/modern%20dental%20clinic%20interior%20with%20dental%20chair%20bright%20clean%20blue%20and%20white%20no%20people%20no%20text?width=1600&height=900&model=flux&nologo=true&seed=21"
+                alt="Ambiente moderno da Clínica Sorriso Pleno com cadeira odontológica ergonômica e iluminação suave"
+                loading="lazy"
+                onerror="this.style.opacity='0'"
+              />
+            </div>
+            <div class="hero-badge-float">
+              <div class="badge-icon-box">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="badge-text-title">Rua dos Pinheiros, 789</p>
+                <p class="badge-text-sub">Fácil acesso a 300m do metrô</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Sobre a Clínica -->
+    <section id="sobre" class="section-alt">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <div class="section-badge">Nossa História & Propósito</div>
+            <h2 class="section-title">Odontologia ética, acolhedora e baseada em evidências.</h2>
+            <p class="section-desc">
+              Fundada com o compromisso de transformar a experiência no consultório odontológico, a Clínica Sorriso Pleno oferece um atendimento focado na escuta do paciente, diagnóstico criterioso e conforto.
+            </p>
+            <div class="about-pillars">
+              <div class="pillar-item">
+                <div class="pillar-icon">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 16v-4"></path>
+                    <path d="M12 8h.01"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Clareza no Diagnóstico</h3>
+                  <p class="pillar-desc">Explicações detalhadas de cada etapa com apoio de imagens e planejamento digital.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-icon">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Rigor Sanitário</h3>
+                  <p class="pillar-desc">Central de esterilização em autoclave com rastreamento e testes biológicos frequentes.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-icon">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Equipe Integrada</h3>
+                  <p class="pillar-desc">Diferentes especialidades no mesmo espaço para planos de tratamento contínuos.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-icon">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Ambiente Ergonômico</h3>
+                  <p class="pillar-desc">Salas climatizadas, acústica tratada e cadeiras projetadas para relaxamento.</p>
+                </div>
+              </div>
+            </div>
+            <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <span>Conhecer a clínica</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <div class="about-card-box">
+            <h3 style="font-size: 1.375rem; margin-bottom: 1.25rem;">Atendimento Humanizado</h3>
+            <p style="margin-bottom: 1.5rem; color: var(--color-text-muted);">
+              Entendemos que ir ao dentista requer confiança e tranquilidade. Nossa equipe foi treinada para ouvir suas queixas com atenção, tirar todas as dúvidas e propor soluções adequadas ao seu momento.
+            </p>
+            <div style="background: var(--color-primary-soft); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--color-primary); margin-bottom: 1.5rem;">
+              <p style="font-size: 0.9375rem; color: var(--color-primary-dark); font-weight: 600; margin-bottom: 0.25rem;">
+                Compromisso com o Paciente:
+              </p>
+              <p style="font-size: 0.875rem; color: var(--color-text-muted);">
+                Sem tratamentos invasivos desnecessários. Valorizamos a preservação biológica da estrutura dental natural e a odontologia preventiva.
+              </p>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary);">6+</div>
+              <div style="font-size: 0.875rem; color: var(--color-text-light);">
+                Especialidades integradas em uma mesma unidade em Pinheiros.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Especialidades -->
+    <section id="especialidades">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Áreas de Atuação</div>
+          <h2 class="section-title">Especialidades Odontológicas</h2>
+          <p class="section-desc">
+            Tratamentos planejados sob medida, com foco na saúde, funcionalidade mastigatória e harmonia do sorriso.
+          </p>
+        </div>
+
+        <div class="specs-grid">
+          <!-- 1. Clínica Geral -->
+          <article class="spec-card">
+            <div class="spec-icon-wrap">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2C8.5 2 6 4.5 6 7.5C6 10 7.5 12 8.5 14C9.5 16 9.5 22 12 22C14.5 22 14.5 16 15.5 14C16.5 12 18 10 18 7.5C18 4.5 15.5 2 12 2Z"></path>
+              </svg>
+            </div>
+            <h3 class="spec-title">Clínica Geral</h3>
+            <p class="spec-text">
+              Consultas preventivas, profilaxia (limpeza), remoção de tártaro, restaurações estéticas e diagnóstico precoce de cáries e gengivites.
+            </p>
+            <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Cl%C3%ADnica%20Geral." target="_blank" rel="noopener noreferrer" class="spec-link">
+              <span>Agendar avaliação</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </article>
+
+          <!-- 2. Ortodontia -->
+          <article class="spec-card">
+            <div class="spec-icon-wrap">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M8 12h8"></path>
+                <path d="M12 8v8"></path>
+              </svg>
+            </div>
+            <h3 class="spec-title">Ortodontia</h3>
+            <p class="spec-text">
+              Alinhamento dental e correção da oclusão funcional com alinhadores transparentes modernos e aparelhos fixos convencionais ou autoligados.
+            </p>
+            <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Ortodontia." target="_blank" rel="noopener noreferrer" class="spec-link">
+              <span>Agendar avaliação</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </article>
+
+          <!-- 3. Implantes Dentários -->
+          <article class="spec-card">
+            <div class="spec-icon-wrap">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="7" y="2" width="10" height="6" rx="2"></rect>
+                <path d="M12 8v14"></path>
+                <path d="M9 13h6"></path>
+                <path d="M9 17h6"></path>
+              </svg>
+            </div>
+            <h3 class="spec-title">Implantes</h3>
+            <p class="spec-text">
+              Reabilitação da perda dentária unitária ou múltipla por meio de implantes de titânio com planejamento tomográfico computadorizado seguro.
+            </p>
+            <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Implantes." target="_blank" rel="noopener noreferrer" class="spec-link">
+              <span>Agendar avaliação</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </article>
+
+          <!-- 4. Clareamento Dental -->
+          <article class="spec-card">
+            <div class="spec-icon-wrap">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36-6.36l-1.42 1.42M7.05 16.95l-1.42 1.42m12.73 0l-1.42-1.42M7.05 7.05L5.63 5.63"></path>
+              </svg>
+            </div>
+            <h3 class="spec-title">Clareamento</h3>
+            <p class="spec-text">
+              Técnicas seguras de clareamento dental em consultório com barreira gengival de proteção e clareamento caseiro supervisionado.
+            </p>
+            <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Clareamento." target="_blank" rel="noopener noreferrer" class="spec-link">
+              <span>Agendar avaliação</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </article>
+
+          <!-- 5. Endodontia -->
+          <article class="spec-card">
+            <div class="spec-icon-wrap">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="12" y1="18" x2="12" y2="12"></line>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h3 class="spec-title">Endodontia</h3>
+            <p class="spec-text">
+              Tratamento de canal mecanizado e preciso para alívio de quadros inflamatórios pulpares e infecções, preservando a raiz e a estrutura natural do dente.
+            </p>
+            <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Endodontia." target="_blank" rel="noopener noreferrer" class="spec-link">
+              <span>Agendar avaliação</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </article>
+
+          <!-- 6. Odontopediatria -->
+          <article class="spec-card">
+            <div class="spec-icon-wrap">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+            </div>
+            <h3 class="spec-title">Odontopediatria</h3>
+            <p class="spec-text">
+              Abordagem lúdica e preventiva dedicada a bebês, crianças e adolescentes, criando memórias positivas e hábitos saudáveis de higiene oral.
+            </p>
+            <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Odontopediatria." target="_blank" rel="noopener noreferrer" class="spec-link">
+              <span>Agendar avaliação</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </article>
+        </div>
+
+        <div class="section-footer-cta">
+          <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Agendar consulta por especialidade</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Corpo Clínico -->
+    <section id="equipe" class="section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Profissionais de Confiança</div>
+          <h2 class="section-title">Nosso Corpo Clínico</h2>
+          <p class="section-desc">
+            Equipe qualificada com registro no Conselho Regional de Odontologia de São Paulo (CRO-SP) e constante atualização científica.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <!-- 1. Dra. Camila Rocha -->
+          <article class="team-card">
+            <div class="team-avatar" aria-hidden="true">CR</div>
+            <h3 class="team-name">Dra. Camila Rocha</h3>
+            <p class="team-spec">Clínica Geral & Estética</p>
+            <span class="team-cro">CRO-SP 104.821</span>
+            <p class="team-bio">
+              Dedica-se ao diagnóstico abrangente, restaurações funcionais e acompanhamento preventivo regular de pacientes adultos.
+            </p>
+          </article>
+
+          <!-- 2. Dr. Lucas Andrade -->
+          <article class="team-card">
+            <div class="team-avatar" aria-hidden="true">LA</div>
+            <h3 class="team-name">Dr. Lucas Andrade</h3>
+            <p class="team-spec">Ortodontia & Oclusão</p>
+            <span class="team-cro">CRO-SP 112.943</span>
+            <p class="team-bio">
+              Especialista em mecânica ortodôntica digital, alinhadores transparentes e tratamentos interceptivos para adolescentes.
+            </p>
+          </article>
+
+          <!-- 3. Dra. Mariana Costa -->
+          <article class="team-card">
+            <div class="team-avatar" aria-hidden="true">MC</div>
+            <h3 class="team-name">Dra. Mariana Costa</h3>
+            <p class="team-spec">Odontopediatria</p>
+            <span class="team-cro">CRO-SP 98.650</span>
+            <p class="team-bio">
+              Especializada no manejo comportamental infantil, orientação materno-infantil e prevenção de cáries em primeira infância.
+            </p>
+          </article>
+
+          <!-- 4. Dr. Rafael Silveira -->
+          <article class="team-card">
+            <div class="team-avatar" aria-hidden="true">RS</div>
+            <h3 class="team-name">Dr. Rafael Silveira</h3>
+            <p class="team-spec">Implantodontia & Prótese</p>
+            <span class="team-cro">CRO-SP 119.302</span>
+            <p class="team-bio">
+              Foco em reabilitação oral funcional, implantes osteointegráveis e planejamento guiado de coroas unitárias e múltiplas.
+            </p>
+          </article>
+        </div>
+
+        <div class="section-footer-cta">
+          <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20corpo%20cl%C3%ADnico." target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <span>Falar com nossa equipe no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Convênios e Atendimento Particular -->
+    <section id="convenios">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Formas de Atendimento</div>
+          <h2 class="section-title">Convênios Aceitos e Atendimento Particular</h2>
+          <p class="section-desc">
+            Transparência e opções flexíveis para que você priorize sua saúde bucal com conforto.
+          </p>
+        </div>
+
+        <div class="plans-box">
+          <div class="plans-grid">
+            <!-- Convênios -->
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                <div class="pillar-icon">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                  </svg>
+                </div>
+                <h3 style="font-size: 1.25rem;">Planos e Convênios Odontológicos</h3>
+              </div>
+              <p style="font-size: 0.9375rem; color: var(--color-text-muted);">
+                Aceitamos diversos planos odontológicos nas modalidades vigentes de cada operadora para procedimentos cobertos pelo seu contrato:
+              </p>
+              <div class="plans-badges">
+                <span class="plan-badge">
+                  <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Amil Dental
+                </span>
+                <span class="plan-badge">
+                  <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Bradesco Dental
+                </span>
+                <span class="plan-badge">
+                  <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  SulAmérica Odonto
+                </span>
+                <span class="plan-badge">
+                  <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  MetLife
+                </span>
+                <span class="plan-badge">
+                  <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Porto Seguro Odontológico
+                </span>
+                <span class="plan-badge">
+                  <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Uniodonto
+                </span>
+              </div>
+              <p style="font-size: 0.8125rem; color: var(--color-text-light); margin-top: 1rem;">
+                *Consulte nossa recepção para confirmar a abrangência do seu plano específico ou categoria da apólice.
+              </p>
+            </div>
+
+            <!-- Particular -->
+            <div style="border-top: 1px solid var(--color-border); padding-top: 2rem;" class="plan-part-wrap">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                <div class="pillar-icon">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                    <path d="M12 18V6"></path>
+                  </svg>
+                </div>
+                <h3 style="font-size: 1.25rem;">Atendimento Particular & Reembolso</h3>
+              </div>
+              <p style="font-size: 0.9375rem; color: var(--color-text-muted);">
+                Para quem não possui convênio ou prefere consultas com tempo estendido e materiais de livre escolha:
+              </p>
+              <ul class="private-perks">
+                <li class="private-perk-item">
+                  <svg class="btn-icon" style="color: var(--color-primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Emissão de relatórios e documentação completa para solicitação de reembolso junto ao seu convênio.</span>
+                </li>
+                <li class="private-perk-item">
+                  <svg class="btn-icon" style="color: var(--color-primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Formas de pagamento facilitadas para tratamentos com maior tempo de execução.</span>
+                </li>
+                <li class="private-perk-item">
+                  <svg class="btn-icon" style="color: var(--color-primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Plano de tratamento discriminado por etapas, permitindo organização prévia do paciente.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-footer-cta">
+          <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20verificar%20a%20cobertura%20do%20meu%20conv%C3%AAnio." target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span>Verificar cobertura do meu convênio</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Como Funciona em 4 Passos -->
+    <section id="passos" class="section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Jornada do Paciente</div>
+          <h2 class="section-title">Como Funciona o Atendimento</h2>
+          <p class="section-desc">
+            Passo a passo simples, transparente e sem burocracias desde o primeiro contato.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <!-- Passo 1 -->
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Agendamento Fácil</h3>
+            <p class="step-desc">
+              Escolha o dia e horário mais conveniente pelo WhatsApp ou formulário online com retorno rápido da recepção.
+            </p>
+          </div>
+
+          <!-- Passo 2 -->
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <h3 class="step-title">Avaliação Inicial</h3>
+            <p class="step-desc">
+              Consulta com anamnese clínica, exame bucal completo e registro fotográfico ou radiográfico quando indicado.
+            </p>
+          </div>
+
+          <!-- Passo 3 -->
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Plano Personalizado</h3>
+            <p class="step-desc">
+              Apresentação clara das opções de tratamento, prazos estimados e esclarecimento de todas as dúvidas.
+            </p>
+          </div>
+
+          <!-- Passo 4 -->
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <h3 class="step-title">Acompanhamento</h3>
+            <p class="step-desc">
+              Execução com técnica cuidadosa, instruções pós-atendimento e suporte contínuo para manutenção da sua saúde bucal.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-footer-cta">
+          <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20dar%20o%20primeiro%20passo%20e%20agendar%20minha%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Iniciar agendamento do 1º passo</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Estrutura (Galeria) -->
+    <section id="estrutura">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Estrutura Física</div>
+          <h2 class="section-title">Ambientes Planejados para o seu Bem-Estar</h2>
+          <p class="section-desc">
+            Espaços higienizados, silenciosos e com infraestrutura pensada para acolher você com pontualidade e tranquilidade.
+          </p>
+        </div>
+
+        <div class="structure-grid">
+          <!-- Imagem Consultório -->
+          <article class="structure-card">
+            <div class="img-box aspect-3-2">
+              <svg class="img-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <img
+                src="https://image.pollinations.ai/prompt/dental%20treatment%20room%20with%20modern%20equipment%20bright%20no%20people%20no%20text?width=1200&height=800&model=flux&nologo=true&seed=22"
+                alt="Consultório odontológico climatizado com equipamentos modernos e iluminação regulável"
+                loading="lazy"
+                onerror="this.style.opacity='0'"
+              />
+            </div>
+            <div class="structure-info">
+              <h3 class="structure-title">Consultório Moderno</h3>
+              <p class="structure-desc">
+                Cadeiras ergonômicas, monitores para visualização de exames e recursos que priorizam o silêncio e o relaxamento do paciente.
+              </p>
+            </div>
+          </article>
+
+          <!-- Imagem Recepção -->
+          <article class="structure-card">
+            <div class="img-box aspect-3-2">
+              <svg class="img-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <img
+                src="https://image.pollinations.ai/prompt/dental%20clinic%20reception%20desk%20bright%20welcoming%20no%20people%20no%20text?width=1200&height=800&model=flux&nologo=true&seed=23"
+                alt="Balcão de recepção acolhedor da clínica com iluminação aconchegante e área de espera limpa"
+                loading="lazy"
+                onerror="this.style.opacity='0'"
+              />
+            </div>
+            <div class="structure-info">
+              <h3 class="structure-title">Recepção Aconchegante</h3>
+              <p class="structure-desc">
+                Ambiente arejado com wi-fi, água mineral, café e suporte ágil de recepção para que sua espera seja pontual e agradável.
+              </p>
+            </div>
+          </article>
+
+          <!-- Imagem Instrumentos -->
+          <article class="structure-card">
+            <div class="img-box aspect-3-2">
+              <svg class="img-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <img
+                src="https://image.pollinations.ai/prompt/dental%20instruments%20tray%20clean%20closeup%20no%20people%20no%20text?width=1200&height=800&model=flux&nologo=true&seed=24"
+                alt="Bandeja cirúrgica odontológica com instrumentais esterilizados de alta precisão"
+                loading="lazy"
+                onerror="this.style.opacity='0'"
+              />
+            </div>
+            <div class="structure-info">
+              <h3 class="structure-title">Instrumentais Esterilizados</h3>
+              <p class="structure-desc">
+                Protocolo estrito de esterilização em autoclave, embalagens lacradas com integridade e descarte seguro de descartáveis.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-footer-cta">
+          <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20visitar%20a%20cl%C3%ADnica%20em%20Pinheiros." target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span>Agendar visita ou consulta presencial</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Perguntas Frequentes (5) -->
+    <section id="faq" class="section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Tire suas Dúvidas</div>
+          <h2 class="section-title">Perguntas Frequentes</h2>
+          <p class="section-desc">
+            Informações objetivas sobre nosso atendimento e rotina clínica.
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <!-- FAQ 1 -->
+          <div class="faq-item active">
+            <button class="faq-question" type="button" aria-expanded="true">
+              <span>Como é realizada a primeira consulta de avaliação?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              A primeira consulta é dedicada a conhecer seu histórico de saúde geral e bucal, entender eventuais desconfortos e realizar um exame minucioso dos dentes, gengiva e tecidos orais. Havendo necessidade de exames complementares (como radiografias), orientamos o encaminhamento antes de definir o plano final.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>A clínica atende emergências odontológicas?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              Sim. Durante nossos horários de funcionamento (segunda a sexta das 8h às 19h e sábados das 8h às 13h), reservamos encaixes operacionais para situações de dor aguda, fraturas dentárias acidentais ou perda de restaurações. Entre em contato prévio pelo WhatsApp para que a equipe prepare o consultório.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Os procedimentos causam desconforto ou dor?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              Priorizamos o controle cuidadoso da sensibilidade por meio de anestésicos tópicos prévios, agulhas ultrafinas e técnicas anestésicas locais modernas e individualizadas. O profissional ajusta o ritmo do atendimento sempre que o paciente solicitar uma pausa.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Com qual frequência devo realizar a profilaxia preventiva?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              Como regra geral na odontologia preventiva, recomenda-se a revisão clínica com profilaxia a cada 6 meses. No entanto, pacientes em tratamento ortodôntico, usuários de implantes ou com histórico de doença periodontal podem necessitar de intervalos trimestrais conforme orientação do dentista.
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Como funciona o atendimento de crianças na clínica?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              Nossa equipe de odontopediatria utiliza técnicas de condicionamento lúdico que respeitam o tempo da criança, explicando os instrumentos de maneira leve e amigável. Os pais podem acompanhar todo o atendimento dentro do consultório.
+            </div>
+          </div>
+        </div>
+
+        <div class="section-footer-cta">
+          <p style="font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: 1rem;">
+            Tem outra pergunta que não está listada acima?
+          </p>
+          <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20tratamentos." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Conversar com a recepção no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Localização, Horários e Formulário -->
+    <section id="localizacao">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Onde Estamos</div>
+          <h2 class="section-title">Localização & Agendamento</h2>
+          <p class="section-desc">
+            Localizada no coração de Pinheiros, com fácil acesso de metrô, ônibus ou carro com estacionamento próximo.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Coluna 1: Informações e Mapa -->
+          <div class="contact-info-card">
+            <div>
+              <h3 style="font-size: 1.375rem; margin-bottom: 1.25rem;">Informações da Clínica</h3>
+              
+              <div class="info-row" style="margin-bottom: 1.25rem;">
+                <div class="info-icon">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="info-title">Endereço</h4>
+                  <p class="info-desc">Rua dos Pinheiros, 789, 3º andar</p>
+                  <p class="info-desc">Pinheiros, São Paulo - SP | CEP: 05422-001</p>
+                </div>
+              </div>
+
+              <div class="info-row" style="margin-bottom: 1.25rem;">
+                <div class="info-icon">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="info-title">Horário de Atendimento</h4>
+                  <p class="info-desc">Segunda a Sexta: 08:00 às 19:00</p>
+                  <p class="info-desc">Sábados: 08:00 às 13:00</p>
+                  <p class="info-desc" style="color: var(--color-text-light); font-size: 0.8125rem;">Domingos e feriados: Fechado</p>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-icon">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="info-title">Redes Sociais & Contato</h4>
+                  <p class="info-desc">Instagram: <a href="https://instagram.com/sorrisopleno" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600;">@sorrisopleno</a></p>
+                  <p class="info-desc">WhatsApp: <a href="https://wa.me/5511999998888" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600;">(11) 99999-8888</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Google Maps iframe Embed -->
+            <div>
+              <div class="map-frame-wrap">
+                <iframe
+                  title="Localização da Clínica Sorriso Pleno no Google Maps"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0862562413197!2d-46.68779652377317!3d-23.56534577880004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57a1b0270631%3A0xc3d5b035dd2fbb47!2sRua%20dos%20Pinheiros%2C%20789%20-%20Pinheiros%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005422-001!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+                  width="100%"
+                  height="100%"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+              <p style="font-size: 0.75rem; color: var(--color-text-light); margin-top: 0.5rem; text-align: center;">
+                Fácil estacionamento conveniado ao lado do edifício.
+              </p>
+            </div>
+          </div>
+
+          <!-- Coluna 2: Formulário de Agendamento -->
+          <div class="form-card">
+            <h3 class="form-card-title">Agendar sua Avaliação</h3>
+            <p class="form-card-desc">
+              Preencha os campos abaixo. Ao clicar em enviar, você será direcionado para o WhatsApp com a mensagem pronta para agendamento.
+            </p>
+
+            <form id="appointmentForm" novalidate>
+              <div class="form-group">
+                <label for="formNome" class="form-label">Nome Completo *</label>
+                <input
+                  type="text"
+                  id="formNome"
+                  class="form-control"
+                  placeholder="Ex: Maria Silva"
+                  required
+                />
+                <div id="errorNome" class="form-error">Por favor, informe seu nome completo.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="formTelefone" class="form-label">Telefone / WhatsApp com DDD *</label>
+                <input
+                  type="tel"
+                  id="formTelefone"
+                  class="form-control"
+                  placeholder="(11) 98765-4321"
+                  required
+                />
+                <div id="errorTelefone" class="form-error">Por favor, informe um telefone válido com DDD.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="formInteresse" class="form-label">Especialidade ou Interesse *</label>
+                <select id="formInteresse" class="form-control" required>
+                  <option value="" disabled selected>Selecione o procedimento de interesse</option>
+                  <option value="Clínica Geral (Limpeza, Check-up, Restauração)">Clínica Geral (Limpeza, Check-up, Restauração)</option>
+                  <option value="Ortodontia (Aparelhos e Alinhadores)">Ortodontia (Aparelhos e Alinhadores)</option>
+                  <option value="Implantes Dentários e Próteses">Implantes Dentários e Próteses</option>
+                  <option value="Clareamento Dental">Clareamento Dental</option>
+                  <option value="Endodontia (Tratamento de Canal)">Endodontia (Tratamento de Canal)</option>
+                  <option value="Odontopediatria (Atendimento Infantil)">Odontopediatria (Atendimento Infantil)</option>
+                  <option value="Dúvida Geral / Outro">Dúvida Geral / Outro</option>
+                </select>
+                <div id="errorInteresse" class="form-error">Por favor, selecione uma especialidade.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="formObs" class="form-label">Preferência de Horário ou Observação (Opcional)</label>
+                <textarea
+                  id="formObs"
+                  rows="3"
+                  class="form-control"
+                  placeholder="Ex: Prefiro períodos da manhã ou tenho interesse no convênio Amil."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"></path>
+                </svg>
+                <span>Enviar dados via WhatsApp</span>
+              </button>
+
+              <p style="font-size: 0.75rem; color: var(--color-text-light); margin-top: 1rem; text-align: center;">
+                Respeitamos sua privacidade. Seus dados serão usados unicamente para o contato de agendamento.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botão Flutuante de WhatsApp -->
+  <aside class="whatsapp-float">
+    <span class="whatsapp-tooltip">Agendar pelo WhatsApp</span>
+    <a
+      href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-btn"
+      aria-label="Fale conosco no WhatsApp - (11) 99999-8888"
+    >
+      <svg class="whatsapp-icon" viewBox="0 0 24 24">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"></path>
+      </svg>
+    </a>
+  </aside>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">Clínica Sorriso Pleno</div>
+          <p class="footer-text">
+            Odontologia integrada em Pinheiros, São Paulo - SP. Cuidado preventivo, estético e reabilitador com rigor técnico e atenção humanizada.
+          </p>
+          <p class="footer-text" style="font-size: 0.8125rem;">
+            Rua dos Pinheiros, 789, 3º andar - Pinheiros - São Paulo, SP<br />
+            Seg a Sex: 8h às 19h | Sáb: 8h às 13h
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio" class="footer-link">Início</a></li>
+            <li><a href="#sobre" class="footer-link">Sobre Nós</a></li>
+            <li><a href="#especialidades" class="footer-link">Especialidades</a></li>
+            <li><a href="#equipe" class="footer-link">Corpo Clínico</a></li>
+            <li><a href="#convenios" class="footer-link">Convênios</a></li>
+            <li><a href="#passos" class="footer-link">Como Funciona</a></li>
+            <li><a href="#estrutura" class="footer-link">Estrutura</a></li>
+            <li><a href="#faq" class="footer-link">Dúvidas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contato & Redes</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="footer-link">
+                WhatsApp: (11) 99999-8888
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/sorrisopleno" target="_blank" rel="noopener noreferrer" class="footer-link">
+                Instagram: @sorrisopleno
+              </a>
+            </li>
+            <li>
+              <a href="#localizacao" class="footer-link">
+                Pinheiros, São Paulo - SP
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-disclaimer">
+          Imagens ilustrativas geradas por IA. Dados fictícios.
+        </div>
+        <div>
+          © 2026 Clínica Sorriso Pleno. Todos os direitos reservados. Modelo de demonstração Orizon Studio.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript (Interações, FAQ, Menu Móvel, Validação e Envio de WhatsApp) -->
+  <script>
+    (function () {
+      'use strict';
+
+      // 1. Mobile Menu Toggle
+      const menuBtn = document.getElementById('menuToggleBtn');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+      if (menuBtn && mobileDrawer) {
+        menuBtn.addEventListener('click', function () {
+          const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+          menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+          mobileDrawer.classList.toggle('active');
+        });
+
+        mobileLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileDrawer.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // 2. FAQ Accordion Toggle
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(function (item) {
+        const questionBtn = item.querySelector('.faq-question');
+        if (questionBtn) {
+          questionBtn.addEventListener('click', function () {
+            const isActive = item.classList.contains('active');
+            
+            // Fecha outros itens para comportamento de acordeão limpo
+            faqItems.forEach(function (otherItem) {
+              otherItem.classList.remove('active');
+              const otherBtn = otherItem.querySelector('.faq-question');
+              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isActive) {
+              item.classList.add('active');
+              questionBtn.setAttribute('aria-expanded', 'true');
+            }
+          });
+        }
+      });
+
+      // 3. Telefone Mask Helper
+      const telInput = document.getElementById('formTelefone');
+      if (telInput) {
+        telInput.addEventListener('input', function (e) {
+          let value = e.target.value.replace(/\D/g, '');
+          if (value.length > 11) value = value.slice(0, 11);
+
+          if (value.length > 10) {
+            // Celular (11) 98765-4321
+            e.target.value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+          } else if (value.length > 6) {
+            // Telefone (11) 4321-4321
+            e.target.value = value.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+          } else if (value.length > 2) {
+            e.target.value = value.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+          } else {
+            e.target.value = value;
+          }
+        });
+      }
+
+      // 4. Form Submission via WhatsApp
+      const form = document.getElementById('appointmentForm');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const nomeInput = document.getElementById('formNome');
+          const telInput = document.getElementById('formTelefone');
+          const interesseSelect = document.getElementById('formInteresse');
+          const obsInput = document.getElementById('formObs');
+
+          const errorNome = document.getElementById('errorNome');
+          const errorTelefone = document.getElementById('errorTelefone');
+          const errorInteresse = document.getElementById('errorInteresse');
+
+          let hasError = false;
+
+          // Validação Nome
+          if (!nomeInput.value || nomeInput.value.trim().length < 2) {
+            errorNome.classList.add('visible');
+            nomeInput.focus();
+            hasError = true;
+          } else {
+            errorNome.classList.remove('visible');
+          }
+
+          // Validação Telefone
+          const digits = (telInput.value || '').replace(/\D/g, '');
+          if (!telInput.value || digits.length < 10) {
+            errorTelefone.classList.add('visible');
+            if (!hasError) telInput.focus();
+            hasError = true;
+          } else {
+            errorTelefone.classList.remove('visible');
+          }
+
+          // Validação Interesse
+          if (!interesseSelect.value) {
+            errorInteresse.classList.add('visible');
+            if (!hasError) interesseSelect.focus();
+            hasError = true;
+          } else {
+            errorInteresse.classList.remove('visible');
+          }
+
+          if (hasError) return;
+
+          // Montagem da mensagem formatada para WhatsApp
+          const nome = nomeInput.value.trim();
+          const telefone = telInput.value.trim();
+          const interesse = interesseSelect.value;
+          const obs = obsInput && obsInput.value.trim() ? obsInput.value.trim() : 'Nenhuma';
+
+          let message = 'Olá! Gostaria de agendar uma consulta na Clínica Sorriso Pleno.\n\n';
+          message += '*Nome:* ' + nome + '\n';
+          message += '*Telefone:* ' + telefone + '\n';
+          message += '*Especialidade:* ' + interesse + '\n';
+          if (obs !== 'Nenhuma') {
+            message += '*Observações/Preferência:* ' + obs;
+          }
+
+          const whatsappUrl = 'https://wa.me/5511999998888?text=' + encodeURIComponent(message);
+          window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

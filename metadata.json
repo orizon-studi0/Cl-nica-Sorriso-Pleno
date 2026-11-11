@@ -1,0 +1,6 @@
+{
+  "name": "Clínica Sorriso Pleno",
+  "description": "Landing page de demonstração da Clínica Sorriso Pleno em Pinheiros, São Paulo - SP. Odontologia moderna, humanizada e completa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
