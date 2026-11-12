@@ -3,27 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clínica Sorriso Pleno | Odontologia em Pinheiros, São Paulo</title>
-  <meta name="description" content="Clínica odontológica moderna e humanizada em Pinheiros, São Paulo. Atendimento em clínica geral, ortodontia, implantes, clareamento, endodontia e odontopediatria." />
+  <title>Clínica Sorriso Pleno, Odontologia em Pinheiros, São Paulo</title>
+  <meta name="description" content="Clínica odontológica humanizada em Pinheiros, São Paulo. Tratamentos preventivos, ortodontia, implantes, clareamento, endodontia e odontopediatria com equipe qualificada." />
   
-  <!-- Open Graph / Facebook / WhatsApp (URLs locais relativas) -->
+  <!-- Favicon com a inicial do nome da clínica -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231F4D45'/><text x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='600' fill='%23FAF8F5' text-anchor='middle'>S</text></svg>" />
+
+  <!-- Open Graph / Redes Sociais -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Clínica Sorriso Pleno | Odontologia em Pinheiros, São Paulo" />
-  <meta property="og:description" content="Odontologia com foco no cuidado humanizado, tecnologia moderna e bem-estar. Conheça nossa estrutura em Pinheiros - SP." />
+  <meta property="og:title" content="Clínica Sorriso Pleno, Odontologia em Pinheiros, São Paulo" />
+  <meta property="og:description" content="Odontologia com foco no cuidado humanizado, tecnologia diagnóstica e conforto. Conheça nossa clínica em Pinheiros, São Paulo." />
   <meta property="og:image" content="imagens/recepcao.jpg" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Clínica Sorriso Pleno" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Clínica Sorriso Pleno | Odontologia em Pinheiros, São Paulo" />
-  <meta name="twitter:description" content="Atendimento odontológico de excelência em Pinheiros - SP. Agende sua consulta com facilidade." />
+  <meta name="twitter:title" content="Clínica Sorriso Pleno, Odontologia em Pinheiros, São Paulo" />
+  <meta name="twitter:description" content="Atendimento odontológico planejado e humanizado em Pinheiros, São Paulo. Agende sua consulta com facilidade." />
   <meta name="twitter:image" content="imagens/recepcao.jpg" />
 
-  <!-- Google Fonts: Serifa elegante para títulos (Playfair Display) e Sans-serif leve para textos (Plus Jakarta Sans) -->
+  <!-- Google Fonts: Newsreader (serif editorial sofisticada para títulos) e DM Sans (sans-serif equilibrada e humana para corpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400..500&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet" />
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -32,7 +35,7 @@
     "@type": "Dentist",
     "name": "Clínica Sorriso Pleno",
     "image": "imagens/recepcao.jpg",
-    "description": "Clínica odontológica de referência em Pinheiros, São Paulo - SP. Tratamentos preventivos, ortodontia, implantes, clareamento, endodontia e odontopediatria.",
+    "description": "Clínica odontológica em Pinheiros, São Paulo, SP. Tratamentos preventivos, ortodontia, implantes, clareamento, endodontia e odontopediatria.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Rua dos Pinheiros, 789, 3º andar",
@@ -77,7 +80,7 @@
        ========================================================================== */
     :root {
       --hero-foco: center 40%;
-      --hero-escurecer: 0.55;
+      --hero-escurecer: 0.60;
     }
 
     /* ==========================================================================
@@ -95,7 +98,7 @@
       --auto-intervalo: 3500;
     }
 
-    /* Nova Paleta Botânica & Mineral */
+    /* Paleta Botânica & Mineral com Contraste Rigoroso (Mínimo 4,5:1) */
     :root {
       --cor-fundo: #FAF8F5;
       --cor-areia: #EFEBE3;
@@ -104,26 +107,26 @@
       --cor-destaque: #7FA899;
       --cor-destaque-suave: rgba(127, 168, 153, 0.16);
       --cor-acento: #C9A66B;
-      --cor-acento-suave: rgba(201, 166, 107, 0.18);
       --cor-texto: #1E2926;
-      --cor-texto-suave: #5B6A66;
+      --cor-texto-suave: #4E5D59; /* Contraste 6.2:1 em fundo claro e 5.5:1 em areia */
       --cor-branca: #FFFFFF;
-      --cor-borda: rgba(31, 77, 69, 0.12);
+      --cor-borda: rgba(31, 77, 69, 0.14);
       --cor-borda-sutil: rgba(31, 77, 69, 0.08);
       --cor-whatsapp: #25D366;
 
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
+      /* Escala de Bordas por Hierarquia */
+      --radius-btn: 8px;
+      --radius-card: 16px;
+      --radius-img: 12px;
+      --radius-sm: 6px;
       --radius-full: 9999px;
 
-      --shadow-sm: 0 1px 3px rgba(30, 41, 38, 0.04);
-      --shadow-md: 0 4px 16px -2px rgba(31, 77, 69, 0.07);
-      --shadow-lg: 0 10px 24px -4px rgba(31, 77, 69, 0.08);
-      --shadow-xl: 0 20px 30px -6px rgba(31, 77, 69, 0.12);
+      /* Nível Único de Sombra Discreta e Realista */
+      --shadow-subtle: 0 1px 3px rgba(30, 41, 38, 0.05), 0 1px 2px rgba(30, 41, 38, 0.03);
 
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      /* Tipografia */
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --nav-height: 72px;
       --banner-height: 36px;
     }
@@ -154,7 +157,13 @@
       padding-top: var(--banner-height);
     }
 
-    /* Prevenção universal de corte de texto e estouro */
+    /* Foco visível acessível no teclado */
+    :focus-visible {
+      outline: 2px solid var(--cor-primaria);
+      outline-offset: 3px;
+    }
+
+    /* Prevenção universal de corte de texto e quebras controladas */
     h1, h2, h3, h4, h5, h6, p, span, a, button, label, li, td, th,
     .btn, .spec-card, .team-card, .step-card, .structure-card,
     .about-card-box, .plans-box, .faq-item, .contact-info-card,
@@ -164,8 +173,7 @@
       hyphens: auto;
     }
 
-    /* Filhos de flex e grid com min-width 0 para nunca estourarem o contêiner */
-    .hero-grid > *,
+    /* Filhos de flex e grid com min-width 0 */
     .hero-container > *,
     .hero-features > *,
     .about-grid > *,
@@ -183,43 +191,26 @@
       max-width: 100%;
     }
 
-    /* Barra de Progresso Fina no Topo */
-    .scroll-progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background: var(--cor-destaque);
-      z-index: 10001;
-      width: 0%;
-      pointer-events: none;
-      transition: width 0.1s ease-out;
-    }
-
-    @media (min-width: 769px) {
-      .scroll-progress-bar {
-        display: none !important;
-      }
-    }
-
-    /* Tipografia: Títulos em Serifa Elegante e Textos em Sans-Serif Leve */
+    /* Tipografia: Títulos com serifa e peso intencional */
     h1, h2, h3, h4, h5 {
       font-family: var(--font-serif);
       color: var(--cor-texto);
-      line-height: 1.25;
-      font-weight: 700;
-      letter-spacing: -0.015em;
+      line-height: 1.2;
+      font-weight: 600;
+      letter-spacing: -0.018em;
     }
 
-    p {
+    /* Linhas de texto com no máximo 68 a 70 caracteres */
+    p, .section-desc, .hero-desc, .spec-text, .team-bio, .step-desc, .structure-desc, .faq-answer {
       color: var(--cor-texto-suave);
       font-family: var(--font-sans);
+      max-width: 68ch;
     }
 
     a {
       color: inherit;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: color 0.2s ease, border-color 0.2s ease;
     }
 
     img {
@@ -228,23 +219,23 @@
       display: block;
     }
 
-    /* Container Utility com largura responsiva */
+    /* Container Utility na grade de 8px */
     .container {
       width: 100%;
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
+      padding-left: 24px;
+      padding-right: 24px;
     }
 
-    /* Section Styling - Fundo das seções em --cor-fundo, alternando com --cor-areia */
+    /* Seções na escala de 8px: 80px (5rem) no desktop */
     section {
       padding-top: 5rem;
       padding-bottom: 5rem;
       position: relative;
       background-color: var(--cor-fundo);
-      scroll-margin-top: calc(var(--nav-height) + var(--banner-height) + 12px);
+      scroll-margin-top: calc(var(--nav-height) + var(--banner-height) + 16px);
     }
 
     .section-alt {
@@ -254,53 +245,38 @@
     .section-header {
       text-align: center;
       max-width: 720px;
-      margin: 0 auto 3.5rem auto;
-    }
-
-    /* Selos e Badges com acento e destaque */
-    .section-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.8125rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--cor-primaria);
-      background-color: var(--cor-destaque-suave);
-      border: 1px solid rgba(127, 168, 153, 0.35);
-      padding: 0.35rem 0.95rem;
-      border-radius: var(--radius-full);
-      margin-bottom: 0.875rem;
+      margin: 0 auto 3rem auto;
     }
 
     .section-title {
-      font-size: clamp(1.6rem, 5.5vw, 2.625rem);
-      font-weight: 700;
+      font-size: clamp(1.75rem, 5.5vw, 2.625rem);
+      font-weight: 600;
       color: var(--cor-texto);
       margin-bottom: 1rem;
-      line-height: 1.22;
+      line-height: 1.2;
     }
 
     .section-desc {
-      font-size: clamp(0.95rem, 2.5vw, 1.0625rem);
+      font-size: clamp(1rem, 2.5vw, 1.0625rem);
       color: var(--cor-texto-suave);
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* Botões: Mínimo 44px de altura, quebra em 2 linhas se necessário */
+    /* Botões com no mínimo 44px de altura, raio 8px */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.625rem;
-      padding: 0.75rem 1.625rem;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
       min-height: 44px;
       font-size: 0.9375rem;
       font-weight: 600;
-      border-radius: var(--radius-full);
+      border-radius: var(--radius-btn);
       cursor: pointer;
       border: 1px solid transparent;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
       text-align: center;
       font-family: var(--font-sans);
       line-height: 1.35;
@@ -310,32 +286,30 @@
     .btn-primary {
       background-color: var(--cor-primaria);
       color: var(--cor-branca);
-      box-shadow: 0 4px 14px 0 rgba(31, 77, 69, 0.28);
+      border-color: var(--cor-primaria);
     }
 
     .btn-primary:hover {
       background-color: var(--cor-primaria-escura);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px 0 rgba(31, 77, 69, 0.38);
+      border-color: var(--cor-primaria-escura);
     }
 
     .btn-secondary {
       background-color: var(--cor-branca);
       color: var(--cor-primaria);
-      border-color: var(--cor-borda);
-      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--cor-borda);
+      box-shadow: var(--shadow-subtle);
     }
 
     .btn-secondary:hover {
       background-color: var(--cor-areia);
       border-color: var(--cor-destaque);
-      transform: translateY(-2px);
     }
 
     .btn-outline {
       background-color: transparent;
       color: var(--cor-primaria);
-      border-color: var(--cor-primaria);
+      border: 1px solid var(--cor-primaria);
     }
 
     .btn-outline:hover {
@@ -354,7 +328,7 @@
       flex-shrink: 0;
     }
 
-    /* Selo Discreto no Topo com --cor-acento */
+    /* Selo Discreto no Topo */
     .demo-banner {
       position: fixed;
       top: 0;
@@ -369,7 +343,7 @@
       justify-content: center;
       z-index: 1000;
       padding: 0 1rem;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
       border-bottom: 1px solid rgba(201, 166, 107, 0.25);
     }
 
@@ -379,7 +353,7 @@
       margin-left: 0.25rem;
     }
 
-    /* Fixed Navigation Bar - Transparente sobre o hero no topo, sólida após 60px */
+    /* Fixed Navigation Bar: Transparente sobre o hero, sólida ao rolar */
     .navbar {
       position: fixed;
       top: var(--banner-height);
@@ -390,15 +364,13 @@
       background-color: transparent;
       border-bottom: 1px solid rgba(255, 255, 255, 0.18);
       box-shadow: none;
-      transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .navbar.scrolled {
-      background-color: rgba(250, 248, 245, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--cor-borda-sutil);
-      box-shadow: var(--shadow-sm);
+      background-color: var(--cor-fundo);
+      border-bottom: 1px solid var(--cor-borda);
+      box-shadow: var(--shadow-subtle);
     }
 
     .navbar-container {
@@ -413,7 +385,7 @@
       align-items: center;
       gap: 0.625rem;
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--cor-branca);
       font-family: var(--font-serif);
       letter-spacing: -0.02em;
@@ -440,10 +412,10 @@
       width: 2.25rem;
       height: 2.25rem;
       color: var(--cor-branca);
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      background-color: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       padding: 0.35rem;
-      border-radius: 10px;
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -452,7 +424,7 @@
 
     .navbar.scrolled .brand-icon {
       color: var(--cor-primaria);
-      background: var(--cor-destaque-suave);
+      background-color: var(--cor-destaque-suave);
       border-color: rgba(127, 168, 153, 0.3);
     }
 
@@ -470,16 +442,21 @@
 
     .nav-link {
       font-size: 0.875rem;
-      font-weight: 600;
+      font-weight: 500;
       color: rgba(255, 255, 255, 0.9);
       position: relative;
-      transition: color 0.3s ease;
-      white-space: normal;
+      transition: color 0.2s ease;
+      padding: 0.35rem 0.2rem;
     }
 
     .nav-link:hover {
       color: var(--cor-branca);
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    }
+
+    .nav-link.active {
+      color: var(--cor-branca);
+      font-weight: 600;
+      border-bottom: 2px solid var(--cor-acento);
     }
 
     .navbar.scrolled .nav-link {
@@ -488,18 +465,17 @@
 
     .navbar.scrolled .nav-link:hover {
       color: var(--cor-primaria);
-      text-shadow: none;
+    }
+
+    .navbar.scrolled .nav-link.active {
+      color: var(--cor-primaria);
+      font-weight: 600;
+      border-bottom: 2px solid var(--cor-primaria);
     }
 
     .nav-cta {
       display: none;
       flex-shrink: 0;
-    }
-
-    .nav-cta .btn {
-      background-color: var(--cor-primaria);
-      color: var(--cor-branca);
-      border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     @media (min-width: 1024px) {
@@ -511,7 +487,7 @@
       }
     }
 
-    /* Mobile Menu Toggle Button */
+    /* Mobile Menu Toggle */
     .menu-toggle {
       display: flex;
       align-items: center;
@@ -521,7 +497,7 @@
       min-height: 44px;
       background: transparent;
       border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 8px;
+      border-radius: var(--radius-sm);
       cursor: pointer;
       color: var(--cor-branca);
       transition: color 0.3s ease, border-color 0.3s ease;
@@ -538,7 +514,7 @@
       }
     }
 
-    /* Mobile Drawer com rolagem interna se a lista for maior que a tela */
+    /* Mobile Drawer */
     .mobile-drawer {
       position: fixed;
       top: calc(var(--banner-height) + var(--nav-height));
@@ -576,24 +552,30 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.85rem;
+      gap: 0.5rem;
       margin-bottom: 1.5rem;
     }
 
     .mobile-nav-link {
-      font-size: 1.0625rem;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 500;
       color: var(--cor-texto);
-      padding: 0.5rem 0;
+      padding: 0.65rem 0.5rem;
       border-bottom: 1px solid var(--cor-borda-sutil);
-      display: block;
-      min-height: 44px;
       display: flex;
       align-items: center;
+      min-height: 44px;
+    }
+
+    .mobile-nav-link.active {
+      color: var(--cor-primaria);
+      font-weight: 600;
+      background-color: var(--cor-areia);
+      border-radius: var(--radius-sm);
     }
 
     /* ==========================================================================
-       PARTE 1: HERO RECONSTRUÍDO (FOTO DE FUNDO INTEGRAL)
+       HERO: FOTO DA RECEPÇÃO COMO PLANO DE FUNDO INTEGRAL
        ========================================================================== */
     .hero {
       position: relative;
@@ -603,13 +585,17 @@
       height: auto;
       display: flex;
       align-items: center;
-      background: linear-gradient(135deg, var(--cor-primaria-escura) 0%, var(--cor-primaria) 50%, var(--cor-destaque) 100%);
-      padding-top: calc(var(--nav-height) + 2.5rem);
+      background-color: var(--cor-primaria-escura);
+      padding-top: calc(var(--nav-height) + 3rem);
       padding-bottom: 4rem;
       scroll-margin-top: var(--banner-height);
     }
 
-    /* Imagem da recepção em plano de fundo integral */
+    .hero :focus-visible {
+      outline: 2px solid var(--cor-branca);
+      outline-offset: 3px;
+    }
+
     .hero-bg-img {
       position: absolute;
       inset: 0;
@@ -632,19 +618,16 @@
       }
     }
 
-    /* Camada escura com gradiente e leve tom da cor primária para legibilidade absoluta */
+    /* Camada escura sólida e profunda para legibilidade absoluta sem reflexos falsos */
     .hero::after {
       content: '';
       position: absolute;
       inset: 0;
       z-index: 1;
       pointer-events: none;
-      background:
-        linear-gradient(180deg, rgba(31, 77, 69, 0.42) 0%, rgba(22, 59, 52, 0.6) 100%),
-        linear-gradient(180deg, rgba(0, 0, 0, var(--hero-escurecer)) 0%, rgba(0, 0, 0, calc(var(--hero-escurecer) - 0.2)) 100%);
+      background-color: rgba(18, 36, 32, var(--hero-escurecer));
     }
 
-    /* Contêiner de conteúdo na frente da foto */
     .hero-container {
       position: relative;
       z-index: 2;
@@ -658,63 +641,47 @@
       text-align: left;
     }
 
-    /* Tag de localização do Hero */
     .hero-tag {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       font-size: 0.875rem;
-      font-weight: 700;
+      font-weight: 500;
       color: var(--cor-branca);
-      background-color: rgba(255, 255, 255, 0.16);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: 0.4rem 1rem;
-      border-radius: var(--radius-full);
-      margin-bottom: 1.25rem;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+      background-color: rgba(22, 59, 52, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.4rem 0.95rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.5rem;
       opacity: 0;
       animation: heroTextSlide 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       animation-delay: 0ms;
     }
 
-    /* Título do Hero com clamp e sombra */
+    /* Título inteiro uniforme, sem palavra destacada em cor ou itálico */
     .hero-title {
-      font-size: clamp(2rem, 6vw, 3.6rem);
-      font-weight: 700;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 600;
       color: var(--cor-branca);
-      line-height: 1.16;
+      line-height: 1.18;
       margin-bottom: 1.25rem;
-      letter-spacing: -0.025em;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+      letter-spacing: -0.02em;
       opacity: 0;
       animation: heroTextSlide 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       animation-delay: 120ms;
     }
 
-    .hero-title span {
-      color: #F0E8DC;
-      font-style: italic;
-      text-decoration: underline;
-      text-decoration-color: var(--cor-acento);
-      text-underline-offset: 4px;
-    }
-
-    /* Subtítulo do Hero com clamp e sombra */
     .hero-desc {
       font-size: clamp(1rem, 2.6vw, 1.25rem);
-      color: rgba(255, 255, 255, 0.95);
+      color: rgba(255, 255, 255, 0.92);
       margin-bottom: 2.25rem;
       line-height: 1.6;
-      max-width: 680px;
-      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+      max-width: 68ch;
       opacity: 0;
       animation: heroTextSlide 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       animation-delay: 240ms;
     }
 
-    /* Ações do Hero */
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
@@ -729,7 +696,6 @@
       background-color: var(--cor-primaria);
       color: var(--cor-branca);
       border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     }
 
     .hero-btn-primary:hover {
@@ -741,24 +707,19 @@
       background-color: transparent;
       color: var(--cor-branca);
       border: 1px solid rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     }
 
     .hero-btn-secondary:hover {
-      background-color: rgba(255, 255, 255, 0.15);
+      background-color: rgba(255, 255, 255, 0.12);
       color: var(--cor-branca);
-      border-color: var(--cor-branca);
     }
 
-    /* Itens de destaque/features do Hero */
     .hero-features {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 2rem;
       padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.22);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
       opacity: 0;
       animation: heroTextSlide 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       animation-delay: 480ms;
@@ -767,11 +728,10 @@
     .hero-feature-item {
       display: flex;
       align-items: center;
-      gap: 0.625rem;
+      gap: 0.5rem;
       font-size: 0.9375rem;
-      font-weight: 600;
+      font-weight: 500;
       color: rgba(255, 255, 255, 0.95);
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     }
 
     .hero-feature-icon {
@@ -784,7 +744,7 @@
     @keyframes heroTextSlide {
       from {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(14px);
       }
       to {
         opacity: 1;
@@ -793,16 +753,16 @@
     }
 
     /* ==========================================================================
-       DEMAIS SEÇÕES (ESTRUTURA PRESERVADA)
+       DEMAIS SEÇÕES: CARDS SÓLIDOS, BORDAS HIERÁRQUICAS E SEM EFEITO DE HOVER PULANTE
        ========================================================================== */
-    /* Bloco Contêiner de Imagens com Proporção Fixa e Reserva Elegante */
     .img-box {
       position: relative;
       width: 100%;
       overflow: hidden;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, var(--cor-areia) 0%, var(--cor-destaque) 100%);
-      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-img);
+      background-color: var(--cor-areia);
+      border: 1px solid var(--cor-borda-sutil);
+      box-shadow: var(--shadow-subtle);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -826,38 +786,36 @@
       gap: 0.75rem;
       padding: 1.5rem;
       text-align: center;
-      background: linear-gradient(135deg, var(--cor-areia) 0%, rgba(127, 168, 153, 0.65) 100%);
+      background-color: var(--cor-areia);
       z-index: 1;
       pointer-events: none;
     }
 
     .fallback-icon-wrap {
-      width: 3.5rem;
-      height: 3.5rem;
-      border-radius: var(--radius-full);
-      background: rgba(255, 255, 255, 0.7);
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 50%;
+      background-color: var(--cor-branca);
       color: var(--cor-primaria);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--cor-borda);
     }
 
     .fallback-icon {
-      width: 1.85rem;
-      height: 1.85rem;
+      width: 1.75rem;
+      height: 1.75rem;
     }
 
     .fallback-label {
       font-size: 0.8125rem;
       font-weight: 600;
       color: var(--cor-primaria);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      background: rgba(255, 255, 255, 0.8);
+      background-color: var(--cor-branca);
       padding: 0.25rem 0.75rem;
-      border-radius: var(--radius-full);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--cor-borda-sutil);
     }
 
     .img-box img {
@@ -868,13 +826,9 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-img);
       opacity: 0;
-      transition: opacity var(--m-transicao) ease, transform 0.4s ease;
-    }
-
-    .img-box:hover img {
-      transform: scale(1.025);
+      transition: opacity var(--m-transicao) ease;
     }
 
     /* 2. Sobre Section */
@@ -892,11 +846,11 @@
     }
 
     .about-card-box {
-      background: var(--cor-branca);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--cor-borda-sutil);
+      background-color: var(--cor-branca);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--cor-borda);
       padding: 2.25rem;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-subtle);
       height: auto;
     }
 
@@ -921,10 +875,10 @@
     .pillar-icon {
       width: 2.5rem;
       height: 2.5rem;
-      background-color: var(--cor-destaque-suave);
+      background-color: var(--cor-areia);
       color: var(--cor-primaria);
-      border: 1px solid rgba(127, 168, 153, 0.3);
-      border-radius: 10px;
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -933,9 +887,10 @@
 
     .pillar-title {
       font-size: 1.0625rem;
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 0.25rem;
       color: var(--cor-texto);
+      font-family: var(--font-sans);
     }
 
     .pillar-desc {
@@ -943,7 +898,7 @@
       color: var(--cor-texto-suave);
     }
 
-    /* 3. Especialidades Section (Desktop Grid) */
+    /* 3. Especialidades Section */
     .specs-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -963,42 +918,41 @@
       }
     }
 
+    /* Card estático, sem pulo no hover */
     .spec-card {
-      background: var(--cor-branca);
-      border: 1px solid var(--cor-borda-sutil);
-      border-radius: var(--radius-lg);
-      padding: 2.25rem 2rem;
-      transition: all 0.3s ease;
+      background-color: var(--cor-branca);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-card);
+      padding: 2rem;
+      transition: border-color 0.2s ease;
       display: flex;
       flex-direction: column;
       position: relative;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-subtle);
       height: auto;
     }
 
     .spec-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
       border-color: var(--cor-destaque);
     }
 
     .spec-icon-wrap {
-      width: 3.25rem;
-      height: 3.25rem;
-      background: var(--cor-destaque-suave);
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--cor-areia);
       color: var(--cor-primaria);
-      border: 1px solid rgba(127, 168, 153, 0.3);
-      border-radius: 12px;
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       flex-shrink: 0;
     }
 
     .spec-title {
       font-size: clamp(1.15rem, 3vw, 1.35rem);
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 0.75rem;
       color: var(--cor-texto);
     }
@@ -1013,29 +967,29 @@
 
     .spec-link {
       font-size: 0.875rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--cor-primaria);
       display: inline-flex;
       align-items: center;
-      gap: 0.375rem;
       min-height: 44px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     .spec-link:hover {
       color: var(--cor-primaria-escura);
-      gap: 0.625rem;
     }
 
     .section-footer-cta {
       text-align: center;
-      margin-top: 3.5rem;
+      margin-top: 3rem;
     }
 
-    /* 4. Corpo Clínico Section (Desktop Grid) */
+    /* 4. Corpo Clínico Section */
     .team-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.75rem;
       align-items: stretch;
     }
 
@@ -1052,47 +1006,44 @@
     }
 
     .team-card {
-      background: var(--cor-branca);
-      border: 1px solid var(--cor-borda-sutil);
-      border-radius: var(--radius-lg);
-      padding: 2.25rem 1.5rem;
+      background-color: var(--cor-branca);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-card);
+      padding: 2rem 1.5rem;
       text-align: center;
-      transition: all 0.3s ease;
+      transition: border-color 0.2s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-subtle);
       height: auto;
     }
 
     .team-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
       border-color: var(--cor-destaque);
     }
 
     .team-avatar {
-      width: 5rem;
-      height: 5rem;
-      border-radius: var(--radius-full);
-      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-destaque));
-      color: var(--cor-branca);
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      background-color: var(--cor-areia);
+      color: var(--cor-primaria);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-size: 1.35rem;
+      font-weight: 600;
       letter-spacing: -0.02em;
       margin-bottom: 1.25rem;
-      box-shadow: 0 4px 12px rgba(31, 77, 69, 0.22);
-      border: 3px solid var(--cor-areia);
+      border: 2px solid var(--cor-destaque);
       font-family: var(--font-serif);
       flex-shrink: 0;
     }
 
     .team-name {
       font-size: clamp(1.1rem, 2.8vw, 1.25rem);
-      font-weight: 700;
+      font-weight: 600;
       color: var(--cor-texto);
       margin-bottom: 0.25rem;
     }
@@ -1108,12 +1059,13 @@
     .team-cro {
       font-size: 0.75rem;
       color: var(--cor-texto-suave);
-      background: var(--cor-areia);
+      background-color: var(--cor-areia);
       padding: 0.25rem 0.625rem;
-      border-radius: var(--radius-full);
+      border-radius: var(--radius-sm);
       display: inline-block;
       margin-bottom: 1rem;
       font-family: var(--font-sans);
+      border: 1px solid var(--cor-borda-sutil);
     }
 
     .team-bio {
@@ -1125,11 +1077,11 @@
 
     /* 5. Convênios e Particular */
     .plans-box {
-      background: var(--cor-branca);
-      border: 1px solid var(--cor-borda-sutil);
-      border-radius: var(--radius-lg);
+      background-color: var(--cor-branca);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-card);
       padding: 2.5rem;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-subtle);
       height: auto;
     }
 
@@ -1161,9 +1113,9 @@
 
     .plan-badge {
       padding: 0.5rem 1rem;
-      background: var(--cor-areia);
-      border: 1px solid rgba(31, 77, 69, 0.08);
-      border-radius: var(--radius-md);
+      background-color: var(--cor-areia);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-sm);
       font-size: 0.875rem;
       font-weight: 600;
       color: var(--cor-texto);
@@ -1197,11 +1149,11 @@
       line-height: 1.5;
     }
 
-    /* 6. Como Funciona (4 Passos - Desktop Grid) */
+    /* 6. Como Funciona em Passos Sequenciais */
     .steps-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.75rem;
       position: relative;
       align-items: stretch;
     }
@@ -1219,33 +1171,31 @@
     }
 
     .step-card {
-      background: var(--cor-branca);
-      border: 1px solid var(--cor-borda-sutil);
-      border-radius: var(--radius-lg);
+      background-color: var(--cor-branca);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-card);
       padding: 2rem 1.5rem;
       position: relative;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s ease;
+      box-shadow: var(--shadow-subtle);
       height: auto;
       display: flex;
       flex-direction: column;
     }
 
     .step-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
       border-color: var(--cor-destaque);
     }
 
     .step-num {
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: 12px;
-      background-color: var(--cor-destaque-suave);
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: var(--radius-sm);
+      background-color: var(--cor-areia);
       color: var(--cor-primaria);
-      border: 1px solid rgba(127, 168, 153, 0.35);
-      font-size: 1.25rem;
-      font-weight: 800;
+      border: 1px solid var(--cor-borda);
+      font-size: 1.15rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1256,7 +1206,7 @@
 
     .step-title {
       font-size: clamp(1.1rem, 2.5vw, 1.25rem);
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 0.5rem;
       color: var(--cor-texto);
     }
@@ -1268,11 +1218,11 @@
       flex-grow: 1;
     }
 
-    /* 7. Estrutura (Galeria - Desktop Grid) */
+    /* 7. Estrutura */
     .structure-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.75rem;
       align-items: stretch;
     }
 
@@ -1289,20 +1239,18 @@
     }
 
     .structure-card {
-      background: var(--cor-branca);
-      border: 1px solid var(--cor-borda-sutil);
-      border-radius: var(--radius-lg);
+      background-color: var(--cor-branca);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-card);
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
+      box-shadow: var(--shadow-subtle);
+      transition: border-color 0.2s ease;
       display: flex;
       flex-direction: column;
       height: auto;
     }
 
     .structure-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
       border-color: var(--cor-destaque);
     }
 
@@ -1315,7 +1263,7 @@
 
     .structure-title {
       font-size: clamp(1.1rem, 2.5vw, 1.25rem);
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 0.5rem;
       color: var(--cor-texto);
     }
@@ -1327,7 +1275,7 @@
       flex-grow: 1;
     }
 
-    /* 8. FAQ Section */
+    /* 8. FAQ Accordion */
     .faq-container {
       max-width: 800px;
       margin: 0 auto;
@@ -1337,17 +1285,16 @@
     }
 
     .faq-item {
-      background: var(--cor-branca);
-      border: 1px solid var(--cor-borda-sutil);
-      border-radius: var(--radius-md);
+      background-color: var(--cor-branca);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-card);
       overflow: hidden;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s ease;
+      box-shadow: var(--shadow-subtle);
     }
 
     .faq-item.active {
       border-color: var(--cor-destaque);
-      box-shadow: var(--shadow-md);
     }
 
     .faq-question {
@@ -1410,11 +1357,11 @@
     }
 
     .contact-info-card {
-      background: var(--cor-branca);
-      border: 1px solid var(--cor-borda-sutil);
-      border-radius: var(--radius-lg);
+      background-color: var(--cor-branca);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-card);
       padding: 2.25rem;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-subtle);
       display: flex;
       flex-direction: column;
       gap: 1.75rem;
@@ -1430,10 +1377,10 @@
     .info-icon {
       width: 2.5rem;
       height: 2.5rem;
-      background: var(--cor-destaque-suave);
+      background-color: var(--cor-areia);
       color: var(--cor-primaria);
-      border: 1px solid rgba(127, 168, 153, 0.3);
-      border-radius: 10px;
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1441,10 +1388,11 @@
     }
 
     .info-title {
-      font-size: 1.125rem;
-      font-weight: 700;
+      font-size: 1.0625rem;
+      font-weight: 600;
       margin-bottom: 0.25rem;
       color: var(--cor-texto);
+      font-family: var(--font-sans);
     }
 
     .info-desc {
@@ -1453,11 +1401,11 @@
     }
 
     .map-frame-wrap {
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-img);
       overflow: hidden;
       border: 1px solid var(--cor-borda);
       aspect-ratio: 16 / 10;
-      background: var(--cor-areia);
+      background-color: var(--cor-areia);
       width: 100%;
     }
 
@@ -1467,19 +1415,19 @@
       border: 0;
     }
 
-    /* Interactive Form */
+    /* Formulário */
     .form-card {
-      background: var(--cor-branca);
-      border: 1px solid var(--cor-borda-sutil);
-      border-radius: var(--radius-lg);
+      background-color: var(--cor-branca);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--radius-card);
       padding: 2.25rem;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-subtle);
       height: auto;
     }
 
     .form-card-title {
       font-size: clamp(1.35rem, 3.5vw, 1.625rem);
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 0.5rem;
       color: var(--cor-texto);
     }
@@ -1511,19 +1459,18 @@
       color: var(--cor-texto);
       background-color: var(--cor-fundo);
       border: 1px solid var(--cor-borda);
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-btn);
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
     }
 
     .form-control:focus {
       background-color: var(--cor-branca);
       border-color: var(--cor-primaria);
-      box-shadow: 0 0 0 3px rgba(31, 77, 69, 0.15);
     }
 
     .form-error {
-      color: #B91C1C;
+      color: #991B1B;
       font-size: 0.8125rem;
       margin-top: 0.375rem;
       display: none;
@@ -1533,7 +1480,7 @@
       display: block;
     }
 
-    /* Floating WhatsApp Button - Continua Verde */
+    /* Floating WhatsApp Button: Mantém cor verde e pulso funcional */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -1550,12 +1497,11 @@
       font-size: 0.8125rem;
       font-weight: 600;
       padding: 0.4rem 0.85rem;
-      border-radius: var(--radius-full);
-      box-shadow: var(--shadow-lg);
+      border-radius: var(--radius-sm);
       opacity: 0;
-      transform: translateX(10px);
+      transform: translateX(8px);
       pointer-events: none;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
       white-space: normal;
       border: 1px solid rgba(255, 255, 255, 0.12);
     }
@@ -1566,42 +1512,36 @@
     }
 
     .whatsapp-btn {
-      width: 60px;
-      height: 60px;
+      width: 58px;
+      height: 58px;
       min-height: 44px;
-      border-radius: var(--radius-full);
+      border-radius: 50%;
       background-color: var(--cor-whatsapp);
       color: var(--cor-branca);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
       cursor: pointer;
       border: none;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s;
-      animation: whatsappPulseDesktop 3s infinite;
-    }
-
-    .whatsapp-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+      animation: whatsappPulseDesktop 3.5s infinite;
     }
 
     @keyframes whatsappPulseDesktop {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-      70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
       100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
     .whatsapp-icon {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       fill: currentColor;
     }
 
-    /* Footer */
+    /* Rodapé */
     .site-footer {
-      background-color: #172421;
+      background-color: #162421;
       color: #A3B5AF;
       padding-top: 4.5rem;
       padding-bottom: 2.5rem;
@@ -1612,7 +1552,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 2.5rem;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
     }
 
     @media (min-width: 768px) {
@@ -1623,7 +1563,7 @@
 
     .footer-brand-title {
       font-size: 1.35rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--cor-branca);
       margin-bottom: 0.75rem;
       font-family: var(--font-serif);
@@ -1639,10 +1579,8 @@
 
     .footer-heading {
       font-size: 0.9375rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--cor-acento);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
       margin-bottom: 1.25rem;
       font-family: var(--font-sans);
     }
@@ -1684,12 +1622,10 @@
       color: #A3B5AF;
     }
 
-    /* Ler mais botão no desktop oculto */
     .btn-read-more {
       display: none;
     }
 
-    /* Dots container no desktop oculto */
     .carousel-dots {
       display: none;
     }
@@ -1710,7 +1646,6 @@
         --auto-intervalo: 3500;
       }
 
-      /* 1) Compactação de Seções e Espaçamentos */
       section {
         padding-top: var(--m-secao-espaco) !important;
         padding-bottom: var(--m-secao-espaco) !important;
@@ -1741,7 +1676,7 @@
         margin-top: 1.75rem !important;
       }
 
-      /* Hero Reconstruído no Celular: min-height 85svh, height: auto, conteúdo centralizado */
+      /* Hero no Celular */
       .hero {
         min-height: 85svh !important;
         height: auto !important;
@@ -1812,7 +1747,7 @@
         font-size: 0.875rem !important;
       }
 
-      /* Textos longos com 'Ler mais' expansível no celular */
+      /* Textos longos com 'Ler mais' */
       .m-clamp-wrap:not(.expanded) .m-clamp-content {
         display: -webkit-box !important;
         -webkit-line-clamp: 3 !important;
@@ -1825,7 +1760,7 @@
         background: transparent;
         border: none;
         color: var(--cor-primaria);
-        font-weight: 700;
+        font-weight: 600;
         font-size: 0.875rem;
         padding: 0.35rem 0;
         margin-top: 0.35rem;
@@ -1836,7 +1771,6 @@
         touch-action: manipulation;
       }
 
-      /* Contêiner de rolagem horizontal para listas largas */
       .plans-box {
         padding: 1.5rem !important;
       }
@@ -1846,7 +1780,7 @@
         width: max-content;
       }
 
-      /* 2) CARROSSEIS HORIZONTAIS NO CELULAR (Grupos de 3+ itens) */
+      /* Carrosséis Horizontais no Celular */
       .specs-grid,
       .team-grid,
       .steps-grid,
@@ -1874,7 +1808,6 @@
         display: none !important;
       }
 
-      /* Cards com largura 78%, altura automática igualada (stretch) e sem corte de texto */
       .specs-grid > article,
       .team-grid > article,
       .steps-grid > div,
@@ -1887,8 +1820,7 @@
         max-height: none !important;
         scroll-snap-align: center !important;
         transition: transform var(--m-transicao) cubic-bezier(0.16, 1, 0.3, 1),
-                    opacity var(--m-transicao) cubic-bezier(0.16, 1, 0.3, 1),
-                    box-shadow var(--m-transicao) ease !important;
+                    opacity var(--m-transicao) cubic-bezier(0.16, 1, 0.3, 1) !important;
         transform: scale(var(--m-card-escala-lateral));
         opacity: var(--m-card-opacidade-lateral);
         box-sizing: border-box !important;
@@ -1899,18 +1831,15 @@
         align-self: stretch !important;
       }
 
-      /* Card ativo no centro */
       .specs-grid > article.is-active,
       .team-grid > article.is-active,
       .steps-grid > div.is-active,
       .structure-grid > article.is-active {
         transform: scale(1) !important;
         opacity: 1 !important;
-        box-shadow: var(--shadow-lg) !important;
         border-color: var(--cor-destaque) !important;
       }
 
-      /* Textos completos nos cards do carrossel - SEM -webkit-line-clamp */
       .spec-text, .team-bio, .step-desc, .structure-desc {
         display: block !important;
         -webkit-line-clamp: none !important;
@@ -1949,7 +1878,6 @@
         padding: 1rem !important;
       }
 
-      /* Bolinhas indicadoras do carrossel */
       .carousel-dots {
         display: flex !important;
         justify-content: center !important;
@@ -1962,7 +1890,7 @@
       .carousel-dot {
         width: 8px;
         height: 8px;
-        border-radius: var(--radius-full);
+        border-radius: 50%;
         background-color: var(--cor-destaque);
         opacity: 0.45;
         transition: all var(--m-transicao) ease;
@@ -1972,23 +1900,10 @@
       }
 
       .carousel-dot.active {
-        width: 24px;
-        border-radius: 4px;
+        width: 20px;
+        border-radius: var(--radius-sm);
         background-color: var(--cor-primaria);
         opacity: 1;
-      }
-
-      /* 3) Animações e Fluidez no Celular */
-      .m-reveal {
-        opacity: 0;
-        transform: translateY(16px);
-        transition: opacity 0.45s ease-out, transform 0.45s ease-out;
-        will-change: opacity, transform;
-      }
-
-      .m-reveal.is-revealed {
-        opacity: 1;
-        transform: translateY(0);
       }
 
       .btn, .mobile-nav-link, .faq-question, .menu-toggle, select, input, textarea {
@@ -1996,10 +1911,9 @@
       }
 
       .btn:active, .spec-link:active, .whatsapp-btn:active {
-        transform: scale(0.97) !important;
+        transform: scale(0.98) !important;
       }
 
-      /* Pulso discreto no WhatsApp a cada 6 segundos no celular */
       .whatsapp-btn {
         animation: whatsappPulseMobile 6s infinite ease-in-out !important;
       }
@@ -2007,19 +1921,18 @@
       @keyframes whatsappPulseMobile {
         0%, 86%, 100% {
           transform: scale(1);
-          box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
+          box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
         }
         90% {
-          transform: scale(1.08);
-          box-shadow: 0 0 0 10px rgba(37, 211, 102, 0.25);
+          transform: scale(1.06);
+          box-shadow: 0 0 0 8px rgba(37, 211, 102, 0.2);
         }
         94% {
           transform: scale(1.02);
-          box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+          box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
         }
       }
 
-      /* Localização e formulário compactos no celular */
       .contact-info-card, .form-card {
         padding: 1.5rem !important;
       }
@@ -2049,27 +1962,20 @@
       .whatsapp-btn {
         animation: none !important;
       }
-      .m-reveal {
-        opacity: 1 !important;
-        transform: none !important;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Barra de progresso fina de rolagem no topo -->
-  <div id="scrollProgressBar" class="scroll-progress-bar" aria-hidden="true"></div>
-
-  <!-- Top Discreet Demonstration Seal com --cor-acento -->
+  <!-- Selo Discreto no Topo -->
   <aside class="demo-banner" aria-label="Aviso de demonstração">
     <span>Selo de prévia: <strong>Modelo de demonstração Orizon Studio</strong></span>
   </aside>
 
-  <!-- Fixed Navigation: Transparente sobre o hero, sólida ao rolar 60px -->
+  <!-- Navegação Fixa -->
   <header class="navbar" id="mainNavbar">
     <div class="container navbar-container">
-      <a href="#inicio" class="brand" aria-label="Clínica Sorriso Pleno - Início">
+      <a href="#inicio" class="brand" aria-label="Clínica Sorriso Pleno, Início">
         <div class="brand-icon">
           <!-- Dental Tooth SVG Icon -->
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2080,7 +1986,7 @@
         <span>Sorriso Pleno</span>
       </a>
 
-      <!-- Desktop Navigation Links -->
+      <!-- Links Desktop -->
       <nav aria-label="Navegação principal">
         <ul class="nav-links">
           <li><a href="#sobre" class="nav-link">Sobre</a></li>
@@ -2094,10 +2000,9 @@
         </ul>
       </nav>
 
-      <!-- Desktop CTA Button -->
+      <!-- Botão de Agendamento Desktop -->
       <div class="nav-cta">
         <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-          <!-- WhatsApp Icon -->
           <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"></path>
           </svg>
@@ -2105,7 +2010,7 @@
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
+      <!-- Botão Menu Celular -->
       <button class="menu-toggle" id="menuToggleBtn" aria-label="Abrir menu de navegação" aria-expanded="false">
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -2137,9 +2042,8 @@
   </div>
 
   <main>
-    <!-- 1. Hero Section Reconstruído: Foto da Recepção como Plano de Fundo Integral -->
+    <!-- 1. Hero: Foto da Recepção como Plano de Fundo Integral -->
     <section id="inicio" class="hero">
-      <!-- Imagem de fundo integral -->
       <img
         src="imagens/recepcao.jpg"
         class="hero-bg-img"
@@ -2149,7 +2053,6 @@
         onerror="this.style.display='none';"
       />
 
-      <!-- Conteúdo na frente -->
       <div class="container hero-container">
         <div class="hero-content">
           <div class="hero-tag">
@@ -2160,7 +2063,7 @@
             <span>Atendimento em Pinheiros, São Paulo</span>
           </div>
           <h1 class="hero-title">
-            Cuidado odontológico completo com <span>acolhimento e precisão</span>.
+            Cuidado odontológico completo com acolhimento e precisão.
           </h1>
           <p class="hero-desc">
             Na Clínica Sorriso Pleno, combinamos tecnologia diagnóstica contemporânea, ambiente tranquilo e equipe multidisciplinar para cuidar da saúde bucal de toda a sua família.
@@ -2174,9 +2077,6 @@
             </a>
             <a href="#especialidades" class="btn btn-outline hero-btn-secondary">
               <span>Ver especialidades</span>
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
             </a>
           </div>
           <div class="hero-features">
@@ -2206,15 +2106,14 @@
     </section>
 
     <!-- 2. Sobre a Clínica -->
-    <section id="sobre" class="section-alt m-reveal">
+    <section id="sobre" class="section-alt">
       <div class="container">
         <div class="about-grid">
           <div>
-            <div class="section-badge">Nossa História & Propósito</div>
             <h2 class="section-title">Odontologia ética, acolhedora e baseada em evidências.</h2>
             <div class="m-clamp-wrap">
               <p class="section-desc m-clamp-content">
-                Fundada com o compromisso de transformar a experiência no consultório odontológico, a Clínica Sorriso Pleno oferece um atendimento focado na escuta do paciente, diagnóstico criterioso e conforto.
+                A Clínica Sorriso Pleno oferece atendimento odontológico focado na escuta atenta, diagnóstico clínico criterioso e acolhimento para você e sua família.
               </p>
               <button type="button" class="btn-read-more" aria-expanded="false">Ler mais</button>
             </div>
@@ -2260,7 +2159,7 @@
               <div class="pillar-item">
                 <div class="pillar-icon">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <rect x="2" y="3" width="20" height="14" rx="2"></rect>
                     <line x1="8" y1="21" x2="16" y2="21"></line>
                     <line x1="12" y1="17" x2="12" y2="21"></line>
                   </svg>
@@ -2273,31 +2172,27 @@
             </div>
             <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
               <span>Conhecer a clínica</span>
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
             </a>
           </div>
 
           <div class="about-card-box">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.25rem;">Atendimento Humanizado</h3>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--cor-texto);">Atendimento Humanizado</h3>
             <div class="m-clamp-wrap">
               <p class="m-clamp-content" style="margin-bottom: 1.5rem; color: var(--cor-texto-suave);">
-                Entendemos que ir ao dentista requer confiança e tranquilidade. Nossa equipe foi treinada para ouvir suas queixas com atenção, tirar todas as dúvidas e propor soluções adequadas ao seu momento.
+                Entendemos que ir ao dentista requer confiança e tranquilidade. Nossa equipe foi treinada para ouvir suas queixas com atenção, tirar todas as dúvidas e propor o tratamento adequado para a sua saúde e rotina.
               </p>
               <button type="button" class="btn-read-more" aria-expanded="false">Ler mais</button>
             </div>
-            <div style="background: var(--cor-areia); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--cor-primaria); margin-bottom: 1.5rem;">
-              <p style="font-size: 0.9375rem; color: var(--cor-primaria); font-weight: 700; margin-bottom: 0.25rem; font-family: var(--font-sans);">
-                Compromisso com o Paciente:
+            <div style="background-color: var(--cor-areia); padding: 1.25rem; border-radius: var(--radius-sm); border-left: 4px solid var(--cor-primaria); margin-bottom: 1.5rem;">
+              <p style="font-size: 0.9375rem; color: var(--cor-primaria); font-weight: 600; margin-bottom: 0.25rem; font-family: var(--font-sans);">
+                Conduta Clínica
               </p>
               <p style="font-size: 0.875rem; color: var(--cor-texto-suave);">
-                Sem tratamentos invasivos desnecessários. Valorizamos a preservação biológica da estrutura dental natural e a odontologia preventiva.
+                Priorizamos a preservação biológica da estrutura dental natural e a odontologia preventiva, evitando intervenções invasivas desnecessárias.
               </p>
             </div>
             <div style="display: flex; gap: 1rem; align-items: center;">
-              <div style="font-size: 2.25rem; font-weight: 800; color: var(--cor-primaria); font-family: var(--font-serif);">6+</div>
+              <div style="font-size: 2.25rem; font-weight: 700; color: var(--cor-primaria); font-family: var(--font-serif);">6+</div>
               <div style="font-size: 0.875rem; color: var(--cor-texto-suave);">
                 Especialidades integradas em uma mesma unidade em Pinheiros.
               </div>
@@ -2307,11 +2202,10 @@
       </div>
     </section>
 
-    <!-- 3. Especialidades (Vira Carrossel no Celular) -->
-    <section id="especialidades" class="m-reveal">
+    <!-- 3. Especialidades -->
+    <section id="especialidades">
       <div class="container">
         <div class="section-header">
-          <div class="section-badge">Áreas de Atuação</div>
           <h2 class="section-title">Especialidades Odontológicas</h2>
           <p class="section-desc">
             Tratamentos planejados sob medida, com foco na saúde, funcionalidade mastigatória e harmonia do sorriso.
@@ -2332,7 +2226,6 @@
             </p>
             <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Cl%C3%ADnica%20Geral." target="_blank" rel="noopener noreferrer" class="spec-link">
               <span>Agendar avaliação</span>
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
           </article>
 
@@ -2351,7 +2244,6 @@
             </p>
             <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Ortodontia." target="_blank" rel="noopener noreferrer" class="spec-link">
               <span>Agendar avaliação</span>
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
           </article>
 
@@ -2371,7 +2263,6 @@
             </p>
             <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Implantes." target="_blank" rel="noopener noreferrer" class="spec-link">
               <span>Agendar avaliação</span>
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
           </article>
 
@@ -2388,7 +2279,6 @@
             </p>
             <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Clareamento." target="_blank" rel="noopener noreferrer" class="spec-link">
               <span>Agendar avaliação</span>
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
           </article>
 
@@ -2408,7 +2298,6 @@
             </p>
             <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Endodontia." target="_blank" rel="noopener noreferrer" class="spec-link">
               <span>Agendar avaliação</span>
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
           </article>
 
@@ -2428,7 +2317,6 @@
             </p>
             <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Odontopediatria." target="_blank" rel="noopener noreferrer" class="spec-link">
               <span>Agendar avaliação</span>
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
           </article>
         </div>
@@ -2436,17 +2324,15 @@
         <div class="section-footer-cta">
           <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <span>Agendar consulta por especialidade</span>
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 4. Corpo Clínico (Vira Carrossel no Celular) -->
-    <section id="equipe" class="section-alt m-reveal">
+    <!-- 4. Corpo Clínico -->
+    <section id="equipe" class="section-alt">
       <div class="container">
         <div class="section-header">
-          <div class="section-badge">Profissionais de Confiança</div>
           <h2 class="section-title">Nosso Corpo Clínico</h2>
           <p class="section-desc">
             Equipe qualificada com registro no Conselho Regional de Odontologia de São Paulo (CRO-SP) e constante atualização científica.
@@ -2458,7 +2344,7 @@
           <article class="team-card">
             <div class="team-avatar" aria-hidden="true">CR</div>
             <h3 class="team-name">Dra. Camila Rocha</h3>
-            <p class="team-spec">Clínica Geral & Estética</p>
+            <p class="team-spec">Clínica Geral e Estética</p>
             <span class="team-cro">CRO-SP 104.821</span>
             <p class="team-bio">
               Dedica-se ao diagnóstico abrangente, restaurações funcionais e acompanhamento preventivo regular de pacientes adultos.
@@ -2469,7 +2355,7 @@
           <article class="team-card">
             <div class="team-avatar" aria-hidden="true">LA</div>
             <h3 class="team-name">Dr. Lucas Andrade</h3>
-            <p class="team-spec">Ortodontia & Oclusão</p>
+            <p class="team-spec">Ortodontia e Oclusão</p>
             <span class="team-cro">CRO-SP 112.943</span>
             <p class="team-bio">
               Especialista em mecânica ortodôntica digital, alinhadores transparentes e tratamentos interceptivos para adolescentes.
@@ -2491,7 +2377,7 @@
           <article class="team-card">
             <div class="team-avatar" aria-hidden="true">RS</div>
             <h3 class="team-name">Dr. Rafael Silveira</h3>
-            <p class="team-spec">Implantodontia & Prótese</p>
+            <p class="team-spec">Implantodontia e Prótese</p>
             <span class="team-cro">CRO-SP 119.302</span>
             <p class="team-bio">
               Foco em reabilitação oral funcional, implantes osteointegráveis e planejamento guiado de coroas unitárias e múltiplas.
@@ -2508,10 +2394,9 @@
     </section>
 
     <!-- 5. Convênios e Atendimento Particular -->
-    <section id="convenios" class="m-reveal">
+    <section id="convenios">
       <div class="container">
         <div class="section-header">
-          <div class="section-badge">Formas de Atendimento</div>
           <h2 class="section-title">Convênios Aceitos e Atendimento Particular</h2>
           <p class="section-desc">
             Transparência e opções flexíveis para que você priorize sua saúde bucal com conforto.
@@ -2529,12 +2414,11 @@
                     <line x1="2" y1="10" x2="22" y2="10"></line>
                   </svg>
                 </div>
-                <h3 style="font-size: 1.35rem;">Planos e Convênios Odontológicos</h3>
+                <h3 style="font-size: 1.35rem; font-weight: 600;">Planos e Convênios Odontológicos</h3>
               </div>
               <p style="font-size: 0.9375rem; color: var(--cor-texto-suave);">
                 Aceitamos diversos planos odontológicos nas modalidades vigentes de cada operadora para procedimentos cobertos pelo seu contrato:
               </p>
-              <!-- Contêiner com rolagem horizontal para listas largas -->
               <div class="plans-badges-wrap">
                 <div class="plans-badges">
                   <span class="plan-badge">
@@ -2564,7 +2448,7 @@
                 </div>
               </div>
               <p style="font-size: 0.8125rem; color: var(--cor-texto-suave); margin-top: 1rem;">
-                *Consulte nossa recepção para confirmar a abrangência do seu plano específico ou categoria da apólice.
+                Consulte nossa recepção para confirmar a abrangência do seu plano específico ou categoria da apólice.
               </p>
             </div>
 
@@ -2578,7 +2462,7 @@
                     <path d="M12 18V6"></path>
                   </svg>
                 </div>
-                <h3 style="font-size: 1.35rem;">Atendimento Particular & Reembolso</h3>
+                <h3 style="font-size: 1.35rem; font-weight: 600;">Atendimento Particular e Reembolso</h3>
               </div>
               <p style="font-size: 0.9375rem; color: var(--cor-texto-suave);">
                 Para quem não possui convênio ou prefere consultas com tempo estendido e materiais de livre escolha:
@@ -2604,17 +2488,15 @@
         <div class="section-footer-cta">
           <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20verificar%20a%20cobertura%20do%20meu%20conv%C3%AAnio." target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
             <span>Verificar cobertura do meu convênio</span>
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 6. Como Funciona em 4 Passos (Vira Carrossel no Celular) -->
-    <section id="passos" class="section-alt m-reveal">
+    <!-- 6. Como Funciona em Passos Sequenciais -->
+    <section id="passos" class="section-alt">
       <div class="container">
         <div class="section-header">
-          <div class="section-badge">Jornada do Paciente</div>
           <h2 class="section-title">Como Funciona o Atendimento</h2>
           <p class="section-desc">
             Passo a passo simples, transparente e sem burocracias desde o primeiro contato.
@@ -2624,7 +2506,7 @@
         <div class="steps-grid">
           <!-- Passo 1 -->
           <div class="step-card">
-            <div class="step-num">01</div>
+            <div class="step-num">1</div>
             <h3 class="step-title">Agendamento Fácil</h3>
             <p class="step-desc">
               Escolha o dia e horário mais conveniente pelo WhatsApp ou formulário online com retorno rápido da recepção.
@@ -2633,7 +2515,7 @@
 
           <!-- Passo 2 -->
           <div class="step-card">
-            <div class="step-num">02</div>
+            <div class="step-num">2</div>
             <h3 class="step-title">Avaliação Inicial</h3>
             <p class="step-desc">
               Consulta com anamnese clínica, exame bucal completo e registro fotográfico ou radiográfico quando indicado.
@@ -2642,7 +2524,7 @@
 
           <!-- Passo 3 -->
           <div class="step-card">
-            <div class="step-num">03</div>
+            <div class="step-num">3</div>
             <h3 class="step-title">Plano Personalizado</h3>
             <p class="step-desc">
               Apresentação clara das opções de tratamento, prazos estimados e esclarecimento de todas as dúvidas.
@@ -2651,7 +2533,7 @@
 
           <!-- Passo 4 -->
           <div class="step-card">
-            <div class="step-num">04</div>
+            <div class="step-num">4</div>
             <h3 class="step-title">Acompanhamento</h3>
             <p class="step-desc">
               Execução com técnica cuidadosa, instruções pós-atendimento e suporte contínuo para manutenção da sua saúde bucal.
@@ -2662,17 +2544,15 @@
         <div class="section-footer-cta">
           <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20dar%20o%20primeiro%20passo%20e%20agendar%20minha%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <span>Iniciar agendamento do 1º passo</span>
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 7. Estrutura (Galeria - Vira Carrossel no Celular) -->
-    <section id="estrutura" class="m-reveal">
+    <!-- 7. Estrutura -->
+    <section id="estrutura">
       <div class="container">
         <div class="section-header">
-          <div class="section-badge">Estrutura Física</div>
           <h2 class="section-title">Ambientes Planejados para o seu Bem-Estar</h2>
           <p class="section-desc">
             Espaços higienizados, silenciosos e com infraestrutura pensada para acolher você com pontualidade e tranquilidade.
@@ -2777,7 +2657,7 @@
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                   </svg>
                 </div>
-                <span class="fallback-label">Esterilização & Biossegurança</span>
+                <span class="fallback-label">Esterilização e Biossegurança</span>
               </div>
               <img
                 src="imagens/esterilizacao.jpg"
@@ -2788,9 +2668,9 @@
               />
             </div>
             <div class="structure-info">
-              <h3 class="structure-title">Esterilização & Biossegurança</h3>
+              <h3 class="structure-title">Esterilização e Biossegurança</h3>
               <p class="structure-desc">
-                Central equipada com autoclaves de última geração, teste biológico e selagem individual de todos os kits clínicos.
+                Central equipada com autoclaves hospitalares com rastreamento por ciclo, teste biológico e selagem individual de todos os kits clínicos.
               </p>
             </div>
           </article>
@@ -2829,17 +2709,15 @@
         <div class="section-footer-cta">
           <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20visitar%20a%20cl%C3%ADnica%20em%20Pinheiros." target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
             <span>Agendar visita ou consulta presencial</span>
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 8. FAQ Accordion (Todas Fechadas no Início) -->
-    <section id="faq" class="section-alt m-reveal">
+    <!-- 8. FAQ Accordion -->
+    <section id="faq" class="section-alt">
       <div class="container">
         <div class="section-header">
-          <div class="section-badge">Tire suas Dúvidas</div>
           <h2 class="section-title">Perguntas Frequentes</h2>
           <p class="section-desc">
             Informações objetivas sobre nosso atendimento e rotina clínica.
@@ -2904,7 +2782,7 @@
         </div>
 
         <div class="section-footer-cta">
-          <p style="font-size: 0.9375rem; color: var(--cor-texto-suave); margin-bottom: 1rem;">
+          <p style="font-size: 0.9375rem; color: var(--cor-texto-suave); margin-bottom: 1rem; margin-left: auto; margin-right: auto;">
             Tem outra pergunta que não está listada acima?
           </p>
           <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20tratamentos." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
@@ -2914,22 +2792,21 @@
       </div>
     </section>
 
-    <!-- 9. Localização, Horários e Formulário -->
-    <section id="localizacao" class="m-reveal">
+    <!-- 9. Localização e Formulário -->
+    <section id="localizacao">
       <div class="container">
         <div class="section-header">
-          <div class="section-badge">Onde Estamos</div>
-          <h2 class="section-title">Localização & Agendamento</h2>
+          <h2 class="section-title">Localização e Agendamento</h2>
           <p class="section-desc">
             Localizada no coração de Pinheiros, com fácil acesso de metrô, ônibus ou carro com estacionamento próximo.
           </p>
         </div>
 
         <div class="contact-grid">
-          <!-- Coluna 1: Informações e Mapa -->
+          <!-- Informações e Mapa -->
           <div class="contact-info-card">
             <div>
-              <h3 style="font-size: 1.5rem; margin-bottom: 1.25rem;">Informações da Clínica</h3>
+              <h3 style="font-size: 1.35rem; font-weight: 600; margin-bottom: 1.25rem; color: var(--cor-texto);">Informações da Clínica</h3>
               
               <div class="info-row" style="margin-bottom: 1.25rem;">
                 <div class="info-icon">
@@ -2941,7 +2818,7 @@
                 <div>
                   <h4 class="info-title">Endereço</h4>
                   <p class="info-desc">Rua dos Pinheiros, 789, 3º andar</p>
-                  <p class="info-desc">Pinheiros, São Paulo - SP | CEP: 05422-001</p>
+                  <p class="info-desc">Pinheiros, São Paulo, SP, CEP 05422-001</p>
                 </div>
               </div>
 
@@ -2954,9 +2831,9 @@
                 </div>
                 <div>
                   <h4 class="info-title">Horário de Atendimento</h4>
-                  <p class="info-desc">Segunda a Sexta: 08:00 às 19:00</p>
-                  <p class="info-desc">Sábados: 08:00 às 13:00</p>
-                  <p class="info-desc" style="color: var(--cor-texto-suave); font-size: 0.8125rem;">Domingos e feriados: Fechado</p>
+                  <p class="info-desc">Segunda a sexta, das 8h às 19h</p>
+                  <p class="info-desc">Sábados, das 8h às 13h</p>
+                  <p class="info-desc" style="color: var(--cor-texto-suave); font-size: 0.8125rem;">Domingos e feriados: fechado</p>
                 </div>
               </div>
 
@@ -2969,14 +2846,14 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 class="info-title">Redes Sociais & Contato</h4>
+                  <h4 class="info-title">Redes Sociais e Contato</h4>
                   <p class="info-desc">Instagram: <a href="https://instagram.com/sorrisopleno" target="_blank" rel="noopener noreferrer" style="color: var(--cor-primaria); font-weight: 600;">@sorrisopleno</a></p>
                   <p class="info-desc">WhatsApp: <a href="https://wa.me/5511999998888" target="_blank" rel="noopener noreferrer" style="color: var(--cor-primaria); font-weight: 600;">(11) 99999-8888</a></p>
                 </div>
               </div>
             </div>
 
-            <!-- Google Maps iframe Embed -->
+            <!-- Mapa Google Maps -->
             <div>
               <div class="map-frame-wrap">
                 <iframe
@@ -2991,12 +2868,12 @@
                 </iframe>
               </div>
               <p style="font-size: 0.75rem; color: var(--cor-texto-suave); margin-top: 0.5rem; text-align: center;">
-                Fácil estacionamento conveniado ao lado do edifício.
+                Estacionamento conveniado ao lado do edifício.
               </p>
             </div>
           </div>
 
-          <!-- Coluna 2: Formulário de Agendamento -->
+          <!-- Formulário de Agendamento -->
           <div class="form-card">
             <h3 class="form-card-title">Agendar sua Avaliação</h3>
             <p class="form-card-desc">
@@ -3017,7 +2894,7 @@
               </div>
 
               <div class="form-group">
-                <label for="formTelefone" class="form-label">Telefone / WhatsApp com DDD *</label>
+                <label for="formTelefone" class="form-label">Telefone ou WhatsApp com DDD *</label>
                 <input
                   type="tel"
                   id="formTelefone"
@@ -3070,7 +2947,7 @@
     </section>
   </main>
 
-  <!-- Botão Flutuante de WhatsApp (Continua Verde) -->
+  <!-- Botão Flutuante de WhatsApp -->
   <aside class="whatsapp-float">
     <span class="whatsapp-tooltip">Agendar pelo WhatsApp</span>
     <a
@@ -3093,11 +2970,11 @@
         <div>
           <div class="footer-brand-title">Clínica Sorriso Pleno</div>
           <p class="footer-text">
-            Odontologia integrada em Pinheiros, São Paulo - SP. Cuidado preventivo, estético e reabilitador com rigor técnico e atenção humanizada.
+            Odontologia integrada em Pinheiros, São Paulo, SP. Cuidado preventivo, estético e reabilitador com rigor técnico e atenção humanizada.
           </p>
           <p class="footer-text" style="font-size: 0.8125rem;">
-            Rua dos Pinheiros, 789, 3º andar - Pinheiros - São Paulo, SP<br />
-            Seg a Sex: 8h às 19h | Sáb: 8h às 13h
+            Rua dos Pinheiros, 789, 3º andar, Pinheiros, São Paulo, SP<br />
+            Segunda a sexta, das 8h às 19h; sábados, das 8h às 13h
           </p>
         </div>
 
@@ -3116,7 +2993,7 @@
         </div>
 
         <div>
-          <h4 class="footer-heading">Contato & Redes</h4>
+          <h4 class="footer-heading">Contato e Redes</h4>
           <ul class="footer-links">
             <li>
               <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="footer-link">
@@ -3130,7 +3007,7 @@
             </li>
             <li>
               <a href="#localizacao" class="footer-link">
-                Pinheiros, São Paulo - SP
+                Pinheiros, São Paulo, SP
               </a>
             </li>
           </ul>
@@ -3139,7 +3016,7 @@
 
       <div class="footer-bottom">
         <div class="footer-disclaimer">
-          Imagens ilustrativas geradas por IA. Dados fictícios.
+          Imagens ilustrativas. Dados fictícios.
         </div>
         <div>
           © 2026 Clínica Sorriso Pleno. Todos os direitos reservados. Modelo de demonstração Orizon Studio.
@@ -3148,25 +3025,12 @@
     </div>
   </footer>
 
-  <!-- Vanilla JavaScript: Interações, Carrosseis Celular, FAQ, Acordeão, Ler Mais, Progresso, Validação -->
+  <!-- Vanilla JavaScript -->
   <script>
     (function () {
       'use strict';
 
-      // 0. Barra de Progresso de Rolagem Fina no Topo
-      const progressBar = document.getElementById('scrollProgressBar');
-      if (progressBar) {
-        window.addEventListener('scroll', function () {
-          const scrollTop = window.scrollY || document.documentElement.scrollTop;
-          const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-          if (docHeight > 0) {
-            const progress = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
-            progressBar.style.width = progress + '%';
-          }
-        }, { passive: true });
-      }
-
-      // 0.1 Menu Fixo: transparente sobre o hero, sólido após 60px
+      // 1. Menu Fixo: transparente no hero, sólido após 60px
       const mainNavbar = document.getElementById('mainNavbar');
       function handleNavbarScroll() {
         if (!mainNavbar) return;
@@ -3179,7 +3043,45 @@
       window.addEventListener('scroll', handleNavbarScroll, { passive: true });
       handleNavbarScroll();
 
-      // 1. Mobile Menu Toggle
+      // 2. Link Ativo no Menu (Scrollspy)
+      const sections = document.querySelectorAll('section[id], header[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function updateActiveNavLinks() {
+        const scrollPosition = window.scrollY + 140;
+        let currentSectionId = '';
+
+        sections.forEach(function (section) {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(function (link) {
+          const href = link.getAttribute('href');
+          if (href === '#' + currentSectionId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+
+        mobileNavLinks.forEach(function (link) {
+          const href = link.getAttribute('href');
+          if (href === '#' + currentSectionId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+      window.addEventListener('scroll', updateActiveNavLinks, { passive: true });
+      updateActiveNavLinks();
+
+      // 3. Mobile Menu Toggle
       const menuBtn = document.getElementById('menuToggleBtn');
       const mobileDrawer = document.getElementById('mobileDrawer');
       const mobileLinks = document.querySelectorAll('.mobile-nav-link');
@@ -3199,7 +3101,7 @@
         });
       }
 
-      // 2. FAQ Accordion: todas fechadas no início, abre uma por vez com seta giratória
+      // 4. FAQ Accordion: todas fechadas no início, abre uma por vez
       const faqItems = document.querySelectorAll('.faq-item');
       faqItems.forEach(function (item) {
         const questionBtn = item.querySelector('.faq-question');
@@ -3207,7 +3109,6 @@
           questionBtn.addEventListener('click', function () {
             const isActive = item.classList.contains('active');
             
-            // Fecha todos os outros acordeões
             faqItems.forEach(function (otherItem) {
               otherItem.classList.remove('active');
               const otherBtn = otherItem.querySelector('.faq-question');
@@ -3222,7 +3123,7 @@
         }
       });
 
-      // 3. Textos longos: "Ler mais" expansível no celular
+      // 5. Textos longos: "Ler mais" expansível no celular
       const readMoreButtons = document.querySelectorAll('.btn-read-more');
       readMoreButtons.forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -3234,7 +3135,7 @@
         });
       });
 
-      // 4. Carrosséis Horizontais no Celular com Scroll-Snap, Escala Lateral, Auto-Avanço e Dots
+      // 6. Carrosséis Horizontais no Celular com Scroll-Snap, Indicadores e Auto-Avanço
       const carouselSelectors = ['.specs-grid', '.team-grid', '.steps-grid', '.structure-grid'];
       
       carouselSelectors.forEach(function (selector) {
@@ -3244,7 +3145,6 @@
         const cards = Array.from(carousel.children);
         if (cards.length < 3) return;
 
-        // Cria bolinhas indicadoras abaixo do carrossel
         let dotsWrap = carousel.parentElement.querySelector('.carousel-dots[data-for="' + selector.slice(1) + '"]');
         if (!dotsWrap) {
           dotsWrap = document.createElement('div');
@@ -3270,12 +3170,10 @@
         let isVisibleOnScreen = false;
         let lastTouchTime = Date.now();
 
-        // Ativa o primeiro card no mobile
         if (cards[0] && window.innerWidth <= 768) {
           cards[0].classList.add('is-active');
         }
 
-        // Observa qual card está centralizado no viewport do carrossel
         if ('IntersectionObserver' in window) {
           const cardObserver = new IntersectionObserver(function (entries) {
             if (window.innerWidth > 768) return;
@@ -3310,7 +3208,6 @@
             cardObserver.observe(card);
           });
 
-          // Observa se o carrossel está visível na tela para pausar/retomar auto-avanço
           const viewportObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
               isVisibleOnScreen = entry.isIntersecting;
@@ -3319,7 +3216,6 @@
           viewportObserver.observe(carousel);
         }
 
-        // Pausa ao tocar / arrastar e retoma 4s após a última interação
         function onUserInteraction() {
           lastTouchTime = Date.now();
         }
@@ -3328,7 +3224,6 @@
         carousel.addEventListener('touchend', onUserInteraction, { passive: true });
         carousel.addEventListener('scroll', onUserInteraction, { passive: true });
 
-        // Auto-avanço a cada 3500ms (respeita prefers-reduced-motion e interação)
         const autoInterval = 3500;
         setInterval(function () {
           if (window.innerWidth > 768) return;
@@ -3341,28 +3236,7 @@
         }, autoInterval);
       });
 
-      // 5. Scroll Reveal Animation (IntersectionObserver)
-      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const revealElements = document.querySelectorAll('.m-reveal');
-        const revealObserver = new IntersectionObserver(function (entries, observer) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-revealed');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.08 });
-
-        revealElements.forEach(function (el) {
-          revealObserver.observe(el);
-        });
-      } else {
-        document.querySelectorAll('.m-reveal').forEach(function (el) {
-          el.classList.add('is-revealed');
-        });
-      }
-
-      // 6. Telefone Mask Helper
+      // 7. Máscara de Telefone com DDD
       const telInput = document.getElementById('formTelefone');
       if (telInput) {
         telInput.addEventListener('input', function (e) {
@@ -3381,7 +3255,7 @@
         });
       }
 
-      // 7. Form Submission via WhatsApp
+      // 8. Envio do Formulário para WhatsApp
       const form = document.getElementById('appointmentForm');
       if (form) {
         form.addEventListener('submit', function (e) {
