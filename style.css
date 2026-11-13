@@ -1,0 +1,2219 @@
+/* ==========================================================================
+   Clínica Sorriso Pleno — Design System & Layout
+   Paleta derivada das fotografias da clínica (Creme, Sálvia, Floresta, Coral, Carvalho)
+   ========================================================================== */
+
+:root {
+  /* Paleta Principal */
+  --bg-cream: #F7F3EA;
+  --bg-cream-elevated: #FCF9F4;
+  --surface-sage-light: #DDE6D8;
+  --surface-sage: #8FA38A;
+  --surface-oak-light: #EFE6D6;
+  --surface-coral-light: #F7DCD3;
+  --forest: #24382E;
+  --forest-deep: #1B2B23;
+  --forest-muted: #43574D;
+  --coral: #E8896B;
+  --coral-hover: #DF7B5B;
+  --oak: #C9AE8A;
+  --whatsapp: #25D366;
+
+  /* Bordas e Divisores */
+  --hairline: rgba(36, 56, 46, 0.14);
+  --hairline-strong: rgba(36, 56, 46, 0.24);
+  --hairline-light: rgba(247, 243, 234, 0.2);
+
+  /* Tipografia */
+  --font-display: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Figtree', system-ui, -apple-system, sans-serif;
+
+  /* Raios por Hierarquia */
+  --radius-squircle: 28px;
+  --radius-card: 24px;
+  --radius-pill: 9999px;
+  --radius-input: 16px;
+
+  /* Curvas e Dimensões */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --header-height: 76px;
+  --container-max: 1220px;
+}
+
+/* Reset Limpo */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  background-color: var(--bg-cream);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--forest);
+  background-color: var(--bg-cream);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  position: relative;
+}
+
+/* Textura de grão muito sutil (2%) sobre o creme */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+  opacity: 0.022;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Foco Acessível */
+:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
+}
+
+.section-dark :focus-visible,
+.site-footer :focus-visible,
+.mobile-menu :focus-visible {
+  outline-color: var(--coral);
+}
+
+/* Barra Fina de Progresso de Leitura no Topo */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background-color: var(--coral);
+  z-index: 1002;
+  pointer-events: none;
+}
+
+/* Tipografia Base */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+p {
+  max-width: 65ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Rótulos pequenos em caixa alta com espaçamento largo */
+.eyebrow-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--forest-muted);
+  margin-bottom: 1rem;
+}
+
+.section-dark .eyebrow-label {
+  color: var(--surface-sage-light);
+}
+
+/* Palavra única em Instrument Serif itálico + arco de sorriso SVG */
+.serif-arc {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  padding-inline: 0.06em;
+  white-space: nowrap;
+}
+
+.smile-underline {
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: -0.14em;
+  width: 104%;
+  height: 0.24em;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.smile-underline path {
+  fill: none;
+  stroke: var(--coral);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.9s var(--ease-out);
+}
+
+.smile-underline.is-waiting path {
+  stroke-dashoffset: 220;
+}
+
+.smile-underline.is-drawn path {
+  stroke-dashoffset: 0;
+}
+
+/* Divisor de Arco de Sorriso entre Seções */
+.smile-divider {
+  display: flex;
+  justify-content: center;
+  padding-block: 0.25rem;
+  background-color: var(--bg-cream);
+}
+
+.smile-divider svg {
+  width: 140px;
+  height: 22px;
+  color: var(--oak);
+}
+
+/* Contêiner Principal e Ritmo de Seções */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.section-band {
+  padding-block: 68px;
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+.section-cream {
+  background-color: var(--bg-cream);
+}
+
+.section-sage {
+  background-color: var(--surface-sage-light);
+}
+
+.section-dark {
+  background-color: var(--forest);
+  color: var(--bg-cream);
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4.4vw, 3.35rem);
+  margin-bottom: 1rem;
+}
+
+.section-lead {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--forest-muted);
+  max-width: 58ch;
+}
+
+.section-dark .section-lead {
+  color: var(--surface-sage-light);
+}
+
+.section-top {
+  margin-bottom: 2.75rem;
+}
+
+/* Botões em Pílula (Mínimo 48px de altura de toque) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.75rem 1.65rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+  transition: background-color 0.25s var(--ease-out), border-color 0.25s var(--ease-out), color 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+
+.btn-coral {
+  background-color: var(--coral);
+  color: var(--forest-deep);
+  border: 1.5px solid var(--coral);
+}
+
+.btn-coral:hover {
+  background-color: var(--coral-hover);
+  border-color: var(--coral-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--forest);
+  border: 1.5px solid var(--forest);
+}
+
+.btn-outline:hover {
+  background-color: var(--forest);
+  color: var(--bg-cream);
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--bg-cream);
+  border: 1.5px solid rgba(247, 243, 234, 0.65);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--bg-cream);
+  color: var(--forest);
+  border-color: var(--bg-cream);
+}
+
+/* ==========================================================================
+   1. HEADER
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background-color: rgba(247, 243, 234, 0.95);
+  border-bottom: 1px solid var(--hairline);
+  z-index: 950;
+  transition: transform 0.4s var(--ease-out), background-color 0.3s ease;
+}
+
+.site-header.is-hidden {
+  transform: translateY(-100%);
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+.brand-wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--forest);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand-smile {
+  width: 68px;
+  height: 9px;
+  margin-top: 3px;
+  color: var(--coral);
+}
+
+.status-pill {
+  display: none;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 600;
+  background-color: var(--surface-sage-light);
+  color: var(--forest);
+  border: 1px solid var(--hairline);
+  white-space: nowrap;
+}
+
+.status-pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--forest-muted);
+  flex-shrink: 0;
+}
+
+.status-pill.is-open .status-pill-dot {
+  background-color: #2E7D4F;
+}
+
+.header-nav {
+  display: none;
+}
+
+.header-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  list-style: none;
+}
+
+.header-nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--forest-muted);
+  white-space: nowrap;
+  padding-block: 0.35rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.header-nav-link:hover,
+.header-nav-link.is-active {
+  color: var(--forest);
+  border-bottom-color: var(--coral);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.header-cta {
+  display: none;
+  min-height: 44px;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--hairline-strong);
+  color: var(--forest);
+  background-color: var(--bg-cream-elevated);
+}
+
+/* Menu Mobile Tela Cheia Verde-Floresta */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background-color: var(--forest);
+  color: var(--bg-cream);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem 20px 2rem;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s var(--ease-out), visibility 0.35s var(--ease-out);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-menu-brand {
+  color: var(--bg-cream);
+}
+
+.mobile-menu-close {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--hairline-light);
+  color: var(--bg-cream);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 2rem;
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 6vw, 2.25rem);
+  font-weight: 600;
+  color: var(--bg-cream);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out), color 0.2s ease;
+}
+
+.mobile-menu.is-open .mobile-menu-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu.is-open li:nth-child(1) .mobile-menu-link { transition-delay: 60ms; }
+.mobile-menu.is-open li:nth-child(2) .mobile-menu-link { transition-delay: 100ms; }
+.mobile-menu.is-open li:nth-child(3) .mobile-menu-link { transition-delay: 140ms; }
+.mobile-menu.is-open li:nth-child(4) .mobile-menu-link { transition-delay: 180ms; }
+.mobile-menu.is-open li:nth-child(5) .mobile-menu-link { transition-delay: 220ms; }
+.mobile-menu.is-open li:nth-child(6) .mobile-menu-link { transition-delay: 260ms; }
+.mobile-menu.is-open li:nth-child(7) .mobile-menu-link { transition-delay: 300ms; }
+.mobile-menu.is-open li:nth-child(8) .mobile-menu-link { transition-delay: 340ms; }
+
+.mobile-menu-link:hover {
+  color: var(--coral);
+}
+
+.mobile-menu-footer {
+  border-top: 1px solid var(--hairline-light);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-status-inline {
+  font-size: 0.875rem;
+  color: var(--surface-sage-light);
+}
+
+/* ==========================================================================
+   2. HERO
+   ========================================================================== */
+.hero-section {
+  padding-top: calc(var(--header-height) + 16px);
+  padding-bottom: 48px;
+  min-height: calc(100svh - 24px);
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-cream);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.35rem;
+  align-items: center;
+}
+
+.hero-media {
+  order: -1;
+  position: relative;
+}
+
+.hero-squircle {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 32px;
+  overflow: hidden;
+  background-color: var(--surface-sage-light);
+  border: 1px solid var(--hairline);
+}
+
+.hero-squircle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.hero-img-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--font-display);
+  color: var(--forest);
+  background-color: var(--surface-sage-light);
+  z-index: 0;
+}
+
+.hero-squircle img {
+  position: relative;
+  z-index: 1;
+}
+
+/* Adesivos inclinados ao redor da imagem */
+.hero-sticker {
+  position: absolute;
+  z-index: 2;
+  background-color: var(--bg-cream-elevated);
+  color: var(--forest);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 14px;
+  padding: 0.5rem 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(36, 56, 46, 0.08);
+  will-change: transform;
+}
+
+.sticker-1 {
+  top: 14px;
+  left: 12px;
+  transform: rotate(-3deg);
+  background-color: var(--surface-sage-light);
+}
+
+.sticker-2 {
+  top: 46%;
+  right: 10px;
+  transform: rotate(2.5deg);
+  background-color: var(--surface-oak-light);
+}
+
+.sticker-3 {
+  bottom: 16px;
+  left: 18px;
+  transform: rotate(-2deg);
+  background-color: var(--surface-coral-light);
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 6.8vw, 4.15rem);
+  line-height: 1.07;
+  margin-bottom: 1.25rem;
+  color: var(--forest);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--forest-muted);
+  max-width: 52ch;
+  margin-bottom: 1.75rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-cta-group .btn {
+  width: 100%;
+}
+
+.hero-urgent-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--surface-sage-light);
+  border: 1px solid var(--hairline);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--forest);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-urgent-pill:hover {
+  background-color: var(--surface-coral-light);
+  border-color: var(--coral);
+}
+
+/* ==========================================================================
+   3. SOBRE A CLÍNICA
+   ========================================================================== */
+.about-header-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 3rem;
+}
+
+.about-counter-block {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  padding: 1.15rem 1.5rem;
+  border-radius: var(--radius-card);
+  background-color: var(--surface-sage-light);
+  border: 1px solid var(--hairline);
+  width: fit-content;
+}
+
+.counter-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--forest);
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-caption {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--forest);
+  max-width: 24ch;
+  line-height: 1.35;
+}
+
+/* Lista numerada em 2 colunas com filetes, SEM cards e SEM ícones */
+.pillars-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem 3rem;
+  list-style: none;
+  margin-bottom: 3rem;
+}
+
+.pillar-row {
+  border-top: 1px solid var(--hairline-strong);
+  padding-top: 1.25rem;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.pillar-num {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--forest-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.pillar-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--forest);
+}
+
+.pillar-copy {
+  font-size: 0.95rem;
+  color: var(--forest-muted);
+}
+
+/* Bloco em Sálvia: Atendimento Humanizado + Citação Grande */
+.humanized-sage-box {
+  background-color: var(--surface-sage-light);
+  border-radius: var(--radius-squircle);
+  padding: clamp(1.75rem, 4vw, 3.25rem);
+  border: 1px solid var(--hairline);
+}
+
+.humanized-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.conduct-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+  line-height: 1.22;
+  color: var(--forest);
+  font-weight: 400;
+}
+
+.disclosure-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.disclosure-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--forest);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--forest);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.disclosure-trigger:hover {
+  background-color: var(--forest);
+  color: var(--bg-cream);
+}
+
+.disclosure-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.disclosure-trigger[aria-expanded="true"] .disclosure-icon {
+  transform: rotate(180deg);
+}
+
+.disclosure-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s var(--ease-out);
+}
+
+.disclosure-panel.is-open {
+  grid-template-rows: 1fr;
+}
+
+.disclosure-inner {
+  overflow: hidden;
+}
+
+.disclosure-text {
+  padding-top: 0.5rem;
+  font-size: 1rem;
+  color: var(--forest);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   4. ESPECIALIDADES — BENTO GRID + PAINEL/BOTTOM SHEET
+   ========================================================================== */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.bento-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  padding: 1.65rem;
+  border-radius: var(--radius-card);
+  min-height: 185px;
+  transition: transform 0.35s var(--ease-out), border-color 0.25s ease;
+  position: relative;
+}
+
+.bento-cell:hover {
+  transform: translateY(-2px);
+}
+
+.bento-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.bento-num {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+
+.bento-plus {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.65;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.bento-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+.bento-line {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  opacity: 0.9;
+}
+
+/* Cores individuais por célula do Bento */
+.bento-sage {
+  background-color: var(--surface-sage);
+  color: var(--forest-deep);
+}
+
+.bento-forest {
+  background-color: var(--forest);
+  color: var(--bg-cream);
+}
+
+.bento-cream {
+  background-color: var(--bg-cream);
+  color: var(--forest);
+  border: 1.5px solid var(--hairline-strong);
+}
+
+.bento-coral {
+  background-color: var(--surface-coral-light);
+  color: var(--forest-deep);
+}
+
+.bento-oak {
+  background-color: var(--surface-oak-light);
+  color: var(--forest-deep);
+}
+
+.bento-sage-light {
+  background-color: #EBF1E7;
+  color: var(--forest);
+  border: 1.5px solid var(--hairline-strong);
+}
+
+/* Painel Lateral (Desktop) / Bottom Sheet (Mobile) */
+.spec-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(27, 43, 35, 0.48);
+  z-index: 1090;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s var(--ease-out), visibility 0.35s var(--ease-out);
+}
+
+.spec-drawer-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.spec-drawer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1100;
+  background-color: var(--bg-cream-elevated);
+  color: var(--forest);
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  padding: 1.75rem 20px 2rem;
+  max-height: 85svh;
+  overflow-y: auto;
+  transform: translateY(105%);
+  transition: transform 0.45s var(--ease-out);
+  box-shadow: 0 -8px 32px rgba(27, 43, 35, 0.16);
+}
+
+.spec-drawer.is-open {
+  transform: translateY(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.drawer-close {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--forest);
+}
+
+.drawer-title {
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  margin-bottom: 1rem;
+}
+
+.drawer-desc {
+  font-size: 1.05rem;
+  color: var(--forest-muted);
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   5. CORPO CLÍNICO — CARROSSEL EM CARTÕES DE VISITA
+   ========================================================================== */
+.team-header-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: space-between;
+  margin-bottom: 2.25rem;
+}
+
+.team-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.carousel-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--hairline-strong);
+  color: var(--forest);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: var(--surface-sage-light);
+  border-color: var(--forest);
+}
+
+.team-carousel {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 0.5rem;
+  cursor: grab;
+}
+
+.team-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.team-carousel.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
+.team-bizcard {
+  flex: 0 0 86%;
+  scroll-snap-align: start;
+  background-color: var(--bg-cream-elevated);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-squircle);
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+/* Moldura em pílula vertical para monogramas 3:4 */
+.team-monogram-pill {
+  aspect-ratio: 3 / 4;
+  max-width: 150px;
+  width: 100%;
+  border-radius: var(--radius-pill);
+  background-color: var(--surface-sage-light);
+  border: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 2.65rem;
+  font-weight: 600;
+  color: var(--forest);
+  letter-spacing: -0.03em;
+}
+
+.team-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.team-card-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.team-card-spec {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--forest-muted);
+}
+
+.team-card-cro {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-bottom: 0.45rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.team-card-bio {
+  font-size: 0.95rem;
+  color: var(--forest-muted);
+}
+
+/* ==========================================================================
+   6. CONVÊNIOS — MARQUEE E PAINÉIS LADO A LADO
+   ========================================================================== */
+.marquee-viewport {
+  overflow: hidden;
+  border-block: 1px solid var(--hairline);
+  padding-block: 1.15rem;
+  margin-bottom: 2.5rem;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.marquee-viewport:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.marquee-pill {
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--bg-cream);
+  border: 1px solid var(--hairline-strong);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--forest);
+  white-space: nowrap;
+}
+
+.plans-panels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.plan-panel {
+  border-radius: var(--radius-squircle);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.75rem;
+}
+
+.plan-panel-cream {
+  background-color: var(--bg-cream);
+  color: var(--forest);
+  border: 1.5px solid var(--hairline-strong);
+}
+
+.plan-panel-forest {
+  background-color: var(--forest);
+  color: var(--bg-cream);
+}
+
+.plan-panel-title {
+  font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+  margin-bottom: 0.75rem;
+}
+
+.plan-panel-desc {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.plan-panel-cream .plan-panel-desc {
+  color: var(--forest-muted);
+}
+
+.plan-panel-forest .plan-panel-desc {
+  color: var(--surface-sage-light);
+}
+
+.plan-text-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.plan-text-item {
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--surface-sage-light);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.plan-footnote {
+  font-size: 0.875rem;
+  color: var(--forest-muted);
+}
+
+.private-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.private-list li {
+  border-top: 1px solid var(--hairline-light);
+  padding-top: 0.85rem;
+  font-size: 0.95rem;
+  color: var(--bg-cream);
+}
+
+/* ==========================================================================
+   7. COMO FUNCIONA — STICKY STACK COM BARRA LATERAL
+   ========================================================================== */
+.stack-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.stack-rail {
+  display: none;
+}
+
+.stack-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.stack-card {
+  position: sticky;
+  top: calc(var(--header-height) + 16px);
+  border-radius: var(--radius-squircle);
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border: 1px solid var(--hairline);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  box-shadow: 0 -4px 18px rgba(36, 56, 46, 0.05);
+}
+
+.stack-card:nth-child(1) {
+  background-color: var(--surface-sage-light);
+  top: calc(var(--header-height) + 12px);
+}
+
+.stack-card:nth-child(2) {
+  background-color: var(--bg-cream-elevated);
+  top: calc(var(--header-height) + 26px);
+}
+
+.stack-card:nth-child(3) {
+  background-color: var(--surface-oak-light);
+  top: calc(var(--header-height) + 40px);
+}
+
+.stack-card:nth-child(4) {
+  background-color: var(--surface-coral-light);
+  top: calc(var(--header-height) + 54px);
+}
+
+.stack-num {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.25rem);
+  font-weight: 600;
+  line-height: 0.95;
+  color: var(--forest);
+  font-variant-numeric: tabular-nums;
+}
+
+.stack-title {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  margin-bottom: 0.65rem;
+  color: var(--forest);
+}
+
+.stack-desc {
+  font-size: 1rem;
+  color: var(--forest);
+  opacity: 0.88;
+}
+
+.stack-cta {
+  margin-top: 2.5rem;
+}
+
+/* ==========================================================================
+   8. ESTRUTURA — ABAS AUTOMÁTICAS COM BARRA DE PROGRESSO
+   ========================================================================== */
+.structure-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.structure-tabs {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 0.35rem;
+}
+
+.structure-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.structure-tab {
+  flex: 0 0 auto;
+  position: relative;
+  text-align: left;
+  min-height: 48px;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--hairline-light);
+  color: var(--surface-sage-light);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  overflow: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.structure-tab.is-active {
+  background-color: rgba(247, 243, 234, 0.12);
+  color: var(--bg-cream);
+  border-color: var(--coral);
+}
+
+.tab-progress-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background-color: var(--coral);
+}
+
+.structure-tab.is-active .tab-progress-bar {
+  animation: tabProgressFill 6s linear forwards;
+}
+
+.structure-showcase.is-paused .structure-tab.is-active .tab-progress-bar {
+  animation-play-state: paused;
+}
+
+@keyframes tabProgressFill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.structure-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.structure-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 32px;
+  overflow: hidden;
+  background-color: var(--forest-deep);
+  border: 1px solid var(--hairline-light);
+}
+
+.structure-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.65s var(--ease-out), transform 0.9s var(--ease-out);
+}
+
+.structure-slide-img.is-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.structure-caption {
+  font-size: 1.05rem;
+  color: var(--surface-sage-light);
+  max-width: 60ch;
+}
+
+/* ==========================================================================
+   9. FAQ — DUAS COLUNAS NO DESKTOP
+   ========================================================================== */
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.faq-item {
+  background-color: var(--bg-cream);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.faq-trigger {
+  width: 100%;
+  min-height: 60px;
+  padding: 1.15rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.faq-plus {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--forest);
+  transition: transform 0.35s var(--ease-out);
+}
+
+.faq-item.is-open .faq-plus {
+  transform: rotate(45deg);
+}
+
+.faq-answer-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s var(--ease-out);
+}
+
+.faq-item.is-open .faq-answer-wrap {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  overflow: hidden;
+}
+
+.faq-answer-text {
+  padding: 0 1.4rem 1.35rem;
+  font-size: 0.98rem;
+  color: var(--forest-muted);
+}
+
+/* ==========================================================================
+   10. LOCALIZAÇÃO E AGENDAMENTO
+   ========================================================================== */
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.info-blocks {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-block {
+  border-top: 1px solid var(--hairline-strong);
+  padding-block: 1.35rem;
+}
+
+.info-block:last-of-type {
+  border-bottom: 1px solid var(--hairline-strong);
+  margin-bottom: 1.5rem;
+}
+
+.info-block-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--forest-muted);
+  margin-bottom: 0.6rem;
+}
+
+.info-block-text {
+  font-size: 1rem;
+  color: var(--forest);
+}
+
+.hours-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 10px;
+  font-size: 0.96rem;
+}
+
+.hours-row.is-today {
+  background-color: var(--surface-sage-light);
+  font-weight: 600;
+}
+
+.today-badge {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--forest);
+  color: var(--bg-cream);
+  margin-left: 0.5rem;
+}
+
+.parking-note {
+  margin-top: 0.55rem;
+  font-size: 0.9rem;
+  color: var(--forest-muted);
+}
+
+.contact-links-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.75rem;
+}
+
+.contact-inline-link {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--coral);
+}
+
+.map-squircle {
+  border-radius: var(--radius-squircle);
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  aspect-ratio: 16 / 10;
+  background-color: var(--surface-sage-light);
+}
+
+.map-squircle iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(42%) contrast(94%) sepia(8%);
+}
+
+/* Formulário com Rótulos Flutuantes e Chips */
+.booking-card {
+  background-color: var(--bg-cream-elevated);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-squircle);
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+}
+
+.booking-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+.booking-desc {
+  font-size: 0.95rem;
+  color: var(--forest-muted);
+  margin-bottom: 1.75rem;
+}
+
+.float-field {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.float-input {
+  width: 100%;
+  min-height: 56px;
+  padding: 1.35rem 1rem 0.5rem;
+  border-radius: var(--radius-input);
+  border: 1.5px solid var(--hairline-strong);
+  background-color: var(--bg-cream);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--forest);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.float-textarea {
+  min-height: 104px;
+  resize: vertical;
+}
+
+.float-input:focus {
+  outline: none;
+  border-color: var(--forest);
+  background-color: #FFFFFF;
+}
+
+.float-label {
+  position: absolute;
+  left: 1rem;
+  top: 1.05rem;
+  font-size: 0.95rem;
+  color: var(--forest-muted);
+  pointer-events: none;
+  transition: transform 0.2s var(--ease-out), font-size 0.2s var(--ease-out), top 0.2s var(--ease-out), color 0.2s ease;
+}
+
+.float-input:focus + .float-label,
+.float-input:not(:placeholder-shown) + .float-label {
+  top: 0.45rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.chip-fieldset {
+  border: none;
+  margin-bottom: 1.35rem;
+}
+
+.chip-legend {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: 0.65rem;
+}
+
+.chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.choice-chip {
+  min-height: 44px;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--hairline-strong);
+  background-color: var(--bg-cream);
+  color: var(--forest);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.choice-chip:hover {
+  border-color: var(--forest);
+}
+
+.choice-chip.is-selected {
+  background-color: var(--forest);
+  color: var(--bg-cream);
+  border-color: var(--forest);
+}
+
+.field-error {
+  display: none;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #9A2B1F;
+}
+
+.field-error.is-visible {
+  display: block;
+}
+
+.form-submit-btn {
+  width: 100%;
+  margin-top: 0.35rem;
+}
+
+.form-privacy {
+  margin-top: 0.95rem;
+  font-size: 0.82rem;
+  color: var(--forest-muted);
+  text-align: center;
+  max-width: none;
+}
+
+.form-feedback {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius-input);
+  background-color: var(--surface-sage-light);
+  border: 1px solid var(--hairline-strong);
+  font-size: 0.92rem;
+}
+
+.form-feedback.is-visible {
+  display: block;
+}
+
+.form-feedback a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   11. RODAPÉ
+   ========================================================================== */
+.site-footer {
+  background-color: var(--forest);
+  color: var(--bg-cream);
+  padding-top: 4.5rem;
+  padding-bottom: 5.25rem;
+  overflow: hidden;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--hairline-light);
+}
+
+.footer-col-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--surface-sage-light);
+  margin-bottom: 0.9rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: var(--coral);
+}
+
+.footer-meta {
+  padding-block: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+  color: var(--surface-sage-light);
+}
+
+.footer-wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 12.5vw, 9.5rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: rgba(221, 230, 216, 0.14);
+  user-select: none;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   12. WHATSAPP FLUTUANTE & BARRA FIXA INFERIOR MOBILE
+   ========================================================================== */
+.whatsapp-fab {
+  display: none;
+}
+
+.mobile-sticky-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 940;
+  background-color: rgba(247, 243, 234, 0.97);
+  border-top: 1px solid var(--hairline);
+  padding: 0.55rem 16px calc(0.55rem + env(safe-area-inset-bottom, 0px));
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 0.65rem;
+  transition: transform 0.35s var(--ease-out), opacity 0.3s ease;
+}
+
+.mobile-sticky-bar.is-hidden {
+  transform: translateY(115%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-sticky-bar .btn {
+  min-height: 46px;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   REVELAÇÕES SUAVES DE TEXTO E SQUIRCLES
+   ========================================================================== */
+.reveal-fade {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+}
+
+.reveal-fade.is-waiting {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.squircle-reveal {
+  transition: clip-path 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+}
+
+.squircle-reveal.is-waiting {
+  clip-path: inset(8% 4% 8% 4% round 36px);
+  transform: scale(0.97);
+}
+
+.squircle-reveal.is-visible {
+  clip-path: inset(0% 0% 0% 0% round 32px);
+  transform: scale(1);
+}
+
+/* ==========================================================================
+   BREAKPOINT 768px (TABLETS & DESKTOP PEQUENO)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 32px;
+  }
+
+  .section-band {
+    padding-block: 96px;
+  }
+
+  .status-pill {
+    display: inline-flex;
+  }
+
+  .header-cta {
+    display: inline-flex;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--header-height) + 48px);
+    padding-bottom: 72px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 3rem;
+  }
+
+  .hero-media {
+    order: 0;
+  }
+
+  .hero-squircle {
+    aspect-ratio: 5 / 4;
+  }
+
+  .sticker-1 {
+    left: -18px;
+    top: 24px;
+  }
+
+  .sticker-2 {
+    right: -18px;
+  }
+
+  .sticker-3 {
+    left: 24px;
+    bottom: -14px;
+  }
+
+  .hero-cta-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .hero-cta-group .btn {
+    width: auto;
+  }
+
+  .about-header-grid {
+    grid-template-columns: 1.35fr auto;
+  }
+
+  .pillars-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .humanized-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.5rem;
+  }
+
+  /* Bento Grid Desktop 12 Colunas */
+  .bento-grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.25rem;
+  }
+
+  .bento-lg {
+    grid-column: span 7;
+    min-height: 248px;
+  }
+
+  .bento-md {
+    grid-column: span 5;
+    min-height: 248px;
+  }
+
+  .bento-wide {
+    grid-column: span 8;
+    min-height: 210px;
+  }
+
+  .bento-sm {
+    grid-column: span 4;
+    min-height: 210px;
+  }
+
+  /* Painel lateral no desktop */
+  .spec-drawer {
+    left: auto;
+    top: 0;
+    bottom: 0;
+    width: min(460px, 92vw);
+    max-height: 100svh;
+    border-radius: 28px 0 0 28px;
+    padding: 2.5rem;
+    transform: translateX(105%);
+  }
+
+  .spec-drawer.is-open {
+    transform: translateX(0);
+  }
+
+  .team-header-row {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .team-bizcard {
+    flex: 0 0 430px;
+    grid-template-columns: 138px 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem;
+  }
+
+  .team-monogram-pill {
+    max-width: none;
+  }
+
+  .plans-panels {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Sticky Stack com Barra Lateral */
+  .stack-layout {
+    grid-template-columns: 110px 1fr;
+    gap: 2.5rem;
+  }
+
+  .stack-rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    position: sticky;
+    top: calc(var(--header-height) + 40px);
+    padding-top: 0.5rem;
+  }
+
+  .stack-rail-label {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--forest);
+  }
+
+  .stack-rail-track {
+    width: 3px;
+    height: 180px;
+    border-radius: 99px;
+    background-color: var(--hairline);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .stack-rail-fill {
+    width: 100%;
+    height: 25%;
+    background-color: var(--coral);
+    border-radius: 99px;
+    transition: height 0.35s var(--ease-out);
+  }
+
+  .stack-card {
+    grid-template-columns: 140px 1fr;
+    gap: 2rem;
+  }
+
+  .faq-layout {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 3.5rem;
+  }
+
+  .faq-sticky-col {
+    position: sticky;
+    top: calc(var(--header-height) + 32px);
+  }
+
+  .location-grid {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 3rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  }
+
+  .footer-meta {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Esconde barra mobile e exibe botão discreto de WhatsApp no desktop */
+  .mobile-sticky-bar {
+    display: none;
+  }
+
+  .whatsapp-fab {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 940;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 48px;
+    padding: 0.65rem 1.1rem;
+    border-radius: var(--radius-pill);
+    background-color: var(--forest);
+    color: var(--bg-cream);
+    border: 1px solid var(--hairline-light);
+    box-shadow: 0 6px 20px rgba(27, 43, 35, 0.18);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background-color 0.25s ease, transform 0.25s var(--ease-out);
+  }
+
+  .whatsapp-fab:hover {
+    background-color: var(--forest-deep);
+    transform: translateY(-2px);
+  }
+
+  .whatsapp-fab-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--whatsapp);
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINT 1100px (DESKTOP PADRÃO)
+   ========================================================================== */
+@media (min-width: 1100px) {
+  .section-band {
+    padding-block: 118px;
+  }
+
+  .header-nav {
+    display: block;
+  }
+
+  .menu-trigger {
+    display: none;
+  }
+
+  .structure-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .structure-tabs {
+    flex-direction: column;
+    overflow: visible;
+    gap: 0.75rem;
+  }
+
+  .structure-tab {
+    border-radius: 18px;
+    padding: 1.1rem 1.25rem;
+    border-color: var(--hairline-light);
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINT 1440px (TELAS AMPLAS)
+   ========================================================================== */
+@media (min-width: 1440px) {
+  :root {
+    --container-max: 1320px;
+  }
+
+  .section-band {
+    padding-block: 132px;
+  }
+}
+
+/* ==========================================================================
+   PREFERS-REDUCED-MOTION
+   Desativa parallax, marquee, autoplay e revelações animadas
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .marquee-group-clone {
+    display: none !important;
+  }
+
+  .reveal-fade.is-waiting,
+  .squircle-reveal.is-waiting {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .smile-underline.is-waiting path {
+    stroke-dashoffset: 0 !important;
+  }
+}
