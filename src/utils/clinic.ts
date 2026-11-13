@@ -96,3 +96,61 @@ export function buildClinicWhatsAppUrl(
 
   return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
 }
+
+export const CAROUSEL_AUTOPLAY_MS = 4000;
+
+/**
+ * Computes next index for looping horizontal center-focus carousel.
+ */
+export function getNextCarouselIndex(currentIndex: number, step: number, total: number): number {
+  if (total <= 0) return 0;
+  return (((currentIndex + step) % total) + total) % total;
+}
+
+export interface CarouselAutoplayState {
+  activeIndex: number;
+  inViewport: boolean;
+  remainingMs: number | null;
+}
+
+/**
+ * Pure state transitions matching the site's 4s carousel behavior:
+ * - Leaving the carousel freezes activeIndex and cancels pending countdown.
+ * - Returning to the carousel restarts a fresh 4000ms countdown from the paused slide.
+ */
+export function createCarouselAutoplayController(total: number, intervalMs: number = CAROUSEL_AUTOPLAY_MS) {
+  const state: CarouselAutoplayState = {
+    activeIndex: 0,
+    inViewport: false,
+    remainingMs: null,
+  };
+
+  return {
+    getState: (): CarouselAutoplayState => ({ ...state }),
+    enterViewport: () => {
+      state.inViewport = true;
+      state.remainingMs = intervalMs;
+    },
+    leaveViewport: () => {
+      state.inViewport = false;
+      state.remainingMs = null;
+    },
+    advanceTime: (elapsedMs: number) => {
+      if (!state.inViewport || state.remainingMs === null) return;
+      if (elapsedMs >= state.remainingMs) {
+        state.activeIndex = getNextCarouselIndex(state.activeIndex, 1, total);
+        state.remainingMs = intervalMs;
+      } else {
+        state.remainingMs -= elapsedMs;
+      }
+    },
+    goTo: (idx: number) => {
+      state.activeIndex = getNextCarouselIndex(idx, 0, total);
+      if (state.inViewport) {
+        state.remainingMs = intervalMs;
+      }
+    },
+  };
+}
+
+

@@ -4,6 +4,9 @@ import {
   getClinicStatus,
   validateExtendedAppointment,
   buildClinicWhatsAppUrl,
+  getNextCarouselIndex,
+  CAROUSEL_AUTOPLAY_MS,
+  createCarouselAutoplayController,
 } from '../src/utils/clinic.js';
 
 test('getClinicStatus detects open hours on weekday', () => {
@@ -47,13 +50,47 @@ test('buildClinicWhatsAppUrl includes specialty, time preference, and notes', ()
   const url = buildClinicWhatsAppUrl({
     nome: 'Fernanda Lima',
     telefone: '(11) 98765-4321',
-    interesse: 'Ortodontia',
+    interesse: 'Implantes e Próteses',
     preferencia: 'Manhã',
     observacao: 'Convênio SulAmérica',
   });
   const decoded = decodeURIComponent(url);
   assert.ok(decoded.includes('Fernanda Lima'));
-  assert.ok(decoded.includes('Ortodontia'));
+  assert.ok(decoded.includes('Implantes e Próteses'));
   assert.ok(decoded.includes('Manhã'));
   assert.ok(decoded.includes('Convênio SulAmérica'));
 });
+
+test('getNextCarouselIndex wraps forward and backward cleanly', () => {
+  assert.equal(getNextCarouselIndex(0, 1, 6), 1);
+  assert.equal(getNextCarouselIndex(5, 1, 6), 0);
+  assert.equal(getNextCarouselIndex(0, -1, 6), 5);
+  assert.equal(getNextCarouselIndex(2, -1, 4), 1);
+});
+
+test('carousel controller pauses at stopped slide on exit and recounts 4000ms on return', () => {
+  assert.equal(CAROUSEL_AUTOPLAY_MS, 4000);
+  const ctrl = createCarouselAutoplayController(6);
+
+  // Enter carousel and advance after 4000ms to slide 1, then partially 2500ms
+  ctrl.enterViewport();
+  ctrl.advanceTime(4000);
+  assert.equal(ctrl.getState().activeIndex, 1);
+  ctrl.advanceTime(2500);
+  assert.equal(ctrl.getState().activeIndex, 1);
+
+  // Leave carousel: freezes at slide 1 with no pending countdown
+  ctrl.leaveViewport();
+  ctrl.advanceTime(10000);
+  assert.equal(ctrl.getState().activeIndex, 1);
+  assert.equal(ctrl.getState().remainingMs, null);
+
+  // Return to carousel: must wait full 4000ms again before advancing to slide 2
+  ctrl.enterViewport();
+  ctrl.advanceTime(3900);
+  assert.equal(ctrl.getState().activeIndex, 1);
+  ctrl.advanceTime(100);
+  assert.equal(ctrl.getState().activeIndex, 2);
+});
+
+

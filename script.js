@@ -1,15 +1,18 @@
 (function () {
   'use strict';
 
-  const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isDesktopPointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+  var reducedMotion =
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // =========================================================================
-  // 1. STATUS DA CLÍNICA (HORÁRIO DE SÃO PAULO) & DESTAQUE DO DIA EM LOCALIZAÇÃO
+  // 1. STATUS DA CLÍNICA (FUSO DE SÃO PAULO) & HORÁRIO DE HOJE
   // =========================================================================
   function getSaoPauloNow() {
     try {
-      const spString = new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' });
+      var spString = new Date().toLocaleString('en-US', {
+        timeZone: 'America/Sao_Paulo',
+      });
       return new Date(spString);
     } catch (_err) {
       return new Date();
@@ -17,11 +20,11 @@
   }
 
   function computeClinicStatus(now) {
-    const day = now.getDay(); // 0 = Dom, 1 = Seg ... 6 = Sáb
-    const minutes = now.getHours() * 60 + now.getMinutes();
-    const openMin = 8 * 60;
-    const weekdayClose = 19 * 60;
-    const satClose = 13 * 60;
+    var day = now.getDay(); // 0 = Dom ... 6 = Sáb
+    var minutes = now.getHours() * 60 + now.getMinutes();
+    var openMin = 8 * 60;
+    var weekdayClose = 19 * 60;
+    var satClose = 13 * 60;
 
     if (day >= 1 && day <= 5) {
       if (minutes >= openMin && minutes < weekdayClose) {
@@ -47,10 +50,10 @@
   }
 
   function applyClinicStatus() {
-    const status = computeClinicStatus(getSaoPauloNow());
-    const pill = document.getElementById('clinicStatusPill');
-    const pillText = document.getElementById('clinicStatusText');
-    const mobileStatus = document.getElementById('mobileStatusInline');
+    var status = computeClinicStatus(getSaoPauloNow());
+    var pill = document.getElementById('clinicStatusPill');
+    var pillText = document.getElementById('clinicStatusText');
+    var mobileStatus = document.getElementById('mobileStatusInline');
 
     if (pill && pillText) {
       pillText.textContent = status.label;
@@ -60,16 +63,15 @@
       mobileStatus.textContent = status.label + ' · Pinheiros, São Paulo';
     }
 
-    const hourRows = document.querySelectorAll('.hours-row[data-day-group]');
-    hourRows.forEach(function (row) {
+    document.querySelectorAll('.hours-row[data-day-group]').forEach(function (row) {
       if (row.getAttribute('data-day-group') === status.dayGroup) {
         row.classList.add('is-today');
         if (!row.querySelector('.today-badge')) {
-          const badge = document.createElement('span');
+          var badge = document.createElement('span');
           badge.className = 'today-badge';
           badge.textContent = 'Hoje';
-          const labelCell = row.querySelector('.hours-day');
-          if (labelCell) labelCell.appendChild(badge);
+          var labelEl = row.querySelector('.hours-day');
+          if (labelEl) labelEl.appendChild(badge);
         }
       }
     });
@@ -78,65 +80,42 @@
   applyClinicStatus();
 
   // =========================================================================
-  // 2. HEADER AUTO-HIDE ON SCROLL, BARRA DE PROGRESSO E SCROLLSPY
+  // 2. HEADER TRANSPARENTE -> CREME AO ROLAR & SCROLLSPY
   // =========================================================================
-  const siteHeader = document.getElementById('siteHeader');
-  const progressBar = document.getElementById('readingProgress');
-  const navLinks = document.querySelectorAll('.header-nav-link');
-  const observedSections = document.querySelectorAll('section[id]');
+  var siteHeader = document.getElementById('siteHeader');
+  var navLinks = document.querySelectorAll('.header-nav-link');
+  var sections = document.querySelectorAll('section[id]');
 
-  let lastScrollY = window.scrollY || 0;
-  let mobileMenuOpen = false;
-
-  function onScrollUpdate() {
-    const currentY = window.scrollY || document.documentElement.scrollTop || 0;
-    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
-    if (progressBar && docHeight > 0) {
-      const pct = Math.min(100, Math.max(0, (currentY / docHeight) * 100));
-      progressBar.style.width = pct.toFixed(2) + '%';
+  function handleHeaderScroll() {
+    var scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    if (siteHeader) {
+      siteHeader.classList.toggle('is-scrolled', scrollY > 36);
     }
 
-    if (siteHeader && !mobileMenuOpen) {
-      if (currentY > 120 && currentY > lastScrollY + 4) {
-        siteHeader.classList.add('is-hidden');
-      } else if (currentY < lastScrollY - 4 || currentY <= 80) {
-        siteHeader.classList.remove('is-hidden');
-      }
-    }
-
-    // Active Nav Link
-    const probeY = currentY + 150;
-    let activeId = '';
-    observedSections.forEach(function (sec) {
+    var probeY = scrollY + 140;
+    var activeId = '';
+    sections.forEach(function (sec) {
       if (probeY >= sec.offsetTop && probeY < sec.offsetTop + sec.offsetHeight) {
         activeId = sec.id;
       }
     });
 
     navLinks.forEach(function (link) {
-      const matches = link.getAttribute('href') === '#' + activeId;
-      link.classList.toggle('is-active', matches);
-      if (matches) {
-        link.setAttribute('aria-current', 'true');
-      } else {
-        link.removeAttribute('aria-current');
-      }
+      var isCurrent = link.getAttribute('href') === '#' + activeId;
+      link.classList.toggle('is-active', isCurrent);
     });
-
-    lastScrollY = currentY;
   }
 
-  window.addEventListener('scroll', onScrollUpdate, { passive: true });
-  onScrollUpdate();
+  window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+  handleHeaderScroll();
 
   // =========================================================================
-  // 3. MENU MOBILE TELA CHEIA VERDE-FLORESTA
+  // 3. MENU MOBILE TELA CHEIA
   // =========================================================================
-  const menuTrigger = document.getElementById('menuToggleBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileMenuClose = document.getElementById('mobileMenuCloseBtn');
-  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link, .mobile-menu-cta');
+  var menuTrigger = document.getElementById('menuToggleBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileMenuClose = document.getElementById('mobileMenuCloseBtn');
+  var mobileMenuOpen = false;
 
   function setMobileMenuState(open) {
     if (!mobileMenu || !menuTrigger) return;
@@ -147,7 +126,6 @@
     document.body.style.overflow = open ? 'hidden' : '';
 
     if (open) {
-      if (siteHeader) siteHeader.classList.remove('is-hidden');
       if (mobileMenuClose) mobileMenuClose.focus();
     } else {
       menuTrigger.focus();
@@ -163,190 +141,408 @@
         setMobileMenuState(false);
       });
     }
-    mobileMenuLinks.forEach(function (link) {
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         setMobileMenuState(false);
       });
     });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuState(false);
+      }
+    });
   }
 
   // =========================================================================
-  // 4. LENIS SMOOTH SCROLL (SÓ DESKTOP) + ÂNCORAS SUAVES
+  // 4. REVELAÇÕES LEVES, ARCOS DE SORRISO E CONTADOR 6+
   // =========================================================================
-  let lenisInstance = null;
-  if (!reducedMotion && window.innerWidth >= 1100 && typeof window.Lenis === 'function') {
-    lenisInstance = new window.Lenis({
-      duration: 1.05,
-      easing: function (t) {
-        return Math.min(1, 1.001 - Math.pow(2, -10 * t));
-      },
-      smoothWheel: true,
-    });
-
-    if (typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined') {
-      window.gsap.registerPlugin(window.ScrollTrigger);
-      lenisInstance.on('scroll', window.ScrollTrigger.update);
-      window.gsap.ticker.add(function (time) {
-        lenisInstance.raf(time * 1000);
-      });
-      window.gsap.ticker.lagSmoothing(0);
-    } else {
-      function raf(time) {
-        lenisInstance.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-    }
-  }
-
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      const targetId = anchor.getAttribute('href');
-      if (!targetId || targetId === '#') return;
-      const targetEl = document.querySelector(targetId);
-      if (!targetEl) return;
-
-      if (lenisInstance) {
-        e.preventDefault();
-        lenisInstance.scrollTo(targetEl, { offset: -72 });
-      }
-    });
-  });
-
-  // =========================================================================
-  // 5. REVELAÇÕES, ARCOS DE SORRISO, CONTADOR E PARALLAX DOS ADESIVOS
-  // =========================================================================
-  const revealTargets = document.querySelectorAll('.reveal-fade, .squircle-reveal, .smile-underline');
+  var revealNodes = document.querySelectorAll('.reveal, .smile-underline');
 
   if (!reducedMotion && 'IntersectionObserver' in window) {
-    revealTargets.forEach(function (el) {
-      // Elementos no Hero acima da dobra já animam na entrada imediata
-      if (!el.closest('.hero-section')) {
+    revealNodes.forEach(function (el) {
+      if (!el.closest('.hero')) {
         el.classList.add('is-waiting');
       }
     });
 
-    const revealObserver = new IntersectionObserver(
+    var revealObserver = new IntersectionObserver(
       function (entries, obs) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('is-waiting');
-            if (entry.target.classList.contains('smile-underline')) {
-              entry.target.classList.add('is-drawn');
-            } else {
-              entry.target.classList.add('is-visible');
-            }
-            obs.unobserve(entry.target);
+          if (!entry.isIntersecting) return;
+          entry.target.classList.remove('is-waiting');
+          if (entry.target.classList.contains('smile-underline')) {
+            entry.target.classList.add('is-drawn');
+          } else {
+            entry.target.classList.add('is-visible');
           }
+          obs.unobserve(entry.target);
         });
       },
-      { threshold: 0.14, rootMargin: '0px 0px -30px 0px' }
+      { threshold: 0.14, rootMargin: '0px 0px -24px 0px' }
     );
 
-    revealTargets.forEach(function (el) {
+    revealNodes.forEach(function (el) {
       if (el.classList.contains('is-waiting')) {
         revealObserver.observe(el);
       } else if (el.classList.contains('smile-underline')) {
         setTimeout(function () {
           el.classList.add('is-drawn');
-        }, 180);
+        }, 160);
       }
+    });
+  } else {
+    document.querySelectorAll('.smile-underline').forEach(function (el) {
+      el.classList.add('is-drawn');
     });
   }
 
-  // Contador animado "6+"
-  const counterEl = document.getElementById('specialtiesCounter');
+  var counterEl = document.getElementById('specialtiesCounter');
   if (counterEl && !reducedMotion && 'IntersectionObserver' in window) {
-    const targetValue = parseInt(counterEl.getAttribute('data-target') || '6', 10);
-    let hasCounted = false;
-
-    const counterObserver = new IntersectionObserver(
+    var targetVal = parseInt(counterEl.getAttribute('data-target') || '6', 10);
+    var counterDone = false;
+    var counterObs = new IntersectionObserver(
       function (entries, obs) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting && !hasCounted) {
-            hasCounted = true;
-            const start = performance.now();
-            const duration = 750;
-            function step(now) {
-              const progress = Math.min(1, (now - start) / duration);
-              const eased = 1 - Math.pow(1 - progress, 3);
-              counterEl.textContent = String(Math.max(1, Math.round(eased * targetValue))) + '+';
-              if (progress < 1) {
-                requestAnimationFrame(step);
-              } else {
-                counterEl.textContent = targetValue + '+';
-              }
+          if (!entry.isIntersecting || counterDone) return;
+          counterDone = true;
+          var start = performance.now();
+          var duration = 650;
+          function tick(now) {
+            var progress = Math.min(1, (now - start) / duration);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            counterEl.textContent = String(Math.max(1, Math.round(eased * targetVal))) + '+';
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            } else {
+              counterEl.textContent = targetVal + '+';
             }
-            requestAnimationFrame(step);
-            obs.unobserve(counterEl);
           }
+          requestAnimationFrame(tick);
+          obs.unobserve(counterEl);
         });
       },
       { threshold: 0.5 }
     );
-    counterObserver.observe(counterEl);
+    counterObs.observe(counterEl);
   }
 
-  // Parallax leve (máx 8%) nos 3 adesivos do Hero em velocidades diferentes
-  const stickers = document.querySelectorAll('.hero-sticker[data-speed]');
-  if (stickers.length && !reducedMotion) {
-    function updateParallax() {
-      if (window.innerWidth < 768) {
-        stickers.forEach(function (s) {
-          s.style.transform = '';
-        });
-        return;
-      }
-      const scrollY = window.scrollY || 0;
-      if (scrollY > window.innerHeight * 1.3) return;
+  // =========================================================================
+  // 5. CARROSSEL COM DESTAQUE CENTRAL (Reutilizável em 4 seções)
+  // =========================================================================
+  var structureCaptionEl = document.getElementById('structureActiveCaption');
 
-      stickers.forEach(function (sticker) {
-        const speed = parseFloat(sticker.getAttribute('data-speed') || '0.05');
-        const baseRotate = sticker.getAttribute('data-rotate') || '0deg';
-        const offset = Math.min(34, Math.max(-34, scrollY * speed));
-        sticker.style.transform = 'translate3d(0, ' + offset.toFixed(1) + 'px, 0) rotate(' + baseRotate + ')';
+  function initCenterFocusCarousel(carousel) {
+    var track = carousel.querySelector('.cf-track');
+    var cards = Array.prototype.slice.call(carousel.querySelectorAll('.cf-card'));
+    var dotsWrap = carousel.querySelector('.cf-dots');
+    var carouselType = carousel.getAttribute('data-carousel');
+
+    if (!track || !cards.length) return;
+
+    var AUTO_INTERVAL_MS = 4000;
+    var activeIndex = 0;
+    var interactionPaused = false;
+    var inViewport = false;
+    var autoTimer = null;
+    var suppressClickUntil = 0;
+
+    // Gera pontos indicadores dinâmicos
+    var dots = [];
+    if (dotsWrap) {
+      dotsWrap.innerHTML = '';
+      cards.forEach(function (_card, idx) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'cf-dot' + (idx === 0 ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Ir para o item ' + (idx + 1));
+        dot.setAttribute('aria-current', idx === 0 ? 'true' : 'false');
+        dot.addEventListener('click', function () {
+          goToIndex(idx, true);
+          restartAutoCount();
+        });
+        dotsWrap.appendChild(dot);
+        dots.push(dot);
       });
     }
-    window.addEventListener('scroll', updateParallax, { passive: true });
-  }
 
-  // Efeito magnético sutil em botões primários (desktop apenas)
-  if (!reducedMotion && isDesktopPointer && window.innerWidth >= 1100) {
-    document.querySelectorAll('.btn-magnetic').forEach(function (btn) {
-      btn.addEventListener('mousemove', function (e) {
-        const rect = btn.getBoundingClientRect();
-        const relX = (e.clientX - rect.left - rect.width / 2) * 0.14;
-        const relY = (e.clientY - rect.top - rect.height / 2) * 0.18;
-        btn.style.transform = 'translate3d(' + relX.toFixed(1) + 'px, ' + relY.toFixed(1) + 'px, 0)';
+    function setActiveCard(idx) {
+      if (idx < 0 || idx >= cards.length) return;
+      activeIndex = idx;
+
+      cards.forEach(function (c, i) {
+        c.classList.toggle('is-center', i === idx);
       });
-      btn.addEventListener('mouseleave', function () {
-        btn.style.transform = '';
+
+      dots.forEach(function (d, i) {
+        d.classList.toggle('is-active', i === idx);
+        d.setAttribute('aria-current', i === idx ? 'true' : 'false');
       });
+
+      if (carouselType === 'estrutura' && structureCaptionEl) {
+        var caption = cards[idx].getAttribute('data-caption');
+        if (caption) structureCaptionEl.textContent = caption;
+      }
+    }
+
+    function goToIndex(idx, smooth) {
+      var wrapped = ((idx % cards.length) + cards.length) % cards.length;
+      var card = cards[wrapped];
+      if (!card) return;
+      var targetLeft = card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
+      track.scrollTo({
+        left: Math.max(0, targetLeft),
+        behavior: smooth && !reducedMotion ? 'smooth' : 'auto',
+      });
+      setActiveCard(wrapped);
+    }
+
+    function syncClosestToCenter() {
+      var centerX = track.scrollLeft + track.clientWidth / 2;
+      var bestIdx = 0;
+      var bestDist = Infinity;
+      cards.forEach(function (card, idx) {
+        var cardCenter = card.offsetLeft + card.clientWidth / 2;
+        var dist = Math.abs(centerX - cardCenter);
+        if (dist < bestDist) {
+          bestDist = dist;
+          bestIdx = idx;
+        }
+      });
+      setActiveCard(bestIdx);
+    }
+
+    // Detecta card central via IntersectionObserver com rootMargin lateral de -40%
+    if ('IntersectionObserver' in window) {
+      var centerObserver = new IntersectionObserver(
+        function (entries) {
+          if (entries.some(function (e) { return e.isIntersecting; })) {
+            syncClosestToCenter();
+          }
+        },
+        {
+          root: track,
+          rootMargin: '0px -40% 0px -40%',
+          threshold: 0.1,
+        }
+      );
+
+      cards.forEach(function (card) {
+        centerObserver.observe(card);
+      });
+    }
+
+    var scrollRaf = 0;
+    track.addEventListener(
+      'scroll',
+      function () {
+        if (scrollRaf) return;
+        scrollRaf = requestAnimationFrame(function () {
+          scrollRaf = 0;
+          syncClosestToCenter();
+        });
+      },
+      { passive: true }
+    );
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        goToIndex(activeIndex, false);
+      }, 120);
     });
-  }
 
-  // =========================================================================
-  // 6. DISCLOSURE "ATENDIMENTO HUMANIZADO" NA SEÇÃO SOBRE
-  // =========================================================================
-  const disclosureBtn = document.getElementById('humanizedDisclosureBtn');
-  const disclosurePanel = document.getElementById('humanizedDisclosurePanel');
+    function clearAutoTimers() {
+      clearTimeout(autoTimer);
+      autoTimer = null;
+    }
 
-  if (disclosureBtn && disclosurePanel) {
-    disclosureBtn.addEventListener('click', function () {
-      const isOpen = disclosureBtn.getAttribute('aria-expanded') === 'true';
-      disclosureBtn.setAttribute('aria-expanded', String(!isOpen));
-      disclosurePanel.classList.toggle('is-open', !isOpen);
-      const labelEl = disclosureBtn.querySelector('.disclosure-label');
-      if (labelEl) {
-        labelEl.textContent = !isOpen ? 'Recolher detalhes' : 'Ler mais sobre nossa conduta';
+    function canAutoPlay() {
+      return !reducedMotion && !interactionPaused && inViewport && !document.hidden;
+    }
+
+    function scheduleNextTick() {
+      clearAutoTimers();
+      if (!canAutoPlay()) return;
+      autoTimer = setTimeout(function () {
+        if (!canAutoPlay()) return;
+        goToIndex(activeIndex + 1, true);
+        scheduleNextTick();
+      }, AUTO_INTERVAL_MS);
+    }
+
+    function restartAutoCount() {
+      interactionPaused = false;
+      scheduleNextTick();
+    }
+
+    // Ao sair da viewport, pausa exatamente no item atual; ao voltar, conta 4s novamente
+    if ('IntersectionObserver' in window) {
+      var visibilityObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            inViewport = entry.isIntersecting;
+            if (inViewport) {
+              restartAutoCount();
+            } else {
+              interactionPaused = false;
+              clearAutoTimers();
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      visibilityObserver.observe(carousel);
+    } else {
+      inViewport = true;
+      scheduleNextTick();
+    }
+
+    // Pausa quando a aba fica oculta; conta 4s novamente ao retornar
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        clearAutoTimers();
+      } else if (inViewport) {
+        restartAutoCount();
       }
     });
+
+    // Clique nos cards: foca card lateral ao clicar (e abre modal de especialidade após focar)
+    cards.forEach(function (card, idx) {
+      card.addEventListener('click', function (e) {
+        if (Date.now() < suppressClickUntil) {
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
+
+        var specKey = card.getAttribute('data-spec');
+        if (idx !== activeIndex) {
+          goToIndex(idx, true);
+          restartAutoCount();
+          if (specKey) {
+            setTimeout(function () {
+              openSpecialtyDialog(specKey, card);
+            }, 220);
+          }
+          return;
+        }
+
+        if (specKey) {
+          openSpecialtyDialog(specKey, card);
+        }
+      });
+    });
+
+    // Arrastar com o mouse no desktop
+    var isMouseDown = false;
+    var dragStartX = 0;
+    var dragStartScrollLeft = 0;
+    var hasDragged = false;
+
+    track.addEventListener('dragstart', function (e) {
+      e.preventDefault();
+    });
+
+    track.addEventListener('mousedown', function (e) {
+      if (e.button !== 0) return;
+      isMouseDown = true;
+      hasDragged = false;
+      dragStartX = e.clientX;
+      dragStartScrollLeft = track.scrollLeft;
+      interactionPaused = true;
+      clearAutoTimers();
+    });
+
+    window.addEventListener('mousemove', function (e) {
+      if (!isMouseDown) return;
+      var dx = e.clientX - dragStartX;
+      if (!hasDragged && Math.abs(dx) > 6) {
+        hasDragged = true;
+        track.classList.add('is-dragging');
+      }
+      if (hasDragged) {
+        track.scrollLeft = dragStartScrollLeft - dx;
+      }
+    });
+
+    function finishMouseDrag() {
+      if (!isMouseDown) return;
+      isMouseDown = false;
+      track.classList.remove('is-dragging');
+      if (hasDragged) {
+        suppressClickUntil = Date.now() + 140;
+        syncClosestToCenter();
+        goToIndex(activeIndex, true);
+      }
+      restartAutoCount();
+    }
+
+    window.addEventListener('mouseup', finishMouseDrag);
+    window.addEventListener('blur', finishMouseDrag);
+
+    // Eventos de toque (dedo no mobile), hover, foco e teclado
+    track.addEventListener(
+      'touchstart',
+      function () {
+        interactionPaused = true;
+        clearAutoTimers();
+      },
+      { passive: true }
+    );
+    track.addEventListener(
+      'touchend',
+      function () {
+        restartAutoCount();
+      },
+      { passive: true }
+    );
+    track.addEventListener(
+      'touchcancel',
+      function () {
+        restartAutoCount();
+      },
+      { passive: true }
+    );
+    carousel.addEventListener('mouseenter', function () {
+      interactionPaused = true;
+      clearAutoTimers();
+    });
+    carousel.addEventListener('mouseleave', function () {
+      if (!isMouseDown) {
+        restartAutoCount();
+      }
+    });
+    carousel.addEventListener('focusin', function () {
+      interactionPaused = true;
+      clearAutoTimers();
+    });
+    carousel.addEventListener('focusout', function () {
+      restartAutoCount();
+    });
+
+    carousel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        goToIndex(activeIndex + 1, true);
+        restartAutoCount();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goToIndex(activeIndex - 1, true);
+        restartAutoCount();
+      }
+    });
+
+    // Centraliza o primeiro item ao iniciar
+    setActiveCard(0);
   }
 
+  document.querySelectorAll('.cf-carousel').forEach(initCenterFocusCarousel);
+
   // =========================================================================
-  // 7. ESPECIALIDADES BENTO GRID -> PAINEL LATERAL / BOTTOM SHEET
+  // 6. GAVETA <dialog> DE ESPECIALIDADES
   // =========================================================================
-  const specialtiesData = {
+  var specialtiesData = {
     'clinica-geral': {
       num: '01',
       title: 'Clínica Geral',
@@ -379,256 +575,99 @@
     },
   };
 
-  const drawer = document.getElementById('specDrawer');
-  const drawerBackdrop = document.getElementById('specDrawerBackdrop');
-  const drawerClose = document.getElementById('specDrawerClose');
-  const drawerNum = document.getElementById('drawerNum');
-  const drawerTitle = document.getElementById('drawerTitle');
-  const drawerDesc = document.getElementById('drawerDesc');
-  const drawerCta = document.getElementById('drawerCta');
-  let lastTriggerCell = null;
+  var specDialog = document.getElementById('specDialog');
+  var specDialogNum = document.getElementById('specDialogNum');
+  var specDialogTitle = document.getElementById('specDialogTitle');
+  var specDialogDesc = document.getElementById('specDialogDesc');
+  var specDialogCta = document.getElementById('specDialogCta');
+  var specDialogCloseBtn = document.getElementById('specDialogCloseBtn');
+  var lastSpecTrigger = null;
 
-  function openSpecialtyDrawer(specKey, triggerEl) {
-    const spec = specialtiesData[specKey];
-    if (!spec || !drawer || !drawerBackdrop) return;
-    lastTriggerCell = triggerEl || null;
+  function openSpecialtyDialog(specKey, triggerEl) {
+    var spec = specialtiesData[specKey];
+    if (!spec || !specDialog) return;
+    lastSpecTrigger = triggerEl || null;
 
-    if (drawerNum) drawerNum.textContent = spec.num;
-    if (drawerTitle) drawerTitle.textContent = spec.title;
-    if (drawerDesc) drawerDesc.textContent = spec.desc;
-    if (drawerCta) {
-      drawerCta.textContent = 'Agendar avaliação em ' + spec.title;
-      const msg = 'Olá! Gostaria de agendar uma avaliação em ' + spec.title + ' na Clínica Sorriso Pleno.';
-      drawerCta.href = 'https://wa.me/5511999998888?text=' + encodeURIComponent(msg);
+    if (specDialogNum) specDialogNum.textContent = spec.num;
+    if (specDialogTitle) specDialogTitle.textContent = spec.title;
+    if (specDialogDesc) specDialogDesc.textContent = spec.desc;
+    if (specDialogCta) {
+      specDialogCta.textContent = 'Agendar avaliação em ' + spec.title;
+      var msg =
+        'Olá! Gostaria de agendar uma avaliação em ' +
+        spec.title +
+        ' na Clínica Sorriso Pleno.';
+      specDialogCta.href = 'https://wa.me/5511999998888?text=' + encodeURIComponent(msg);
     }
 
-    drawer.hidden = false;
-    drawerBackdrop.hidden = false;
-    requestAnimationFrame(function () {
-      drawer.classList.add('is-open');
-      drawerBackdrop.classList.add('is-open');
-    });
-    if (drawerClose) drawerClose.focus();
+    if (typeof specDialog.showModal === 'function') {
+      specDialog.showModal();
+    } else {
+      specDialog.setAttribute('open', 'open');
+    }
+    if (specDialogCloseBtn) specDialogCloseBtn.focus();
   }
 
-  function closeSpecialtyDrawer() {
-    if (!drawer || !drawerBackdrop) return;
-    drawer.classList.remove('is-open');
-    drawerBackdrop.classList.remove('is-open');
-    setTimeout(function () {
-      if (!drawer.classList.contains('is-open')) {
-        drawer.hidden = true;
-        drawerBackdrop.hidden = true;
-      }
-    }, 350);
-    if (lastTriggerCell) {
-      lastTriggerCell.focus();
-      lastTriggerCell = null;
+  function closeSpecialtyDialog() {
+    if (!specDialog) return;
+    if (typeof specDialog.close === 'function') {
+      specDialog.close();
+    } else {
+      specDialog.removeAttribute('open');
     }
-  }
-
-  document.querySelectorAll('.bento-cell[data-spec]').forEach(function (cell) {
-    cell.addEventListener('click', function () {
-      openSpecialtyDrawer(cell.getAttribute('data-spec'), cell);
-    });
-  });
-
-  if (drawerClose) drawerClose.addEventListener('click', closeSpecialtyDrawer);
-  if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeSpecialtyDrawer);
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      if (drawer && drawer.classList.contains('is-open')) {
-        closeSpecialtyDrawer();
-      }
-      if (mobileMenuOpen) {
-        setMobileMenuState(false);
-      }
-    }
-  });
-
-  // =========================================================================
-  // 8. CORPO CLÍNICO — CARROSSEL ARRASTÁVEL COM AUTO-AVANÇO LENTO
-  // =========================================================================
-  const teamCarousel = document.getElementById('teamCarousel');
-  const teamPrev = document.getElementById('teamPrevBtn');
-  const teamNext = document.getElementById('teamNextBtn');
-
-  if (teamCarousel) {
-    let teamPaused = false;
-    let isDragging = false;
-    let startX = 0;
-    let startScrollLeft = 0;
-
-    function scrollTeam(direction) {
-      const card = teamCarousel.querySelector('.team-bizcard');
-      const step = card ? card.getBoundingClientRect().width + 20 : 340;
-      const maxScroll = teamCarousel.scrollWidth - teamCarousel.clientWidth;
-
-      if (direction > 0 && teamCarousel.scrollLeft >= maxScroll - 8) {
-        teamCarousel.scrollTo({ left: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
-      } else if (direction < 0 && teamCarousel.scrollLeft <= 8) {
-        teamCarousel.scrollTo({ left: maxScroll, behavior: reducedMotion ? 'auto' : 'smooth' });
-      } else {
-        teamCarousel.scrollBy({ left: step * direction, behavior: reducedMotion ? 'auto' : 'smooth' });
-      }
-    }
-
-    if (teamPrev) teamPrev.addEventListener('click', function () { scrollTeam(-1); });
-    if (teamNext) teamNext.addEventListener('click', function () { scrollTeam(1); });
-
-    teamCarousel.addEventListener('mouseenter', function () { teamPaused = true; });
-    teamCarousel.addEventListener('mouseleave', function () {
-      teamPaused = false;
-      isDragging = false;
-      teamCarousel.classList.remove('is-dragging');
-    });
-    teamCarousel.addEventListener('touchstart', function () { teamPaused = true; }, { passive: true });
-    teamCarousel.addEventListener('touchend', function () {
-      setTimeout(function () { teamPaused = false; }, 4000);
-    }, { passive: true });
-
-    // Arraste com mouse no desktop
-    teamCarousel.addEventListener('mousedown', function (e) {
-      isDragging = true;
-      teamCarousel.classList.add('is-dragging');
-      startX = e.pageX - teamCarousel.offsetLeft;
-      startScrollLeft = teamCarousel.scrollLeft;
-    });
-    window.addEventListener('mouseup', function () {
-      isDragging = false;
-      teamCarousel.classList.remove('is-dragging');
-    });
-    teamCarousel.addEventListener('mousemove', function (e) {
-      if (!isDragging) return;
-      e.preventDefault();
-      const x = e.pageX - teamCarousel.offsetLeft;
-      const walk = (x - startX) * 1.25;
-      teamCarousel.scrollLeft = startScrollLeft - walk;
-    });
-
-    if (!reducedMotion) {
-      setInterval(function () {
-        if (!teamPaused && !isDragging) {
-          scrollTeam(1);
-        }
-      }, 4500);
+    if (lastSpecTrigger) {
+      lastSpecTrigger.focus();
+      lastSpecTrigger = null;
     }
   }
 
-  // =========================================================================
-  // 9. COMO FUNCIONA — BARRA DE PROGRESSO DO STICKY STACK
-  // =========================================================================
-  const stackCards = document.querySelectorAll('.stack-card');
-  const stackRailLabel = document.getElementById('stackRailLabel');
-  const stackRailFill = document.getElementById('stackRailFill');
-
-  if (stackCards.length && stackRailLabel && stackRailFill) {
-    function updateStackRail() {
-      let activeStep = 1;
-      const anchorY = window.innerHeight * 0.42;
-
-      stackCards.forEach(function (card, idx) {
-        const rect = card.getBoundingClientRect();
-        if (rect.top <= anchorY) {
-          activeStep = idx + 1;
-        }
-      });
-
-      stackRailLabel.textContent = '0' + activeStep + ' / 0' + stackCards.length;
-      stackRailFill.style.height = (activeStep / stackCards.length) * 100 + '%';
-    }
-    window.addEventListener('scroll', updateStackRail, { passive: true });
-    updateStackRail();
+  if (specDialogCloseBtn) {
+    specDialogCloseBtn.addEventListener('click', closeSpecialtyDialog);
   }
 
-  // =========================================================================
-  // 10. ESTRUTURA — ABAS AUTOMÁTICAS COM BARRA DE PROGRESSO (6 SEGUNDOS)
-  // =========================================================================
-  const structureShowcase = document.getElementById('structureShowcase');
-  const structureTabs = document.querySelectorAll('.structure-tab');
-  const structureSlides = document.querySelectorAll('.structure-slide-img');
-  const structureCaption = document.getElementById('structureCaption');
-
-  if (structureShowcase && structureTabs.length && structureSlides.length) {
-    let activeTabIndex = 0;
-    let structurePaused = false;
-    let structureTimer = null;
-
-    function activateStructureTab(index) {
-      activeTabIndex = index;
-
-      structureTabs.forEach(function (tab, i) {
-        const isCurrent = i === index;
-        tab.classList.toggle('is-active', isCurrent);
-        tab.setAttribute('aria-selected', String(isCurrent));
-
-        // Reinicia barra de progresso
-        const bar = tab.querySelector('.tab-progress-bar');
-        if (bar) {
-          bar.style.animation = 'none';
-          void bar.offsetWidth;
-          bar.style.animation = '';
-        }
-      });
-
-      structureSlides.forEach(function (slide, i) {
-        slide.classList.toggle('is-active', i === index);
-      });
-
-      const activeTab = structureTabs[index];
-      if (structureCaption && activeTab) {
-        structureCaption.textContent = activeTab.getAttribute('data-caption') || '';
+  if (specDialog) {
+    specDialog.addEventListener('click', function (e) {
+      if (e.target === specDialog) {
+        closeSpecialtyDialog();
       }
-    }
-
-    function scheduleNextStructureTab() {
-      clearTimeout(structureTimer);
-      if (reducedMotion || structurePaused) return;
-      structureTimer = setTimeout(function () {
-        const nextIdx = (activeTabIndex + 1) % structureTabs.length;
-        activateStructureTab(nextIdx);
-        scheduleNextStructureTab();
-      }, 6000);
-    }
-
-    structureTabs.forEach(function (tab, idx) {
-      tab.addEventListener('click', function () {
-        activateStructureTab(idx);
-        scheduleNextStructureTab();
-      });
     });
-
-    structureShowcase.addEventListener('mouseenter', function () {
-      structurePaused = true;
-      structureShowcase.classList.add('is-paused');
-      clearTimeout(structureTimer);
+    specDialog.addEventListener('close', function () {
+      if (lastSpecTrigger) {
+        lastSpecTrigger.focus();
+        lastSpecTrigger = null;
+      }
     });
-
-    structureShowcase.addEventListener('mouseleave', function () {
-      structurePaused = false;
-      structureShowcase.classList.remove('is-paused');
-      scheduleNextStructureTab();
-    });
-
-    scheduleNextStructureTab();
   }
 
   // =========================================================================
-  // 11. FAQ ACCORDION (UM ABERTO POR VEZ)
+  // 7. DISCLOSURE "ATENDIMENTO PARTICULAR E REEMBOLSO"
   // =========================================================================
-  const faqItems = document.querySelectorAll('.faq-item');
+  var privateDisclosureBtn = document.getElementById('privateDisclosureBtn');
+  var privateDisclosurePanel = document.getElementById('privateDisclosurePanel');
+
+  if (privateDisclosureBtn && privateDisclosurePanel) {
+    privateDisclosureBtn.addEventListener('click', function () {
+      var expanded = privateDisclosureBtn.getAttribute('aria-expanded') === 'true';
+      privateDisclosureBtn.setAttribute('aria-expanded', String(!expanded));
+      privateDisclosurePanel.classList.toggle('is-open', !expanded);
+    });
+  }
+
+  // =========================================================================
+  // 8. FAQ ACORDEÃO (UM ABERTO POR VEZ, ANIMAÇÃO CSS)
+  // =========================================================================
+  var faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(function (item) {
-    const trigger = item.querySelector('.faq-trigger');
+    var trigger = item.querySelector('.faq-trigger');
     if (!trigger) return;
 
     trigger.addEventListener('click', function () {
-      const wasOpen = item.classList.contains('is-open');
+      var wasOpen = item.classList.contains('is-open');
 
       faqItems.forEach(function (other) {
         other.classList.remove('is-open');
-        const otherBtn = other.querySelector('.faq-trigger');
-        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        var btn = other.querySelector('.faq-trigger');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
       });
 
       if (!wasOpen) {
@@ -639,155 +678,20 @@
   });
 
   // =========================================================================
-  // 12. FORMULÁRIO DE AGENDAMENTO (CHIPS, RÓTULOS FLUTUANTES, VALIDAÇÃO)
+  // 9. BOTÃO FLUTUANTE DO WHATSAPP (Oculto no mobile enquanto #inicio está visível)
   // =========================================================================
-  const form = document.getElementById('appointmentForm');
-  const nomeInput = document.getElementById('formNome');
-  const telInput = document.getElementById('formTelefone');
-  const obsInput = document.getElementById('formObs');
-  const specialtyInput = document.getElementById('formEspecialidade');
-  const timeInput = document.getElementById('formHorario');
+  var heroSection = document.getElementById('inicio');
+  var whatsappFab = document.getElementById('whatsappFab');
 
-  const errorNome = document.getElementById('errorNome');
-  const errorTelefone = document.getElementById('errorTelefone');
-  const errorInteresse = document.getElementById('errorInteresse');
-  const formFeedback = document.getElementById('formFeedback');
-  const formFeedbackLink = document.getElementById('formFeedbackLink');
-
-  // Chips de Especialidade (seleção única)
-  const specialtyChips = document.querySelectorAll('.specialty-chip');
-  specialtyChips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      specialtyChips.forEach(function (c) {
-        c.classList.remove('is-selected');
-        c.setAttribute('aria-checked', 'false');
-      });
-      chip.classList.add('is-selected');
-      chip.setAttribute('aria-checked', 'true');
-      if (specialtyInput) specialtyInput.value = chip.getAttribute('data-value') || '';
-      if (errorInteresse) errorInteresse.classList.remove('is-visible');
-    });
-  });
-
-  // Chips de Preferência de Horário (opcional, alternável)
-  const timeChips = document.querySelectorAll('.time-chip');
-  timeChips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      const already = chip.classList.contains('is-selected');
-      timeChips.forEach(function (c) {
-        c.classList.remove('is-selected');
-        c.setAttribute('aria-pressed', 'false');
-      });
-      if (!already) {
-        chip.classList.add('is-selected');
-        chip.setAttribute('aria-pressed', 'true');
-        if (timeInput) timeInput.value = chip.getAttribute('data-value') || '';
-      } else if (timeInput) {
-        timeInput.value = '';
-      }
-    });
-  });
-
-  // Máscara de telefone com DDD
-  if (telInput) {
-    telInput.addEventListener('input', function (e) {
-      let digits = e.target.value.replace(/\D/g, '').slice(0, 11);
-      if (digits.length > 10) {
-        e.target.value = digits.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
-      } else if (digits.length > 6) {
-        e.target.value = digits.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
-      } else if (digits.length > 2) {
-        e.target.value = digits.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
-      } else {
-        e.target.value = digits;
-      }
-      if (errorTelefone && digits.length >= 10) {
-        errorTelefone.classList.remove('is-visible');
-      }
-    });
-  }
-
-  if (nomeInput && errorNome) {
-    nomeInput.addEventListener('input', function () {
-      if (nomeInput.value.trim().length >= 2) {
-        errorNome.classList.remove('is-visible');
-      }
-    });
-  }
-
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      let hasError = false;
-
-      const nomeVal = nomeInput ? nomeInput.value.trim() : '';
-      const telVal = telInput ? telInput.value.trim() : '';
-      const telDigits = telVal.replace(/\D/g, '');
-      const specVal = specialtyInput ? specialtyInput.value.trim() : '';
-      const timeVal = timeInput ? timeInput.value.trim() : '';
-      const obsVal = obsInput ? obsInput.value.trim() : '';
-
-      if (nomeVal.length < 2) {
-        if (errorNome) errorNome.classList.add('is-visible');
-        if (nomeInput) nomeInput.focus();
-        hasError = true;
-      } else if (errorNome) {
-        errorNome.classList.remove('is-visible');
-      }
-
-      if (telDigits.length < 10) {
-        if (errorTelefone) errorTelefone.classList.add('is-visible');
-        if (!hasError && telInput) telInput.focus();
-        hasError = true;
-      } else if (errorTelefone) {
-        errorTelefone.classList.remove('is-visible');
-      }
-
-      if (!specVal) {
-        if (errorInteresse) errorInteresse.classList.add('is-visible');
-        if (!hasError && specialtyChips[0]) specialtyChips[0].focus();
-        hasError = true;
-      } else if (errorInteresse) {
-        errorInteresse.classList.remove('is-visible');
-      }
-
-      if (hasError) return;
-
-      let message = 'Olá! Gostaria de agendar uma consulta na Clínica Sorriso Pleno.\n\n';
-      message += '*Nome:* ' + nomeVal + '\n';
-      message += '*Telefone:* ' + telVal + '\n';
-      message += '*Especialidade:* ' + specVal;
-      if (timeVal) {
-        message += '\n*Preferência de horário:* ' + timeVal;
-      }
-      if (obsVal) {
-        message += '\n*Observações:* ' + obsVal;
-      }
-
-      const waUrl = 'https://wa.me/5511999998888?text=' + encodeURIComponent(message);
-
-      if (formFeedback && formFeedbackLink) {
-        formFeedbackLink.href = waUrl;
-        formFeedback.classList.add('is-visible');
-      }
-
-      window.open(waUrl, '_blank', 'noopener,noreferrer');
-    });
-  }
-
-  // =========================================================================
-  // 13. BARRA INFERIOR MOBILE SE ESCONDE QUANDO O FORMULÁRIO ESTÁ VISÍVEL
-  // =========================================================================
-  const mobileStickyBar = document.getElementById('mobileStickyBar');
-  if (mobileStickyBar && form && 'IntersectionObserver' in window) {
-    const formVisibilityObserver = new IntersectionObserver(
+  if (heroSection && whatsappFab && 'IntersectionObserver' in window) {
+    var heroFabObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          mobileStickyBar.classList.toggle('is-hidden', entry.isIntersecting);
+          whatsappFab.classList.toggle('is-hero-hidden', entry.isIntersecting);
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.2 }
     );
-    formVisibilityObserver.observe(form);
+    heroFabObserver.observe(heroSection);
   }
 })();

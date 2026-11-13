@@ -4,38 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Clínica Sorriso Pleno | Odontologia em Pinheiros, São Paulo</title>
-  <meta name="description" content="Clínica odontológica em Pinheiros, São Paulo. Seis especialidades no mesmo endereço, com diagnóstico claro, biossegurança rigorosa e atendimento no seu ritmo." />
+  <meta
+    name="description"
+    content="Clínica odontológica em Pinheiros, São Paulo. Seis especialidades integradas na Rua dos Pinheiros, 789, com diagnóstico claro e atendimento no seu ritmo."
+  />
 
-  <!-- Favicon simples com a inicial S -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2324382E'/><text x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='600' fill='%23F7F3EA' text-anchor='middle'>S</text></svg>" />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2324382E'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='600' fill='%23F7F3EA' text-anchor='middle'>S</text></svg>"
+  />
 
-  <!-- Open Graph / Redes Sociais -->
+  <!-- Open Graph / Twitter Cards -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Clínica Sorriso Pleno | Odontologia em Pinheiros, São Paulo" />
-  <meta property="og:description" content="Odontologia sem pressa, do check-up ao implante. Seis especialidades integradas na Rua dos Pinheiros, 789, em São Paulo." />
-  <meta property="og:image" content="https://cl-nica-sorriso-pleno.orizonstudio-ltda.workers.dev/assets/recepcao-BFtHx4Om.jpg" />
+  <meta
+    property="og:description"
+    content="Odontologia sem pressa, do check-up ao implante. Seis especialidades integradas em Pinheiros, São Paulo."
+  />
+  <meta property="og:image" content="images/recepcao.jpg" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Clínica Sorriso Pleno" />
-
-  <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Clínica Sorriso Pleno | Odontologia em Pinheiros, São Paulo" />
-  <meta name="twitter:description" content="Seis especialidades odontológicas em Pinheiros, São Paulo, com diagnóstico claro e atendimento no seu ritmo." />
-  <meta name="twitter:image" content="https://cl-nica-sorriso-pleno.orizonstudio-ltda.workers.dev/assets/recepcao-BFtHx4Om.jpg" />
+  <meta
+    name="twitter:description"
+    content="Seis especialidades odontológicas em Pinheiros, São Paulo, com diagnóstico claro e atendimento no seu ritmo."
+  />
+  <meta name="twitter:image" content="images/recepcao.jpg" />
 
-  <!-- Google Fonts: Bricolage Grotesque, Instrument Serif e Figtree -->
+  <!-- Google Fonts: apenas 2 famílias (Bricolage Grotesque + Figtree), pesos essenciais -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=Figtree:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600&family=Figtree:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
 
-  <!-- Schema.org Structured Data: Dentist -->
+  <!-- Schema.org Dentist JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Dentist",
     "name": "Clínica Sorriso Pleno",
-    "image": "https://cl-nica-sorriso-pleno.orizonstudio-ltda.workers.dev/assets/recepcao-BFtHx4Om.jpg",
-    "description": "Clínica odontológica em Pinheiros, São Paulo. Atendimento em clínica geral, ortodontia, implantes, clareamento, endodontia e odontopediatria.",
+    "image": "images/recepcao.jpg",
+    "description": "Clínica odontológica em Pinheiros, São Paulo. Atendimento integrado em clínica geral, ortodontia, implantes, clareamento, endodontia e odontopediatria.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Rua dos Pinheiros, 789, 3º andar",
@@ -67,7 +80,6 @@
     "medicalSpecialty": [
       "Dentistry",
       "Orthodontics",
-      "Periodontics",
       "Endodontics",
       "Pediatric Dentistry"
     ]
@@ -75,22 +87,13 @@
   </script>
 
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Lenis e GSAP (ScrollTrigger) via CDN -->
-  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
   <script type="module" src="script.js"></script>
 </head>
 <body>
-
-  <!-- Barra fina de progresso de leitura no topo -->
-  <div id="readingProgress" class="reading-progress" aria-hidden="true"></div>
-
-  <!-- 1. Header -->
+  <!-- Cabeçalho: transparente sobre a foto inicial, creme sólido ao rolar -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <div class="header-brand-group">
+      <div class="header-left">
         <a href="#inicio" class="brand-wordmark" aria-label="Clínica Sorriso Pleno, voltar ao início">
           <span>Sorriso Pleno</span>
           <svg class="brand-smile" viewBox="0 0 80 12" fill="none" aria-hidden="true">
@@ -98,31 +101,28 @@
           </svg>
         </a>
 
-        <div class="status-pill" id="clinicStatusPill" aria-live="polite">
-          <span class="status-pill-dot" aria-hidden="true"></span>
+        <span class="status-pill" id="clinicStatusPill" aria-live="polite">
+          <span class="status-dot" aria-hidden="true"></span>
           <span id="clinicStatusText">Aberto agora</span>
-        </div>
+        </span>
       </div>
 
       <nav class="header-nav" aria-label="Navegação principal">
         <ul class="header-nav-list">
           <li><a href="#sobre" class="header-nav-link">Sobre</a></li>
           <li><a href="#especialidades" class="header-nav-link">Especialidades</a></li>
-          <li><a href="#equipe" class="header-nav-link">Corpo Clínico</a></li>
-          <li><a href="#convenios" class="header-nav-link">Convênios</a></li>
-          <li><a href="#passos" class="header-nav-link">Como Funciona</a></li>
+          <li><a href="#equipe" class="header-nav-link">Equipe</a></li>
           <li><a href="#estrutura" class="header-nav-link">Estrutura</a></li>
-          <li><a href="#faq" class="header-nav-link">Dúvidas</a></li>
           <li><a href="#localizacao" class="header-nav-link">Localização</a></li>
         </ul>
       </nav>
 
-      <div class="header-actions">
+      <div class="header-right">
         <a
           href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta."
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn-coral header-cta btn-magnetic"
+          class="btn btn-coral header-cta"
         >
           Agendar consulta
         </a>
@@ -135,7 +135,7 @@
           aria-expanded="false"
           aria-controls="mobileMenu"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
             <line x1="4" y1="8" x2="20" y2="8"></line>
             <line x1="4" y1="16" x2="20" y2="16"></line>
           </svg>
@@ -144,37 +144,35 @@
     </div>
   </header>
 
-  <!-- Menu Mobile Tela Cheia Verde-Floresta -->
-  <div class="mobile-menu" id="mobileMenu" aria-label="Menu móvel" aria-hidden="true">
-    <div>
-      <div class="mobile-menu-top">
-        <a href="#inicio" class="brand-wordmark mobile-menu-brand">
-          <span>Sorriso Pleno</span>
-          <svg class="brand-smile" viewBox="0 0 80 12" fill="none" aria-hidden="true">
-            <path d="M2 2.5C24 11.5 56 11.5 78 2.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
-          </svg>
-        </a>
-        <button type="button" class="mobile-menu-close" id="mobileMenuCloseBtn" aria-label="Fechar menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-
-      <nav aria-label="Links do menu móvel">
-        <ul class="mobile-menu-list">
-          <li><a href="#sobre" class="mobile-menu-link">Sobre</a></li>
-          <li><a href="#especialidades" class="mobile-menu-link">Especialidades</a></li>
-          <li><a href="#equipe" class="mobile-menu-link">Corpo Clínico</a></li>
-          <li><a href="#convenios" class="mobile-menu-link">Convênios</a></li>
-          <li><a href="#passos" class="mobile-menu-link">Como Funciona</a></li>
-          <li><a href="#estrutura" class="mobile-menu-link">Estrutura</a></li>
-          <li><a href="#faq" class="mobile-menu-link">Perguntas Frequentes</a></li>
-          <li><a href="#localizacao" class="mobile-menu-link">Localização e Agendamento</a></li>
-        </ul>
-      </nav>
+  <!-- Menu Mobile Tela Cheia -->
+  <div class="mobile-menu" id="mobileMenu" aria-label="Menu de navegação móvel" aria-hidden="true">
+    <div class="mobile-menu-top">
+      <a href="#inicio" class="brand-wordmark mobile-menu-brand">
+        <span>Sorriso Pleno</span>
+        <svg class="brand-smile" viewBox="0 0 80 12" fill="none" aria-hidden="true">
+          <path d="M2 2.5C24 11.5 56 11.5 78 2.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+        </svg>
+      </a>
+      <button type="button" class="mobile-menu-close" id="mobileMenuCloseBtn" aria-label="Fechar menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </div>
+
+    <nav aria-label="Links do menu móvel">
+      <ul class="mobile-menu-list">
+        <li><a href="#sobre" class="mobile-menu-link">Sobre</a></li>
+        <li><a href="#especialidades" class="mobile-menu-link">Especialidades</a></li>
+        <li><a href="#equipe" class="mobile-menu-link">Corpo Clínico</a></li>
+        <li><a href="#convenios" class="mobile-menu-link">Convênios</a></li>
+        <li><a href="#passos" class="mobile-menu-link">Como Funciona</a></li>
+        <li><a href="#estrutura" class="mobile-menu-link">Estrutura</a></li>
+        <li><a href="#faq" class="mobile-menu-link">Perguntas Frequentes</a></li>
+        <li><a href="#localizacao" class="mobile-menu-link">Localização e Contato</a></li>
+      </ul>
+    </nav>
 
     <div class="mobile-menu-footer">
       <p class="mobile-status-inline" id="mobileStatusInline">Pinheiros, São Paulo</p>
@@ -190,723 +188,638 @@
   </div>
 
   <main>
-    <!-- 2. Hero -->
-    <section id="inicio" class="hero-section">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <span class="eyebrow-label">Pinheiros, São Paulo · Rua dos Pinheiros, 789</span>
+    <!-- 1. TELA INICIAL: Foto de fundo em tela cheia com título no terço inferior -->
+    <section id="inicio" class="hero">
+      <div class="hero-media-fallback" aria-hidden="true">Recepção Clínica Sorriso Pleno</div>
+      <picture class="hero-picture">
+        <source media="(max-width: 768px)" srcset="images/recepcao-sm.jpg" />
+        <img
+          src="images/recepcao.jpg"
+          alt="Recepção acolhedora da Clínica Sorriso Pleno em Pinheiros, com balcão claro, madeira e parede em verde sálvia"
+          width="1376"
+          height="768"
+          fetchpriority="high"
+          decoding="async"
+          class="hero-bg-img"
+          onerror="this.style.display='none'"
+        />
+      </picture>
+      <div class="hero-scrim" aria-hidden="true"></div>
 
-          <h1 class="hero-title">
-            Odontologia
-            <span style="white-space: nowrap;"><span class="serif-arc">sem pressa<svg class="smile-underline" viewBox="0 0 200 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 4C60 17 140 17 197 4" /></svg></span>,</span>
-            do <span style="white-space: nowrap;">check-up</span> ao implante.
-          </h1>
+      <div class="container hero-content">
+        <p class="eyebrow eyebrow-light">Pinheiros, São Paulo · Rua dos Pinheiros, 789</p>
 
-          <p class="hero-subtitle">
-            Seis especialidades no mesmo endereço, em Pinheiros, com diagnóstico claro e atendimento no seu ritmo.
-          </p>
+        <h1 class="hero-title">
+          Odontologia
+          <span class="nowrap"><span class="smile-word">sem pressa<svg class="smile-underline" viewBox="0 0 200 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 4C60 17 140 17 197 4" /></svg></span>,</span>
+          do <span class="nowrap">check-up</span> ao implante.
+        </h1>
 
-          <div class="hero-cta-group">
-            <a
-              href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta."
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-coral btn-magnetic"
-            >
-              Agendar consulta
-            </a>
-            <a href="#especialidades" class="btn btn-outline">
-              Ver especialidades
-            </a>
-          </div>
+        <p class="hero-subtitle">
+          Seis especialidades no mesmo endereço, em Pinheiros, com diagnóstico claro e atendimento no seu ritmo.
+        </p>
 
+        <div class="hero-actions">
           <a
-            href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Estou%20com%20dor%20aguda%20e%20preciso%20de%20atendimento."
+            href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta."
             target="_blank"
             rel="noopener noreferrer"
-            class="hero-urgent-pill"
+            class="btn btn-coral hero-primary-cta"
           >
-            Dor aguda? Fale agora no WhatsApp.
+            Agendar consulta
+          </a>
+          <a
+            href="https://instagram.com/sorrisopleno"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-hero-instagram"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>Conheça também nosso perfil</span>
           </a>
         </div>
 
-        <div class="hero-media">
-          <div class="hero-sticker sticker-1" data-speed="0.06" data-rotate="-3deg">Pontualidade</div>
-          <div class="hero-sticker sticker-2" data-speed="-0.05" data-rotate="2.5deg">Biossegurança</div>
-          <div class="hero-sticker sticker-3" data-speed="0.08" data-rotate="-2deg">Sem pressa</div>
+        <a href="#especialidades" class="hero-secondary-link">
+          Ver especialidades
+        </a>
 
-          <div class="hero-squircle squircle-reveal">
-            <div class="hero-img-fallback" aria-hidden="true">Recepção da Clínica Sorriso Pleno</div>
-            <img
-              src="https://cl-nica-sorriso-pleno.orizonstudio-ltda.workers.dev/assets/recepcao-BFtHx4Om.jpg"
-              alt="Recepção luminosa da Clínica Sorriso Pleno em Pinheiros, com balcão curvo, madeira clara e parede em verde sálvia"
-              width="1200"
-              height="900"
-              fetchpriority="high"
-              referrerpolicy="no-referrer"
-              onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='imagens/recepcao.jpg';}else{this.style.display='none';}"
-            />
-          </div>
-        </div>
+        <ul class="hero-chips" aria-label="Pilares do atendimento">
+          <li>Pontualidade</li>
+          <li>Biossegurança</li>
+          <li>Sem pressa</li>
+        </ul>
       </div>
     </section>
 
     <!-- Divisor arco de sorriso -->
     <div class="smile-divider" aria-hidden="true">
       <svg viewBox="0 0 140 22" fill="none">
-        <path d="M8 4C46 20 94 20 132 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+        <path d="M8 4C46 20 94 20 132 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
       </svg>
     </div>
 
-    <!-- 3. Sobre -->
+    <!-- 2. SOBRE -->
     <section id="sobre" class="section-band section-cream">
       <div class="container">
-        <div class="about-header-grid">
-          <div class="reveal-fade">
-            <span class="eyebrow-label">Sobre a Clínica</span>
+        <div class="about-top reveal">
+          <div>
+            <p class="eyebrow">Sobre a Clínica</p>
             <h2 class="section-heading">
               Cada consulta começa pela
-              <span class="serif-arc">
-                escuta
-                <svg class="smile-underline" viewBox="0 0 140 16" preserveAspectRatio="none" aria-hidden="true">
-                  <path d="M3 4C45 15 95 15 137 4" />
-                </svg>
-              </span>.
+              <span class="smile-word">escuta<svg class="smile-underline" viewBox="0 0 140 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 4C45 15 95 15 137 4" /></svg></span>.
             </h2>
-            <p class="section-lead">
-              Reservamos tempo real para entender sua história e suas dúvidas antes de qualquer procedimento. Explicamos cada imagem e etapa do tratamento com linguagem simples, sem pressa nem surpresas.
+            <p class="about-lead">
+              Reservamos tempo de verdade para ouvir o que trouxe você aqui antes de qualquer exame.
+            </p>
+            <p class="about-copy">
+              Mostramos cada radiografia e opção de tratamento em linguagem direta, para que você decida com calma e combine pausas sempre que precisar.
             </p>
           </div>
 
-          <div class="about-counter-block reveal-fade">
+          <div class="about-stat">
             <span class="counter-number" id="specialtiesCounter" data-target="6">6+</span>
-            <span class="counter-caption">especialidades em uma mesma unidade</span>
+            <span class="counter-label">especialidades integradas em uma mesma unidade em Pinheiros</span>
           </div>
         </div>
 
-        <ol class="pillars-list">
-          <li class="pillar-row reveal-fade">
+        <ol class="pillars-grid reveal">
+          <li class="pillar-item">
             <span class="pillar-num">01</span>
-            <div>
-              <h3 class="pillar-name">Clareza no Diagnóstico</h3>
-              <p class="pillar-copy">Explicações detalhadas de cada etapa com apoio de imagens e planejamento digital.</p>
-            </div>
+            <h3 class="pillar-title">Clareza no Diagnóstico</h3>
+            <p class="pillar-desc">Explicações detalhadas com apoio visual antes de iniciar qualquer etapa clínica.</p>
           </li>
-          <li class="pillar-row reveal-fade">
+          <li class="pillar-item">
             <span class="pillar-num">02</span>
-            <div>
-              <h3 class="pillar-name">Rigor Sanitário</h3>
-              <p class="pillar-copy">Central de esterilização em autoclave com rastreamento e testes biológicos frequentes.</p>
-            </div>
+            <h3 class="pillar-title">Rigor Sanitário</h3>
+            <p class="pillar-desc">Esterilização em autoclave com rastreamento de ciclos e testes biológicos frequentes.</p>
           </li>
-          <li class="pillar-row reveal-fade">
+          <li class="pillar-item">
             <span class="pillar-num">03</span>
-            <div>
-              <h3 class="pillar-name">Equipe Integrada</h3>
-              <p class="pillar-copy">Diferentes especialidades no mesmo espaço para planos de tratamento contínuos.</p>
-            </div>
+            <h3 class="pillar-title">Equipe Integrada</h3>
+            <p class="pillar-desc">Especialistas alinhados no mesmo espaço para planos contínuos sem deslocamentos.</p>
           </li>
-          <li class="pillar-row reveal-fade">
+          <li class="pillar-item">
             <span class="pillar-num">04</span>
-            <div>
-              <h3 class="pillar-name">Ambiente Ergonômico</h3>
-              <p class="pillar-copy">Salas climatizadas, acústica tratada e cadeiras projetadas para relaxamento.</p>
-            </div>
+            <h3 class="pillar-title">Ambiente Ergonômico</h3>
+            <p class="pillar-desc">Salas silenciosas, climatizadas e cadeiras projetadas para relaxamento postural.</p>
           </li>
         </ol>
 
-        <div class="humanized-sage-box reveal-fade">
-          <div class="humanized-grid">
-            <div>
-              <span class="eyebrow-label">Atendimento Humanizado · Conduta Clínica</span>
-              <blockquote class="conduct-quote">
-                “Sem tratamentos invasivos desnecessários. Valorizamos a preservação biológica da estrutura dental natural e a odontologia preventiva.”
-              </blockquote>
-            </div>
-
-            <div class="disclosure-wrap">
-              <p style="font-size: 0.98rem; color: var(--forest);">
-                Ir ao dentista não precisa ser um momento tenso. Nossa equipe trabalha em ritmo calmo e combina pausas sempre que você precisar.
-              </p>
-              <button
-                type="button"
-                class="disclosure-trigger"
-                id="humanizedDisclosureBtn"
-                aria-expanded="false"
-                aria-controls="humanizedDisclosurePanel"
-              >
-                <span class="disclosure-label">Ler mais sobre nossa conduta</span>
-                <svg class="disclosure-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-
-              <div class="disclosure-panel" id="humanizedDisclosurePanel">
-                <div class="disclosure-inner">
-                  <p class="disclosure-text">
-                    Entendemos que ir ao dentista requer confiança e tranquilidade. Nossa equipe foi treinada para ouvir suas queixas com atenção, tirar todas as dúvidas e propor tratamentos adequados ao seu momento, com anestesia tópica prévia e comunicação clara em cada consulta.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="humanized-box reveal">
+          <p class="eyebrow">Atendimento Humanizado · Conduta Clínica</p>
+          <blockquote class="conduct-quote">
+            “Sem tratamentos invasivos desnecessários. Valorizamos a preservação biológica da estrutura dental natural e a odontologia preventiva.”
+          </blockquote>
+          <p class="humanized-note">
+            Anestesia tópica prévia, comunicação transparente a cada etapa e respeito ao ritmo de adultos e crianças.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- 4. Especialidades — Bento Grid -->
+    <!-- 3. ESPECIALIDADES — Carrossel com destaque central + dialog -->
     <section id="especialidades" class="section-band section-sage">
-      <div class="container">
-        <div class="section-top reveal-fade">
-          <span class="eyebrow-label">Especialidades</span>
-          <h2 class="section-heading">
-            Cuidado integrado para cada
-            <span class="serif-arc">fase
-              <svg class="smile-underline" viewBox="0 0 110 16" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M3 4C35 15 75 15 107 4" />
-              </svg>
-            </span>.
-          </h2>
-          <p class="section-lead">
-            Tratamentos planejados sob medida, com foco na saúde, funcionalidade mastigatória e harmonia do sorriso. Clique em uma especialidade para ver os detalhes.
-          </p>
-        </div>
-
-        <div class="bento-grid">
-          <button type="button" class="bento-cell bento-lg bento-sage" data-spec="clinica-geral">
-            <div class="bento-top">
-              <span class="bento-num">01</span>
-              <span class="bento-plus" aria-hidden="true">+</span>
-            </div>
-            <div>
-              <h3 class="bento-name">Clínica Geral</h3>
-              <p class="bento-line">Prevenção, profilaxia, restaurações estéticas e diagnóstico precoce.</p>
-            </div>
-          </button>
-
-          <button type="button" class="bento-cell bento-md bento-forest" data-spec="ortodontia">
-            <div class="bento-top">
-              <span class="bento-num">02</span>
-              <span class="bento-plus" aria-hidden="true">+</span>
-            </div>
-            <div>
-              <h3 class="bento-name">Ortodontia</h3>
-              <p class="bento-line">Alinhadores transparentes e aparelhos fixos para oclusão funcional.</p>
-            </div>
-          </button>
-
-          <button type="button" class="bento-cell bento-wide bento-cream" data-spec="implantes">
-            <div class="bento-top">
-              <span class="bento-num">03</span>
-              <span class="bento-plus" aria-hidden="true">+</span>
-            </div>
-            <div>
-              <h3 class="bento-name">Implantes</h3>
-              <p class="bento-line">Reabilitação unitária ou múltipla com planejamento tomográfico computadorizado.</p>
-            </div>
-          </button>
-
-          <button type="button" class="bento-cell bento-sm bento-coral" data-spec="clareamento">
-            <div class="bento-top">
-              <span class="bento-num">04</span>
-              <span class="bento-plus" aria-hidden="true">+</span>
-            </div>
-            <div>
-              <h3 class="bento-name">Clareamento</h3>
-              <p class="bento-line">Protocolos seguros em consultório ou supervisionados.</p>
-            </div>
-          </button>
-
-          <button type="button" class="bento-cell bento-sm bento-oak" data-spec="endodontia">
-            <div class="bento-top">
-              <span class="bento-num">05</span>
-              <span class="bento-plus" aria-hidden="true">+</span>
-            </div>
-            <div>
-              <h3 class="bento-name">Endodontia</h3>
-              <p class="bento-line">Tratamento de canal mecanizado preservando a raiz natural.</p>
-            </div>
-          </button>
-
-          <button type="button" class="bento-cell bento-wide bento-sage-light" data-spec="odontopediatria">
-            <div class="bento-top">
-              <span class="bento-num">06</span>
-              <span class="bento-plus" aria-hidden="true">+</span>
-            </div>
-            <div>
-              <h3 class="bento-name">Odontopediatria</h3>
-              <p class="bento-line">Abordagem lúdica e preventiva para bebês, crianças e adolescentes.</p>
-            </div>
-          </button>
-        </div>
+      <div class="container section-intro reveal">
+        <p class="eyebrow">Especialidades</p>
+        <h2 class="section-heading">
+          Cuidado pensado para cada
+          <span class="smile-word">fase<svg class="smile-underline" viewBox="0 0 110 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 4C35 15 75 15 107 4" /></svg></span>.
+        </h2>
+        <p class="section-lead">
+          Toque em qualquer card para ler a descrição completa e agendar sua avaliação.
+        </p>
       </div>
-    </section>
 
-    <!-- Painel Lateral / Bottom Sheet de Especialidades -->
-    <div class="spec-drawer-backdrop" id="specDrawerBackdrop" hidden></div>
-    <aside
-      class="spec-drawer"
-      id="specDrawer"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="drawerTitle"
-      hidden
-    >
-      <div class="drawer-header">
-        <span class="eyebrow-label" style="margin-bottom: 0;">Especialidade <span id="drawerNum">01</span></span>
-        <button type="button" class="drawer-close" id="specDrawerClose" aria-label="Fechar painel">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-      <h3 class="drawer-title" id="drawerTitle">Clínica Geral</h3>
-      <p class="drawer-desc" id="drawerDesc">
-        Consultas preventivas, profilaxia (limpeza), remoção de tártaro, restaurações estéticas e diagnóstico precoce de cáries e gengivites.
-      </p>
-      <a
-        id="drawerCta"
-        href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-coral"
-        style="width: 100%;"
+      <div
+        class="cf-carousel"
+        data-carousel="especialidades"
+        role="region"
+        aria-roledescription="carrossel"
+        aria-label="Especialidades odontológicas"
+        tabindex="0"
       >
-        Agendar avaliação em Clínica Geral
-      </a>
-    </aside>
+        <div class="cf-track">
+          <button type="button" class="cf-card spec-card tone-sage is-center" data-spec="clinica-geral">
+            <span class="spec-card-top">
+              <span class="spec-num">01</span>
+              <span class="spec-more">Detalhes +</span>
+            </span>
+            <span class="spec-card-bottom">
+              <strong class="spec-name">Clínica Geral</strong>
+              <span class="spec-short">Prevenção, limpeza e restaurações estéticas para manter a saúde bucal em dia.</span>
+            </span>
+          </button>
 
-    <!-- 5. Corpo Clínico — Carrossel em Cartões de Visita -->
-    <section id="equipe" class="section-band section-cream">
-      <div class="container">
-        <div class="team-header-row">
-          <div class="reveal-fade">
-            <span class="eyebrow-label">Corpo Clínico</span>
-            <h2 class="section-heading">
-              Profissionais com registro no
-              <span class="serif-arc">CRO-SP
-                <svg class="smile-underline" viewBox="0 0 130 16" preserveAspectRatio="none" aria-hidden="true">
-                  <path d="M3 4C42 15 88 15 127 4" />
-                </svg>
-              </span>.
-            </h2>
-            <p class="section-lead">
-              Equipe qualificada com atualização científica contínua para acompanhar você em cada etapa do cuidado bucal.
-            </p>
-          </div>
+          <button type="button" class="cf-card spec-card tone-forest" data-spec="ortodontia">
+            <span class="spec-card-top">
+              <span class="spec-num">02</span>
+              <span class="spec-more">Detalhes +</span>
+            </span>
+            <span class="spec-card-bottom">
+              <strong class="spec-name">Ortodontia</strong>
+              <span class="spec-short">Alinhadores transparentes e aparelhos fixos focados em função e mordida equilibrada.</span>
+            </span>
+          </button>
 
-          <div class="team-controls">
-            <button type="button" class="carousel-arrow" id="teamPrevBtn" aria-label="Profissional anterior">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>
-            </button>
-            <button type="button" class="carousel-arrow" id="teamNextBtn" aria-label="Próximo profissional">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-          </div>
+          <button type="button" class="cf-card spec-card tone-cream" data-spec="implantes">
+            <span class="spec-card-top">
+              <span class="spec-num">03</span>
+              <span class="spec-more">Detalhes +</span>
+            </span>
+            <span class="spec-card-bottom">
+              <strong class="spec-name">Implantes</strong>
+              <span class="spec-short">Reabilitação de dentes perdidos com planejamento tomográfico computadorizado.</span>
+            </span>
+          </button>
+
+          <button type="button" class="cf-card spec-card tone-coral-light" data-spec="clareamento">
+            <span class="spec-card-top">
+              <span class="spec-num">04</span>
+              <span class="spec-more">Detalhes +</span>
+            </span>
+            <span class="spec-card-bottom">
+              <strong class="spec-name">Clareamento</strong>
+              <span class="spec-short">Protocolos em consultório com proteção gengival ou supervisionados em casa.</span>
+            </span>
+          </button>
+
+          <button type="button" class="cf-card spec-card tone-oak-light" data-spec="endodontia">
+            <span class="spec-card-top">
+              <span class="spec-num">05</span>
+              <span class="spec-more">Detalhes +</span>
+            </span>
+            <span class="spec-card-bottom">
+              <strong class="spec-name">Endodontia</strong>
+              <span class="spec-short">Tratamento de canal mecanizado para alívio de dor e preservação da raiz natural.</span>
+            </span>
+          </button>
+
+          <button type="button" class="cf-card spec-card tone-sage-light" data-spec="odontopediatria">
+            <span class="spec-card-top">
+              <span class="spec-num">06</span>
+              <span class="spec-more">Detalhes +</span>
+            </span>
+            <span class="spec-card-bottom">
+              <strong class="spec-name">Odontopediatria</strong>
+              <span class="spec-short">Atendimento lúdico e preventivo para bebês, crianças e adolescentes.</span>
+            </span>
+          </button>
         </div>
 
-        <div class="team-carousel" id="teamCarousel" aria-label="Equipe clínica">
-          <article class="team-bizcard">
-            <div class="team-monogram-pill" aria-hidden="true">CR</div>
-            <div class="team-card-body">
-              <h3 class="team-card-name">Dra. Camila Rocha</h3>
-              <p class="team-card-spec">Clínica Geral e Estética</p>
-              <span class="team-card-cro">CRO-SP 104.821</span>
-              <p class="team-card-bio">
-                Dedica-se ao diagnóstico abrangente, restaurações funcionais e acompanhamento preventivo regular de pacientes adultos.
-              </p>
-            </div>
-          </article>
-
-          <article class="team-bizcard">
-            <div class="team-monogram-pill" aria-hidden="true">LA</div>
-            <div class="team-card-body">
-              <h3 class="team-card-name">Dr. Lucas Andrade</h3>
-              <p class="team-card-spec">Ortodontia e Oclusão</p>
-              <span class="team-card-cro">CRO-SP 112.943</span>
-              <p class="team-card-bio">
-                Especialista em mecânica ortodôntica digital, alinhadores transparentes e tratamentos interceptivos para adolescentes.
-              </p>
-            </div>
-          </article>
-
-          <article class="team-bizcard">
-            <div class="team-monogram-pill" aria-hidden="true">MC</div>
-            <div class="team-card-body">
-              <h3 class="team-card-name">Dra. Mariana Costa</h3>
-              <p class="team-card-spec">Odontopediatria</p>
-              <span class="team-card-cro">CRO-SP 98.650</span>
-              <p class="team-card-bio">
-                Especializada no manejo comportamental infantil, orientação materno-infantil e prevenção de cáries em primeira infância.
-              </p>
-            </div>
-          </article>
-
-          <article class="team-bizcard">
-            <div class="team-monogram-pill" aria-hidden="true">RS</div>
-            <div class="team-card-body">
-              <h3 class="team-card-name">Dr. Rafael Silveira</h3>
-              <p class="team-card-spec">Implantodontia e Prótese</p>
-              <span class="team-card-cro">CRO-SP 119.302</span>
-              <p class="team-card-bio">
-                Foco em reabilitação oral funcional, implantes osteointegráveis e planejamento guiado de coroas unitárias e múltiplas.
-              </p>
-            </div>
-          </article>
+        <div class="container cf-controls">
+          <div class="cf-dots" aria-label="Slides de especialidades"></div>
         </div>
       </div>
-    </section>
 
-    <!-- 6. Convênios e Particular -->
-    <section id="convenios" class="section-band section-sage">
-      <div class="container">
-        <div class="section-top reveal-fade">
-          <span class="eyebrow-label">Formas de Atendimento</span>
-          <h2 class="section-heading">
-            Convênios e atendimento
-            <span class="serif-arc">particular
-              <svg class="smile-underline" viewBox="0 0 150 16" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M3 4C48 15 102 15 147 4" />
+      <!-- Gaveta inferior nativa (<dialog>) para descrição completa da especialidade -->
+      <dialog id="specDialog" class="spec-dialog" aria-labelledby="specDialogTitle">
+        <div class="spec-dialog-sheet">
+          <div class="spec-dialog-head">
+            <span class="eyebrow" style="margin-bottom: 0;">Especialidade <span id="specDialogNum">01</span></span>
+            <button type="button" class="spec-dialog-close" id="specDialogCloseBtn" aria-label="Fechar janela">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
-            </span>.
-          </h2>
-          <p class="section-lead">
-            Transparência e opções flexíveis para que você priorize sua saúde bucal com conforto.
-          </p>
-        </div>
-
-        <!-- Faixa em Marquee Lento -->
-        <div class="marquee-viewport" aria-label="Convênios odontológicos aceitos">
-          <div class="marquee-track">
-            <div class="marquee-group">
-              <span class="marquee-pill">Amil Dental</span>
-              <span class="marquee-pill">Bradesco Dental</span>
-              <span class="marquee-pill">SulAmérica Odonto</span>
-              <span class="marquee-pill">MetLife</span>
-              <span class="marquee-pill">Porto Seguro Odontológico</span>
-              <span class="marquee-pill">Uniodonto</span>
-            </div>
-            <div class="marquee-group marquee-group-clone" aria-hidden="true">
-              <span class="marquee-pill">Amil Dental</span>
-              <span class="marquee-pill">Bradesco Dental</span>
-              <span class="marquee-pill">SulAmérica Odonto</span>
-              <span class="marquee-pill">MetLife</span>
-              <span class="marquee-pill">Porto Seguro Odontológico</span>
-              <span class="marquee-pill">Uniodonto</span>
-            </div>
+            </button>
           </div>
-        </div>
-
-        <div class="plans-panels">
-          <div class="plan-panel plan-panel-cream reveal-fade">
-            <div>
-              <h3 class="plan-panel-title">Planos e Convênios Odontológicos</h3>
-              <p class="plan-panel-desc">
-                Aceitamos diversos planos odontológicos nas modalidades vigentes de cada operadora para procedimentos cobertos pelo seu contrato:
-              </p>
-              <ul class="plan-text-list">
-                <li class="plan-text-item">Amil Dental</li>
-                <li class="plan-text-item">Bradesco Dental</li>
-                <li class="plan-text-item">SulAmérica Odonto</li>
-                <li class="plan-text-item">MetLife</li>
-                <li class="plan-text-item">Porto Seguro Odontológico</li>
-                <li class="plan-text-item">Uniodonto</li>
-              </ul>
-              <p class="plan-footnote">
-                Consulte nossa recepção para confirmar a abrangência do seu plano específico ou categoria da apólice.
-              </p>
-            </div>
-            <div>
-              <a
-                href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20verificar%20a%20cobertura%20do%20meu%20conv%C3%AAnio."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-outline"
-              >
-                Verificar cobertura do meu convênio
-              </a>
-            </div>
-          </div>
-
-          <div class="plan-panel plan-panel-forest reveal-fade">
-            <div>
-              <h3 class="plan-panel-title">Atendimento Particular e Reembolso</h3>
-              <p class="plan-panel-desc">
-                Para quem não possui convênio ou prefere consultas com tempo estendido e materiais de livre escolha:
-              </p>
-              <ul class="private-list">
-                <li>Emissão de relatórios e documentação completa para solicitação de reembolso junto ao seu convênio.</li>
-                <li>Formas de pagamento facilitadas para tratamentos com maior tempo de execução.</li>
-                <li>Plano de tratamento discriminado por etapas, permitindo organização prévia do paciente.</li>
-              </ul>
-            </div>
-            <div>
-              <a
-                href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20particular."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-coral btn-magnetic"
-              >
-                Agendar consulta particular
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. Como Funciona — Sticky Stack -->
-    <section id="passos" class="section-band section-cream">
-      <div class="container">
-        <div class="section-top reveal-fade">
-          <span class="eyebrow-label">Como Funciona</span>
-          <h2 class="section-heading">
-            Quatro etapas sem
-            <span class="serif-arc">burocracia
-              <svg class="smile-underline" viewBox="0 0 155 16" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M3 4C50 15 105 15 152 4" />
-              </svg>
-            </span>.
-          </h2>
-          <p class="section-lead">
-            Passo a passo simples e transparente desde o primeiro contato.
-          </p>
-        </div>
-
-        <div class="stack-layout">
-          <div class="stack-rail" aria-hidden="true">
-            <span class="stack-rail-label" id="stackRailLabel">01 / 04</span>
-            <div class="stack-rail-track">
-              <div class="stack-rail-fill" id="stackRailFill"></div>
-            </div>
-          </div>
-
-          <div class="stack-cards">
-            <article class="stack-card">
-              <div class="stack-num">01</div>
-              <div>
-                <h3 class="stack-title">Agendamento Fácil</h3>
-                <p class="stack-desc">
-                  Escolha o dia e horário mais conveniente pelo WhatsApp ou formulário online com retorno rápido da recepção.
-                </p>
-              </div>
-            </article>
-
-            <article class="stack-card">
-              <div class="stack-num">02</div>
-              <div>
-                <h3 class="stack-title">Avaliação Inicial</h3>
-                <p class="stack-desc">
-                  Consulta com anamnese clínica, exame bucal completo e registro fotográfico ou radiográfico quando indicado.
-                </p>
-              </div>
-            </article>
-
-            <article class="stack-card">
-              <div class="stack-num">03</div>
-              <div>
-                <h3 class="stack-title">Plano Personalizado</h3>
-                <p class="stack-desc">
-                  Apresentação clara das opções de tratamento, prazos estimados e esclarecimento de todas as dúvidas.
-                </p>
-              </div>
-            </article>
-
-            <article class="stack-card">
-              <div class="stack-num">04</div>
-              <div>
-                <h3 class="stack-title">Acompanhamento</h3>
-                <p class="stack-desc">
-                  Execução com técnica cuidadosa, instruções pós-atendimento e suporte contínuo para manutenção da sua saúde bucal.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="stack-cta">
+          <h3 class="spec-dialog-title" id="specDialogTitle">Clínica Geral</h3>
+          <p class="spec-dialog-desc" id="specDialogDesc"></p>
           <a
-            href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20dar%20o%20primeiro%20passo%20e%20agendar%20minha%20consulta."
+            id="specDialogCta"
+            href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-coral btn-magnetic"
+            class="btn btn-coral spec-dialog-cta"
           >
-            Iniciar agendamento do 1º passo
+            Agendar avaliação em Clínica Geral
           </a>
+        </div>
+      </dialog>
+    </section>
+
+    <!-- 4. CORPO CLÍNICO — Mesmo carrossel com destaque central -->
+    <section id="equipe" class="section-band section-cream">
+      <div class="container section-intro reveal">
+        <p class="eyebrow">Corpo Clínico</p>
+        <h2 class="section-heading">
+          Profissionais com registro no
+          <span class="smile-word">CRO-SP<svg class="smile-underline" viewBox="0 0 130 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 4C42 15 88 15 127 4" /></svg></span>.
+        </h2>
+        <p class="section-lead">
+          Formação contínua e diálogo aberto em cada consulta para conduzir seu plano sem pressa.
+        </p>
+      </div>
+
+      <div
+        class="cf-carousel"
+        data-carousel="equipe"
+        role="region"
+        aria-roledescription="carrossel"
+        aria-label="Corpo clínico da clínica"
+        tabindex="0"
+      >
+        <div class="cf-track">
+          <article class="cf-card team-card is-center" tabindex="0">
+            <div class="team-monogram" aria-hidden="true">CR</div>
+            <h3 class="team-name">Dra. Camila Rocha</h3>
+            <p class="team-spec">Clínica Geral e Estética</p>
+            <p class="team-cro">CRO-SP 104.821</p>
+            <p class="team-bio">
+              Dedica-se ao diagnóstico abrangente, restaurações funcionais e acompanhamento preventivo regular de pacientes adultos.
+            </p>
+          </article>
+
+          <article class="cf-card team-card" tabindex="0">
+            <div class="team-monogram" aria-hidden="true">LA</div>
+            <h3 class="team-name">Dr. Lucas Andrade</h3>
+            <p class="team-spec">Ortodontia e Oclusão</p>
+            <p class="team-cro">CRO-SP 112.943</p>
+            <p class="team-bio">
+              Especialista em mecânica ortodôntica digital, alinhadores transparentes e tratamentos interceptivos para adolescentes.
+            </p>
+          </article>
+
+          <article class="cf-card team-card" tabindex="0">
+            <div class="team-monogram" aria-hidden="true">MC</div>
+            <h3 class="team-name">Dra. Mariana Costa</h3>
+            <p class="team-spec">Odontopediatria</p>
+            <p class="team-cro">CRO-SP 98.650</p>
+            <p class="team-bio">
+              Especializada no manejo comportamental infantil, orientação materno-infantil e prevenção de cáries em primeira infância.
+            </p>
+          </article>
+
+          <article class="cf-card team-card" tabindex="0">
+            <div class="team-monogram" aria-hidden="true">RS</div>
+            <h3 class="team-name">Dr. Rafael Silveira</h3>
+            <p class="team-spec">Implantodontia e Prótese</p>
+            <p class="team-cro">CRO-SP 119.302</p>
+            <p class="team-bio">
+              Foco em reabilitação oral funcional, implantes osteointegráveis e planejamento guiado de coroas unitárias e múltiplas.
+            </p>
+          </article>
+        </div>
+
+        <div class="container cf-controls">
+          <div class="cf-dots" aria-label="Slides do corpo clínico"></div>
+        </div>
+      </div>
+
+      <div class="container section-cta-wrap reveal">
+        <a
+          href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20Cl%C3%ADnica%20Sorriso%20Pleno."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-coral"
+        >
+          Falar com nossa equipe no WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. CONVÊNIOS (Sem carrossel: chips em texto + disclosure Particular e Reembolso) -->
+    <section id="convenios" class="section-band section-sage">
+      <div class="container">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Convênios e Atendimento</p>
+          <h2 class="section-heading">
+            Opções claras pelo plano ou
+            <span class="smile-word">particular<svg class="smile-underline" viewBox="0 0 150 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 4C48 15 102 15 147 4" /></svg></span>.
+          </h2>
+        </div>
+
+        <div class="plans-wrap reveal">
+          <ul class="insurance-chips" aria-label="Convênios odontológicos aceitos">
+            <li class="insurance-chip">Amil Dental</li>
+            <li class="insurance-chip">Bradesco Dental</li>
+            <li class="insurance-chip">SulAmérica Odonto</li>
+            <li class="insurance-chip">MetLife</li>
+            <li class="insurance-chip">Porto Seguro Odontológico</li>
+            <li class="insurance-chip">Uniodonto</li>
+          </ul>
+
+          <p class="insurance-note">
+            Consulte nossa recepção para confirmar a abrangência do seu plano.
+          </p>
+
+          <div class="disclosure-card">
+            <button
+              type="button"
+              class="disclosure-btn"
+              id="privateDisclosureBtn"
+              aria-expanded="false"
+              aria-controls="privateDisclosurePanel"
+            >
+              <span>Atendimento Particular e Reembolso</span>
+              <svg class="disclosure-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <div class="disclosure-panel" id="privateDisclosurePanel">
+              <div class="disclosure-inner">
+                <ul class="private-items">
+                  <li>Emissão de relatórios e documentação completa para solicitação de reembolso junto ao seu convênio.</li>
+                  <li>Formas de pagamento facilitadas para tratamentos com maior tempo de execução.</li>
+                  <li>Plano de tratamento discriminado por etapas, permitindo organização prévia do paciente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="plans-cta-row">
+            <a
+              href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20verificar%20a%20cobertura%20do%20meu%20conv%C3%AAnio."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-coral"
+            >
+              Verificar cobertura do meu convênio
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 8. Estrutura — Abas Automáticas em Seção Verde-Floresta -->
-    <section id="estrutura" class="section-band section-dark">
-      <div class="container">
-        <div class="section-top reveal-fade">
-          <span class="eyebrow-label">Nossa Estrutura</span>
-          <h2 class="section-heading">
-            Ambientes feitos para
-            <span class="serif-arc">acalmar
-              <svg class="smile-underline" viewBox="0 0 130 16" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M3 4C42 15 88 15 127 4" />
-              </svg>
-            </span>.
-          </h2>
-          <p class="section-lead">
-            Espaços higienizados, silenciosos e com infraestrutura pensada para acolher você com pontualidade e tranquilidade.
+    <!-- 6. COMO FUNCIONA — Mesmo carrossel -->
+    <section id="passos" class="section-band section-cream">
+      <div class="container section-intro reveal">
+        <p class="eyebrow">Como Funciona</p>
+        <h2 class="section-heading">
+          Quatro passos sem
+          <span class="smile-word">burocracia<svg class="smile-underline" viewBox="0 0 155 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 4C50 15 105 15 152 4" /></svg></span>.
+        </h2>
+        <p class="section-lead">
+          Do contato inicial ao acompanhamento, você sabe sempre o que vem a seguir.
+        </p>
+      </div>
+
+      <div
+        class="cf-carousel"
+        data-carousel="passos"
+        role="region"
+        aria-roledescription="carrossel"
+        aria-label="Etapas do atendimento"
+        tabindex="0"
+      >
+        <div class="cf-track">
+          <article class="cf-card step-card is-center" tabindex="0">
+            <span class="step-num">01</span>
+            <h3 class="step-title">Agendamento Fácil</h3>
+            <p class="step-desc">
+              Escolha o dia e horário mais conveniente diretamente pelo WhatsApp com retorno rápido da recepção.
+            </p>
+          </article>
+
+          <article class="cf-card step-card" tabindex="0">
+            <span class="step-num">02</span>
+            <h3 class="step-title">Avaliação Inicial</h3>
+            <p class="step-desc">
+              Consulta com anamnese clínica, exame bucal completo e registro fotográfico ou radiográfico quando indicado.
+            </p>
+          </article>
+
+          <article class="cf-card step-card" tabindex="0">
+            <span class="step-num">03</span>
+            <h3 class="step-title">Plano Personalizado</h3>
+            <p class="step-desc">
+              Apresentação clara das opções de tratamento, prazos estimados e esclarecimento de todas as dúvidas.
+            </p>
+          </article>
+
+          <article class="cf-card step-card" tabindex="0">
+            <span class="step-num">04</span>
+            <h3 class="step-title">Acompanhamento</h3>
+            <p class="step-desc">
+              Execução cuidadosa, orientações pós-atendimento e suporte contínuo para manutenção da saúde bucal.
+            </p>
+          </article>
+        </div>
+
+        <div class="container cf-controls">
+          <div class="cf-dots" aria-label="Slides das etapas"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ESTRUTURA — Seção verde-floresta com o mesmo carrossel + legenda do card em foco -->
+    <section id="estrutura" class="section-band section-forest">
+      <div class="container section-intro reveal">
+        <p class="eyebrow eyebrow-light">Nossa Estrutura</p>
+        <h2 class="section-heading">
+          Ambientes feitos para
+          <span class="smile-word">acalmar<svg class="smile-underline" viewBox="0 0 130 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 4C42 15 88 15 127 4" /></svg></span>.
+        </h2>
+        <p class="section-lead">
+          Salas higienizadas, silenciosas e equipadas para acolher com pontualidade e tranquilidade.
+        </p>
+      </div>
+
+      <div
+        class="cf-carousel"
+        data-carousel="estrutura"
+        role="region"
+        aria-roledescription="carrossel"
+        aria-label="Ambientes da clínica"
+        tabindex="0"
+      >
+        <div class="cf-track">
+          <article
+            class="cf-card structure-card is-center"
+            tabindex="0"
+            data-caption="Cadeiras ergonômicas, monitores para visualização de exames e recursos que priorizam o silêncio e o relaxamento do paciente."
+          >
+            <div class="structure-media">
+              <div class="media-fallback" aria-hidden="true">Consultório Odontológico</div>
+              <picture>
+                <source media="(max-width: 768px)" srcset="images/consultorio-sm.jpg" />
+                <img
+                  src="images/consultorio.jpg"
+                  alt="Consultório odontológico com cadeira ergonômica em verde sálvia, iluminação suave e armários de carvalho"
+                  width="1200"
+                  height="896"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.style.display='none'"
+                />
+              </picture>
+            </div>
+            <h3 class="structure-card-title">Consultório Odontológico</h3>
+          </article>
+
+          <article
+            class="cf-card structure-card"
+            tabindex="0"
+            data-caption="Ambiente arejado com wi-fi, água mineral, café e suporte ágil de recepção para que sua espera seja pontual e agradável."
+          >
+            <div class="structure-media">
+              <div class="media-fallback" aria-hidden="true">Sala de Espera Aconchegante</div>
+              <picture>
+                <source media="(max-width: 768px)" srcset="images/espera-sm.jpg" />
+                <img
+                  src="images/espera.jpg"
+                  alt="Sala de espera aconchegante com sofá claro, mesa em carvalho, iluminação indireta e plantas"
+                  width="1200"
+                  height="896"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.style.display='none'"
+                />
+              </picture>
+            </div>
+            <h3 class="structure-card-title">Sala de Espera Aconchegante</h3>
+          </article>
+
+          <article
+            class="cf-card structure-card"
+            tabindex="0"
+            data-caption="Protocolo estrito de esterilização em autoclave, embalagens lacradas com integridade e descarte seguro de descartáveis."
+          >
+            <div class="structure-media">
+              <div class="media-fallback" aria-hidden="true">Instrumentais Esterilizados</div>
+              <picture>
+                <source media="(max-width: 768px)" srcset="images/detalhes-sm.jpg" />
+                <img
+                  src="images/detalhes.jpg"
+                  alt="Bandeja de instrumentos odontológicos esterilizados sobre superfície de madeira clara"
+                  width="1200"
+                  height="896"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.style.display='none'"
+                />
+              </picture>
+            </div>
+            <h3 class="structure-card-title">Instrumentais Esterilizados</h3>
+          </article>
+
+          <article
+            class="cf-card structure-card"
+            tabindex="0"
+            data-caption="Central equipada com autoclaves hospitalares com rastreamento por ciclo, teste biológico e selagem individual de todos os kits clínicos."
+          >
+            <div class="structure-media">
+              <div class="media-fallback" aria-hidden="true">Esterilização e Biossegurança</div>
+              <picture>
+                <source media="(max-width: 768px)" srcset="images/esterilizacao-sm.jpg" />
+                <img
+                  src="images/esterilizacao.jpg"
+                  alt="Central de esterilização odontológica com bancada de aço inoxidável e kits lacrados"
+                  width="1200"
+                  height="896"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.style.display='none'"
+                />
+              </picture>
+            </div>
+            <h3 class="structure-card-title">Esterilização e Biossegurança</h3>
+          </article>
+
+          <article
+            class="cf-card structure-card"
+            tabindex="0"
+            data-caption="Radiografia digital panorâmica no próprio local, proporcionando diagnóstico imediato com baixa emissão de radiação."
+          >
+            <div class="structure-media">
+              <div class="media-fallback" aria-hidden="true">Diagnóstico por Imagem</div>
+              <picture>
+                <source media="(max-width: 768px)" srcset="images/radiografia-sm.jpg" />
+                <img
+                  src="images/radiografia.jpg"
+                  alt="Sala de raio-X odontológico digital panorâmico para diagnóstico imediato"
+                  width="1200"
+                  height="896"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.style.display='none'"
+                />
+              </picture>
+            </div>
+            <h3 class="structure-card-title">Diagnóstico por Imagem</h3>
+          </article>
+        </div>
+
+        <div class="container">
+          <p class="structure-active-caption" id="structureActiveCaption" aria-live="polite">
+            Cadeiras ergonômicas, monitores para visualização de exames e recursos que priorizam o silêncio e o relaxamento do paciente.
           </p>
         </div>
 
-        <div class="structure-grid structure-showcase" id="structureShowcase">
-          <div class="structure-tabs" role="tablist" aria-label="Ambientes da clínica">
-            <button
-              type="button"
-              class="structure-tab is-active"
-              role="tab"
-              aria-selected="true"
-              data-caption="Cadeiras ergonômicas, monitores para visualização de exames e recursos que priorizam o silêncio e o relaxamento do paciente."
-            >
-              <span>Consultório</span>
-              <span class="tab-progress-bar" aria-hidden="true"></span>
-            </button>
-
-            <button
-              type="button"
-              class="structure-tab"
-              role="tab"
-              aria-selected="false"
-              data-caption="Ambiente arejado com wi-fi, água mineral, café e suporte ágil de recepção para que sua espera seja pontual e agradável."
-            >
-              <span>Sala de Espera</span>
-              <span class="tab-progress-bar" aria-hidden="true"></span>
-            </button>
-
-            <button
-              type="button"
-              class="structure-tab"
-              role="tab"
-              aria-selected="false"
-              data-caption="Protocolo estrito de esterilização em autoclave, embalagens lacradas com integridade e descarte seguro de descartáveis."
-            >
-              <span>Instrumentais</span>
-              <span class="tab-progress-bar" aria-hidden="true"></span>
-            </button>
-
-            <button
-              type="button"
-              class="structure-tab"
-              role="tab"
-              aria-selected="false"
-              data-caption="Central equipada com autoclaves hospitalares com rastreamento por ciclo, teste biológico e selagem individual de todos os kits clínicos."
-            >
-              <span>Esterilização e Biossegurança</span>
-              <span class="tab-progress-bar" aria-hidden="true"></span>
-            </button>
-
-            <button
-              type="button"
-              class="structure-tab"
-              role="tab"
-              aria-selected="false"
-              data-caption="Radiografia digital panorâmica no próprio local, proporcionando diagnóstico imediato com baixa emissão de radiação."
-            >
-              <span>Diagnóstico por Imagem</span>
-              <span class="tab-progress-bar" aria-hidden="true"></span>
-            </button>
-          </div>
-
-          <div class="structure-stage">
-            <div class="structure-frame squircle-reveal">
-              <img
-                src="https://cl-nica-sorriso-pleno.orizonstudio-ltda.workers.dev/assets/consultorio-BkdWq__9.jpg"
-                alt="Consultório odontológico com cadeira ergonômica em verde sálvia, iluminação suave e armários de carvalho"
-                width="1200"
-                height="800"
-                loading="lazy"
-                referrerpolicy="no-referrer"
-                class="structure-slide-img is-active"
-                onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='imagens/consultorio.jpg';}"
-              />
-              <img
-                src="https://cl-nica-sorriso-pleno.orizonstudio-ltda.workers.dev/assets/espera-_uGQRMNy.jpg"
-                alt="Sala de espera aconchegante com sofá claro, mesa em carvalho, iluminação indireta e plantas"
-                width="1200"
-                height="800"
-                loading="lazy"
-                referrerpolicy="no-referrer"
-                class="structure-slide-img"
-                onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='imagens/espera.jpg';}"
-              />
-              <img
-                src="https://cl-nica-sorriso-pleno.orizonstudio-ltda.workers.dev/assets/detalhes-JTKjAGzO.jpg"
-                alt="Bandeja de instrumentos odontológicos esterilizados sobre superfície de madeira clara"
-                width="1200"
-                height="800"
-                loading="lazy"
-                referrerpolicy="no-referrer"
-                class="structure-slide-img"
-                onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='imagens/detalhes.jpg';}"
-              />
-              <img
-                src="https://cl-nica-sorriso-pleno.orizonstudio-ltda.workers.dev/assets/esterilizacao-DEwvExEv.jpg"
-                alt="Central de esterilização odontológica com bancada de aço inoxidável e kits lacrados"
-                width="1200"
-                height="800"
-                loading="lazy"
-                referrerpolicy="no-referrer"
-                class="structure-slide-img"
-                onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='imagens/esterilizacao.jpg';}"
-              />
-              <img
-                src="https://cl-nica-sorriso-pleno.orizonstudio-ltda.workers.dev/assets/radiografia-Bwj6zOe-.jpg"
-                alt="Sala de raio-X odontológico digital panorâmico para diagnóstico imediato"
-                width="1200"
-                height="800"
-                loading="lazy"
-                referrerpolicy="no-referrer"
-                class="structure-slide-img"
-                onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='imagens/radiografia.jpg';}"
-              />
-            </div>
-
-            <p class="structure-caption" id="structureCaption">
-              Cadeiras ergonômicas, monitores para visualização de exames e recursos que priorizam o silêncio e o relaxamento do paciente.
-            </p>
-          </div>
+        <div class="container cf-controls">
+          <div class="cf-dots" aria-label="Slides da estrutura"></div>
         </div>
       </div>
     </section>
 
-    <!-- 9. Perguntas Frequentes -->
+    <!-- 8. FAQ -->
     <section id="faq" class="section-band section-sage">
       <div class="container faq-layout">
-        <div class="faq-sticky-col reveal-fade">
-          <span class="eyebrow-label">Perguntas Frequentes</span>
+        <div class="faq-left reveal">
+          <p class="eyebrow">Perguntas Frequentes</p>
           <h2 class="section-heading">
             Dúvidas
-            <span class="serif-arc">comuns
-              <svg class="smile-underline" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M3 4C40 15 80 15 117 4" />
-              </svg>
-            </span>.
+            <span class="smile-word">comuns<svg class="smile-underline" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 4C40 15 80 15 117 4" /></svg></span>.
           </h2>
-          <p class="section-lead" style="margin-bottom: 1.75rem;">
-            Informações objetivas sobre nosso atendimento e rotina clínica.
+          <p class="section-lead">
+            Respostas diretas sobre avaliação, conforto e rotina clínica.
           </p>
           <a
             href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20tratamentos."
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-outline"
+            class="btn btn-outline faq-contact-btn"
           >
             Conversar com a recepção
           </a>
         </div>
 
-        <div class="faq-list">
+        <div class="faq-list reveal">
           <div class="faq-item">
             <button type="button" class="faq-trigger" aria-expanded="false">
               <span>Como é realizada a primeira consulta de avaliação?</span>
@@ -995,235 +908,140 @@
       </div>
     </section>
 
-    <!-- 10. Localização e Agendamento -->
+    <!-- 9. LOCALIZAÇÃO E CONTATO (Endereço + Mapa do Google Maps integrado, sem formulário) -->
     <section id="localizacao" class="section-band section-cream">
       <div class="container">
-        <div class="section-top reveal-fade">
-          <span class="eyebrow-label">Localização e Agendamento</span>
+        <div class="section-intro reveal">
+          <p class="eyebrow">Localização e Contato</p>
           <h2 class="section-heading">
             No coração de
-            <span class="serif-arc">Pinheiros
-              <svg class="smile-underline" viewBox="0 0 140 16" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M3 4C45 15 95 15 137 4" />
-              </svg>
-            </span>.
+            <span class="smile-word">Pinheiros<svg class="smile-underline" viewBox="0 0 140 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 4C45 15 95 15 137 4" /></svg></span>.
           </h2>
           <p class="section-lead">
-            Fácil acesso de metrô, ônibus ou carro, com estacionamento conveniado ao lado do edifício.
+            Estacionamento conveniado ao lado do edifício e fácil acesso pela Rua dos Pinheiros.
           </p>
         </div>
 
         <div class="location-grid">
-          <div>
-            <div class="info-blocks">
-              <div class="info-block">
-                <h3 class="info-block-title">Endereço</h3>
-                <p class="info-block-text">
-                  Rua dos Pinheiros, 789, 3º andar<br />
-                  Pinheiros, São Paulo, SP · CEP 05422-001
-                </p>
-                <p class="parking-note">Estacionamento conveniado ao lado do edifício.</p>
-              </div>
-
-              <div class="info-block">
-                <h3 class="info-block-title">Horário de Atendimento</h3>
-                <ul class="hours-list">
-                  <li class="hours-row" data-day-group="weekday">
-                    <span class="hours-day">Segunda a sexta</span>
-                    <span>8h às 19h</span>
-                  </li>
-                  <li class="hours-row" data-day-group="sat">
-                    <span class="hours-day">Sábado</span>
-                    <span>8h às 13h</span>
-                  </li>
-                  <li class="hours-row" data-day-group="sun">
-                    <span class="hours-day">Domingos e feriados</span>
-                    <span>Fechado</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="info-block">
-                <h3 class="info-block-title">Contato e Redes</h3>
-                <div class="contact-links-inline">
-                  <a
-                    href="https://wa.me/5511999998888"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-inline-link"
-                  >
-                    WhatsApp: (11) 99999-8888
-                  </a>
-                  <a
-                    href="https://instagram.com/sorrisopleno"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-inline-link"
-                  >
-                    Instagram: @sorrisopleno
-                  </a>
-                </div>
-              </div>
+          <div class="location-info-col reveal">
+            <div class="info-group">
+              <h3 class="info-title">Endereço</h3>
+              <p class="info-text">
+                Rua dos Pinheiros, 789, 3º andar<br />
+                Pinheiros, São Paulo · CEP 05422-001
+              </p>
+              <p class="parking-note">Estacionamento conveniado ao lado do edifício.</p>
             </div>
 
-            <div class="map-squircle">
-              <iframe
-                title="Localização da Clínica Sorriso Pleno no Google Maps"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0862562413197!2d-46.68779652377317!3d-23.56534577880004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57a1b0270631%3A0xc3d5b035dd2fbb47!2sRua%20dos%20Pinheiros%2C%20789%20-%20Pinheiros%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005422-001!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
-                width="600"
-                height="375"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+            <div class="info-group">
+              <h3 class="info-title">Horários</h3>
+              <ul class="hours-list">
+                <li class="hours-row" data-day-group="weekday">
+                  <span class="hours-day">Segunda a sexta</span>
+                  <span>8h às 19h</span>
+                </li>
+                <li class="hours-row" data-day-group="sat">
+                  <span class="hours-day">Sábados</span>
+                  <span>8h às 13h</span>
+                </li>
+                <li class="hours-row" data-day-group="sun">
+                  <span class="hours-day">Domingos e feriados</span>
+                  <span>Fechado</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="info-group">
+              <h3 class="info-title">Contato</h3>
+              <div class="contact-inline">
+                <a
+                  href="https://wa.me/5511999998888"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-link"
+                >
+                  WhatsApp: (11) 99999-8888
+                </a>
+                <a
+                  href="https://instagram.com/sorrisopleno"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-link"
+                >
+                  Instagram: @sorrisopleno — Conheça nosso perfil
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- Formulário com rótulos flutuantes e chips -->
-          <div class="booking-card">
-            <h3 class="booking-title">Agendar sua Avaliação</h3>
-            <p class="booking-desc">
-              Preencha os campos abaixo. Ao enviar, você será direcionado para o WhatsApp com a mensagem pronta para agendamento.
-            </p>
-
-            <form id="appointmentForm" novalidate>
-              <div class="float-field">
-                <input
-                  type="text"
-                  id="formNome"
-                  class="float-input"
-                  placeholder=" "
-                  autocomplete="name"
-                  required
-                />
-                <label for="formNome" class="float-label">Nome completo *</label>
-                <div id="errorNome" class="field-error" role="alert">Por favor, informe seu nome completo.</div>
+          <div class="location-map-col reveal">
+            <div class="map-shell" id="mapShell">
+              <iframe
+                class="map-iframe"
+                title="Mapa com localização e ruas próximas à Clínica Sorriso Pleno na Rua dos Pinheiros, 789, São Paulo"
+                src="https://www.google.com/maps?q=Rua+dos+Pinheiros,+789,+Pinheiros,+Sao+Paulo,+SP,+05422-001&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="map-footer-bar">
+                <p class="map-footer-address">
+                  <strong>Rua dos Pinheiros, 789, 3º andar</strong>
+                  <span>Pinheiros, São Paulo · CEP 05422-001</span>
+                </p>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Rua+dos+Pinheiros+789+Pinheiros+Sao+Paulo+SP+05422-001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-outline map-open-btn"
+                >
+                  Abrir no Google Maps
+                </a>
               </div>
-
-              <div class="float-field">
-                <input
-                  type="tel"
-                  id="formTelefone"
-                  class="float-input"
-                  placeholder=" "
-                  autocomplete="tel"
-                  required
-                />
-                <label for="formTelefone" class="float-label">Telefone / WhatsApp com DDD *</label>
-                <div id="errorTelefone" class="field-error" role="alert">Por favor, informe um telefone válido com DDD.</div>
-              </div>
-
-              <fieldset class="chip-fieldset">
-                <legend class="chip-legend">Especialidade ou interesse *</legend>
-                <input type="hidden" id="formEspecialidade" value="" />
-                <div class="chips-row" role="radiogroup" aria-label="Especialidade ou interesse">
-                  <button type="button" class="choice-chip specialty-chip" role="radio" aria-checked="false" data-value="Clínica Geral">Clínica Geral</button>
-                  <button type="button" class="choice-chip specialty-chip" role="radio" aria-checked="false" data-value="Ortodontia">Ortodontia</button>
-                  <button type="button" class="choice-chip specialty-chip" role="radio" aria-checked="false" data-value="Implantes">Implantes</button>
-                  <button type="button" class="choice-chip specialty-chip" role="radio" aria-checked="false" data-value="Clareamento">Clareamento</button>
-                  <button type="button" class="choice-chip specialty-chip" role="radio" aria-checked="false" data-value="Endodontia">Endodontia</button>
-                  <button type="button" class="choice-chip specialty-chip" role="radio" aria-checked="false" data-value="Odontopediatria">Odontopediatria</button>
-                  <button type="button" class="choice-chip specialty-chip" role="radio" aria-checked="false" data-value="Dúvida Geral / Outro">Dúvida Geral / Outro</button>
-                </div>
-                <div id="errorInteresse" class="field-error" role="alert">Por favor, selecione uma especialidade.</div>
-              </fieldset>
-
-              <fieldset class="chip-fieldset">
-                <legend class="chip-legend">Preferência de horário (opcional)</legend>
-                <input type="hidden" id="formHorario" value="" />
-                <div class="chips-row">
-                  <button type="button" class="choice-chip time-chip" aria-pressed="false" data-value="Manhã">Manhã</button>
-                  <button type="button" class="choice-chip time-chip" aria-pressed="false" data-value="Tarde">Tarde</button>
-                  <button type="button" class="choice-chip time-chip" aria-pressed="false" data-value="Sábado">Sábado</button>
-                </div>
-              </fieldset>
-
-              <div class="float-field">
-                <textarea
-                  id="formObs"
-                  class="float-input float-textarea"
-                  placeholder=" "
-                ></textarea>
-                <label for="formObs" class="float-label">Observação ou convênio (opcional)</label>
-              </div>
-
-              <button type="submit" class="btn btn-coral btn-magnetic form-submit-btn">
-                Enviar dados via WhatsApp
-              </button>
-
-              <div class="form-feedback" id="formFeedback" role="status">
-                Mensagem preparada com seus dados. Caso o WhatsApp não tenha aberto automaticamente,
-                <a id="formFeedbackLink" href="https://wa.me/5511999998888" target="_blank" rel="noopener noreferrer">clique aqui para abrir a conversa</a>.
-              </div>
-
-              <p class="form-privacy">
-                Respeitamos sua privacidade. Seus dados serão usados unicamente para o contato de agendamento.
-              </p>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- 12. Botão Flutuante Discreto (Desktop) e Barra Fixa Inferior (Mobile) -->
+  <!-- 11. Botão Flutuante Pulsante do WhatsApp (sem texto, aparece no mobile após o hero) -->
   <a
     href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta."
     target="_blank"
     rel="noopener noreferrer"
-    class="whatsapp-fab"
+    class="whatsapp-fab is-hero-hidden"
+    id="whatsappFab"
     aria-label="Falar no WhatsApp com a Clínica Sorriso Pleno"
   >
-    <span class="whatsapp-fab-dot" aria-hidden="true"></span>
-    <span>WhatsApp</span>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.79 14.01c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.18.11-1.91-.12-.45-.14-1.02-.34-1.76-.66-3.09-1.33-5.11-4.44-5.27-4.65-.15-.21-1.26-1.68-1.26-3.2 0-1.52.8-2.27 1.08-2.58.29-.31.63-.39.84-.39.21 0 .42 0 .6.01.19.01.45-.07.7.53.26.62.88 2.15.96 2.31.08.16.13.34.03.55-.1.21-.15.34-.31.52-.15.18-.32.4-.46.54-.15.16-.31.33-.13.64.18.31.79 1.3 1.7 2.11 1.17 1.04 2.16 1.37 2.47 1.52.31.15.49.13.67-.08.18-.21.77-.9.98-1.21.21-.31.41-.26.7-.15.29.11 1.81.85 2.12 1.01.31.16.52.23.59.36.08.13.08.75-.16 1.43z"/>
+    </svg>
   </a>
 
-  <div class="mobile-sticky-bar" id="mobileStickyBar" aria-label="Ações rápidas">
-    <a href="#localizacao" class="btn btn-coral">Agendar consulta</a>
-    <a href="tel:+5511999998888" class="btn btn-outline">Ligar</a>
-  </div>
-
-  <!-- 11. Rodapé -->
+  <!-- 10. RODAPÉ COMPACTO -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h3 class="footer-col-title">Clínica Sorriso Pleno</h3>
-          <p style="font-size: 0.95rem; color: var(--surface-sage-light); margin-bottom: 0.85rem;">
-            Odontologia integrada em Pinheiros, São Paulo. Atendimento preventivo, ortodôntico, reabilitador e infantil no seu ritmo.
-          </p>
-          <p style="font-size: 0.875rem; color: var(--surface-sage-light);">
+          <h3 class="footer-title">Clínica Sorriso Pleno</h3>
+          <p class="footer-copy">
             Rua dos Pinheiros, 789, 3º andar<br />
-            Pinheiros, São Paulo - SP · CEP 05422-001
+            Pinheiros, São Paulo · CEP 05422-001
           </p>
         </div>
 
         <div>
-          <h3 class="footer-col-title">Navegação</h3>
-          <ul class="footer-links">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#especialidades">Especialidades</a></li>
-            <li><a href="#equipe">Corpo Clínico</a></li>
-            <li><a href="#convenios">Convênios</a></li>
-            <li><a href="#passos">Como Funciona</a></li>
-            <li><a href="#estrutura">Estrutura</a></li>
-            <li><a href="#faq">Perguntas Frequentes</a></li>
-            <li><a href="#localizacao">Localização e Agendamento</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="footer-col-title">Horários</h3>
-          <p style="font-size: 0.9rem; color: var(--surface-sage-light);">
+          <h3 class="footer-title">Horários</h3>
+          <p class="footer-copy">
             Segunda a sexta: 8h às 19h<br />
-            Sábado: 8h às 13h<br />
+            Sábados: 8h às 13h<br />
             Domingos e feriados: fechado
           </p>
         </div>
 
         <div>
-          <h3 class="footer-col-title">Contato</h3>
+          <h3 class="footer-title">Contato</h3>
           <ul class="footer-links">
             <li><a href="https://wa.me/5511999998888" target="_blank" rel="noopener noreferrer">WhatsApp: (11) 99999-8888</a></li>
             <li><a href="tel:+5511999998888">Telefone: (11) 99999-8888</a></li>
@@ -1234,10 +1052,9 @@
 
       <div class="footer-meta">
         <span>Responsável técnica: Dra. Camila Rocha, CRO-SP 104.821</span>
-        <span>Site demonstrativo. Dados e imagens fictícios.</span>
+        <span>Imagens ilustrativas. Dados fictícios.</span>
+        <span>Site demonstrativo.</span>
       </div>
-
-      <div class="footer-wordmark" aria-hidden="true">Sorriso Pleno</div>
     </div>
   </footer>
 </body>
